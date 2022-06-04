@@ -1,0 +1,7 @@
+from django.test import SimpleTestCase
+
+class TestAPIView(SimpleTestCase):
+    pass
+
+class TestLocalViewsets(SimpleTestCase):
+    pass
