@@ -54,13 +54,9 @@ class Location(models.Model):
 
 
 class Channel(models.Model):
-    url = models.CharField(choices=[('job_python', 'Python'),
-                                    ('job_react', 'React'),
-                                    ('job_javadevs', 'Java')],
-                           max_length=50,
+    url = models.CharField(max_length=50,
                            verbose_name="Адрес Telegram-канала",
-                           unique=True)  # позже можно поменять на CharField без choices,
-                                         # чтобы HR мог добавить новый канал самостоятельно через интерфейс
+                           unique=True) 
 
     def __str__(self):
         return self.url
@@ -113,7 +109,6 @@ class Vacancy(models.Model):
                             max_length=2)
     tasks = models.TextField(verbose_name='Задачи')
     requirements = models.TextField(verbose_name='Требования')
-    contact = models.URLField(verbose_name='Ссылка на работодателя')  # а откуда её брать?
     url = models.SlugField(verbose_name='Адрес для вакансии на сайте')
     channel_id = models.ForeignKey(Channel, on_delete=models.CASCADE,
                                             verbose_name="Telegram-канал, откуда пришла вакансия")
