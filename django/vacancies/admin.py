@@ -3,7 +3,7 @@ from .models import *
 
 
 class VacanciesAdmin(admin.ModelAdmin):
-    list_display = ['role', 'desc', 'add_date', 'min_salary', 'max_salary', 'employment', 'skill', 'contact', 'url']
+    list_display = ['role', 'desc', 'add_date', 'min_salary', 'max_salary', 'employment', 'skill', 'url']
     search_fields = ('desc', 'add_date', 'salary',)
     prepopulated_fields = {'url': ('desc',)}
 

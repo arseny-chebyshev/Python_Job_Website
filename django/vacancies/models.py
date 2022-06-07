@@ -45,7 +45,7 @@ class Location(models.Model):
                             max_length=50, unique=True)
 
     def __str__(self):
-        return self.city
+        return f"{self.country}, {self.city}"
 
     class Meta:
         verbose_name = 'Локация'
@@ -109,7 +109,7 @@ class Vacancy(models.Model):
                             max_length=2)
     tasks = models.TextField(verbose_name='Задачи')
     requirements = models.TextField(verbose_name='Требования')
-    url = models.SlugField(verbose_name='Адрес для вакансии на сайте')
+    url = models.SlugField(verbose_name='Адрес для вакансии на сайте', default=desc)
     channel_id = models.ForeignKey(Channel, on_delete=models.CASCADE,
                                             verbose_name="Telegram-канал, откуда пришла вакансия")
     message_id = models.PositiveIntegerField(verbose_name='ID cообщения в telegram-канале', null=True) # если не поставить default value/blank=True, то makemigrations не выполняется и предлагает утановить default value, даже при условии что в таблице нет записей (проверено TRUNCATE-ом). Сраная магия :\
