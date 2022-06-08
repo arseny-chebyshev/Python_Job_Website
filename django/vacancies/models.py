@@ -1,4 +1,5 @@
 from django.db import models
+from .utils import slugify_cyrillic
 
 
 class Technology(models.Model):
@@ -40,9 +41,9 @@ class Role(models.Model):
 
 class Location(models.Model):
     country = models.CharField(verbose_name='Страна', 
-                               max_length=50) #добавить валидаторы на то, чтобы страна и город были capitalized?
+                               max_length=50, unique=True) #добавить валидаторы на то, чтобы страна и город были capitalized?
     city = models.CharField(verbose_name='Город',
-                            max_length=50, unique=True)
+                            max_length=50)
 
     def __str__(self):
         return f"{self.country}, {self.city}"
@@ -72,7 +73,7 @@ class Vacancy(models.Model):
     add_date = models.DateTimeField(verbose_name='Дата добавления вакансии',
                                     auto_now=True)
     min_salary = models.PositiveIntegerField(verbose_name='Минимальная заработная плата', default=0)
-    max_salary = models.PositiveIntegerField(verbose_name='Максимальная заработная плата', null=True)
+    max_salary = models.PositiveIntegerField(verbose_name='Максимальная заработная плата', blank=True)
     remote = models.BooleanField(verbose_name='Удаленная работа', 
                                  default=True)
     relocation = models.BooleanField(verbose_name='Релокация',
@@ -80,8 +81,8 @@ class Vacancy(models.Model):
     technologies = models.ManyToManyField(to='Technology',
                                           related_name='technologies_required',  # параметр определяет возможность
                                                                                  # запросов по типу:
-                                                                                 # technologies = Vacancy.objects.technologies_required.all(),
-                                                                                 # т.е. чтобы можно было получить лист объектов Technology для вакансии
+                                                                                 # vacancies = Technology.objects.technologies_required.all(),
+                                                                                 # т.е. чтобы можно было получить лист объектов Vacancy для технологии
                                           verbose_name='Технологии')
     location = models.ForeignKey(to='Location',
                                  related_name='from_location',
@@ -109,10 +110,30 @@ class Vacancy(models.Model):
                             max_length=2)
     tasks = models.TextField(verbose_name='Задачи')
     requirements = models.TextField(verbose_name='Требования')
-    url = models.SlugField(verbose_name='Адрес для вакансии на сайте', default=desc)
+    url = models.SlugField(verbose_name='Адрес для вакансии на сайте', max_length=255,
+                           unique=True, blank=True)
     channel_id = models.ForeignKey(Channel, on_delete=models.CASCADE,
                                             verbose_name="Telegram-канал, откуда пришла вакансия")
-    message_id = models.PositiveIntegerField(verbose_name='ID cообщения в telegram-канале', null=True) # если не поставить default value/blank=True, то makemigrations не выполняется и предлагает утановить default value, даже при условии что в таблице нет записей (проверено TRUNCATE-ом). Сраная магия :\
+    message_id = models.PositiveIntegerField(verbose_name='ID cообщения в telegram-канале',
+                                             null=True) # если не поставить default value/blank=True, то makemigrations не выполняется и предлагает утановить default value, даже при условии что в таблице нет записей (проверено TRUNCATE-ом). Сраная магия :\
+
+    def _create_unique_vacancy_slug(self):
+        if self.max_salary:
+            slug = slugify_cyrillic(f"{self.role.name}-{self.location.city}-{self.max_salary}-рублей")
+        else:
+            slug = slugify_cyrillic(f"{self.role.name}-{self.location.city}")
+
+        unique_slug = slug
+        num = 1
+        while Vacancy.objects.filter(url=unique_slug).exclude(id=self.id).exists():
+            unique_slug = f'{slug}-{num}'
+            num += 1
+        return unique_slug
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if not self.url:
+            self.url = self._create_unique_vacancy_slug()
 
     def __str__(self):
         return self.desc
@@ -126,3 +147,4 @@ class Vacancy(models.Model):
         ordering = ['-add_date']
         verbose_name = 'Вакансия'
         verbose_name_plural = 'Вакансии'
+        unique_together = ('channel_id', 'message_id')
