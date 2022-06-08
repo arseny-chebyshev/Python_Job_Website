@@ -1,4 +1,10 @@
-
-.App {
+.app {
   margin: 15px 100px 0 100px;
+}
+.app__title {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-standart-white);
 }
