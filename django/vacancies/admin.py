@@ -3,9 +3,10 @@ from .models import *
 
 
 class VacanciesAdmin(admin.ModelAdmin):
-    list_display = ['role', 'desc', 'add_date', 'min_salary', 'max_salary', 'employment', 'skill', 'contact', 'url']
+    list_display = ['role', 'desc', 'add_date', 'min_salary', 'max_salary', 'employment', 'skill']
     search_fields = ('desc', 'add_date', 'salary',)
-    prepopulated_fields = {'url': ('desc',)}
+    exclude = ['url']
+#    prepopulated_fields = {'url': ('role', 'location')} заполняется на стороне сервера со slugify_cyrillic
 
 
 class TechnologiesAdmin(admin.ModelAdmin):
