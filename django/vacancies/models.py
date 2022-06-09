@@ -41,7 +41,7 @@ class Role(models.Model):
 
 class Location(models.Model):
     country = models.CharField(verbose_name='Страна', 
-                               max_length=50, unique=True) #добавить валидаторы на то, чтобы страна и город были capitalized?
+                               max_length=50, unique=True) # добавить валидаторы на то, чтобы страна и город были capitalized?
     city = models.CharField(verbose_name='Город',
                             max_length=50)
 
