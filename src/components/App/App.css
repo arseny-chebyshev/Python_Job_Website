@@ -1,10 +1,59 @@
 .app {
-  margin: 15px 100px 0 100px;
+  margin: 0 auto;
+  width: 1270px;
 }
+
 .app__title {
   text-align: center;
-  margin-top: 150px;
-  font-size: 3rem;
+  margin-top: 90px;
   font-weight: bold;
-  color: var(--color-standart-white);
+  color: transparent;
+  font-size: 48px;
+  background-image: var(--color-grad-alice);
+	background-clip: text;
+  
+}
+@media (max-width: 1400px) {
+  .app {
+    width: 1200px;
+  }
+
+  .app__title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .app {
+    width: 1000px;
+  }
+
+  .app__title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .app {
+    width: 800px;
+  }
+
+  .app__title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    width: 650px;
+  }
+}
+
+@media (max-width: 576px) {
+  .app {
+    width: 390px;
+  }
+  .app__title{
+    font-size: 37px;
+  }
 }

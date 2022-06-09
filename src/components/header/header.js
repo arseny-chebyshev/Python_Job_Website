@@ -11,12 +11,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header__logo">
-        {/* <img
-          className="header__logo-logo"
-          src="./image/image-logo/logo.png"
-          alt="Изображение не найдено"
-        /> */}
-        <FcReadingEbook className="header__logo-logo" size={100} />
+        <FcReadingEbook className="header__logo-logo" size={70} />
       </div>
       <div className="header__search">
         <input

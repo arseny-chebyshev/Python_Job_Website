@@ -8,28 +8,23 @@ const App = () => {
     {
       role: "React Native Developer",
       salary: "от 50 000",
+      level:"Junior",
       mode: "Полный день, удалённая работа",
       location: "Россия, Москва",
-      techology: [
-        "ReactJSReactJSReactJSReactJSReactJSReactJSReactJS", 
-        "NodeJs", 
-        "NodeJs", 
-        "NodeJs", 
-        "NodeJs", 
-        "NodeJs", 
-        "NodeJs", 
-        "Docker"],
+      techology: ["ReactJS", "Docker"],
     },
     {
       role: "Python Developer ",
       salary: "от 100 000 до 150 000",
-      mode: "Частичная занятость, удалённая работа",
+      level:"Junior",
+      mode: "Частичная занятость, удалённая",
       location: "Беларусь, Минск",
       techology: ["Python", "Django"],
     },
     {
       role: " JavaScript developer",
       salary: "от 90 000 до 130 000",
+      level:"Junior",
       mode: "Полный день, офис",
       location: "Россия, Казань",
       techology: ["JS ES6+", "Angular", "Redux"],
@@ -38,7 +33,7 @@ const App = () => {
   return (
     <div className="app">
       <Header />
-      <div className="app__title">Найди работу прямо сейчас</div>
+      <p className="app__title">Найди работу прямо сейчас</p>
       <Field>
         {vacancy.map((el) => (
           <Card
@@ -47,6 +42,7 @@ const App = () => {
             mode={el.mode}
             location={el.location}
             technology={el.techology}
+            level={el.level}
           />
         ))}
       </Field>

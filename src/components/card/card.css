@@ -1,91 +1,71 @@
 .card {
-  width: 390px;
-  height: 560px;
+  width: 775px;
+  height: 220px;
+  margin-bottom: 10px;
   background-color: var(--color-standart-white);
-  border-radius: 35px;
-  margin-left: 28px;
-  margin-top: 20px;
+  border-radius: 15px;
+  font-size: 22px;
+  line-height: 28px;
 }
-
 .card:hover {
   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.25);
 }
-
 .card__role {
-  height: 80px;
+  height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  max-width: max-content;
+  margin-left: 20px;
+  cursor: pointer;
 }
-
 .card__role-title {
-  background-color: rgba(255, 255, 254, 0.9);
   border-radius: 25px 25px 0 0;
   font-family: "Outfit";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
+  font-weight: bold;
+  font-size: 28px;
   letter-spacing: 0.2em;
   height: 100%;
   display: flex;
   text-align: center;
   align-items: center;
 }
-
+.card__role-title:hover {
+  text-decoration: underline;
+}
 .card__line {
   height: 15px;
   background-image: var(--color-grad-green);
   border: none;
 }
-
 .card__info {
-  margin: 10px 0 0 10px;
+  margin: 0 0 0 20px;
 }
-
 .card__info-salary {
-  margin-top: 5px;
-  font-style: normal;
+  color: var(--color-standart-green);
   font-weight: 700;
-  font-size: 25px;
-  line-height: 31px;
+  font-size: 20px;
 }
 
 .card__info-mode {
-  margin-top: 5px;
-  font-family: "Mulish";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
+  margin-top: 3px;
   letter-spacing: 0.05em;
 }
 
 .card__info-location {
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 .card__info-location-title {
-  font-style: bold;
   font-weight: 600;
-  font-size: 22px;
-  line-height: 28px;
   letter-spacing: 0.05em;
 }
 
 .card__info-technology {
-  margin-top: 5px;
-  
-  
+  margin-top: 3px;
 }
 .card__info-technology-title {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 28px;
+  font-weight: 600;
   letter-spacing: 0.05em;
-}
-.card__info-technology__list {
-  margin: 3px;
-  height: 230px;
 }
 .alert-enter {
   opacity: 0;
@@ -104,6 +84,39 @@
   transform: scale(0.9);
   transition: opacity 400ms, transform 300ms;
 }
-.card__info-technology__list-li{
-  flex-wrap: wrap;
+
+@media (max-width: 1200px) {
+  .card {
+    width: 600px;
+  }
+}
+@media (max-width: 992px) {
+  .card {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    width: 500px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .card__role-title {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .card__info-salary {
+    font-size: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+  }
+  .card__info-salary {
+    font-size: 12px;
+  }
 }

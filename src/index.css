@@ -1,6 +1,6 @@
 :root {
   --color-standart-black: #16161a;
-  --color-standart-white: #fffffe;
+  --color-standart-white: #f8f4ff;
   --color-standart-gray: #72757e;
   --color-standart-green: #2cb67d;
   --color-standart-purple: #7f5af0;
@@ -28,8 +28,19 @@
     rgba(233, 212, 23, 0.760417) 85.94%,
     rgba(232, 210, 8, 0) 100%
   );
+  --color-grad-alice: linear-gradient(
+    224.21deg,
+    #4c3df8 1.34%,
+    #a165d0 71.47%,
+    rgba(221, 130, 244, 0.7) 100%
+  );
 }
 
+@media (max-width: 1200px) {
+  body {
+    background-color: red;
+  }
+}
 body {
   margin: 0;
   padding: 0;

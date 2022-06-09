@@ -1,5 +1,16 @@
 .field {
   margin-top: 20px;
   display: flex;
-  flex-flow : row wrap;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+@media (min-width: 1200px) {
+}
+
+@media (max-width: 768px) {
+  .field {
+    display: flex;
+    justify-content: center;
+  }
 }
