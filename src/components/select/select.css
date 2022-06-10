@@ -1,0 +1,29 @@
+.select_title {
+  margin-top: 8px;
+  font-weight: bold;
+}
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  padding: 5px;
+  width: 230px;
+  height: 35px;
+  margin-top: 8px;
+  border: none;
+  background: url("caret.png") no-repeat right;
+  background-color: var(--color-standart-gray2);
+  font-size: 15px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.select_arrow {
+  position: relative;
+  right: 25px;
+  top: 5px;
+}
+select::-ms-expand {
+  display: none;
+}

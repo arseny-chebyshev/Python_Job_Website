@@ -1,17 +1,18 @@
 .card {
-  width: 775px;
-  height: 220px;
+  padding: 8px;
+  width: 700px;
+  height: 205px;
   margin-bottom: 10px;
   background-color: var(--color-standart-white);
   border-radius: 15px;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 28px;
 }
 .card:hover {
   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.25);
 }
 .card__role {
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content: flex-start;
   max-width: max-content;
@@ -20,10 +21,10 @@
 }
 .card__role-title {
   border-radius: 25px 25px 0 0;
-  font-family: "Outfit";
+  font-family: PT Sans, sans-serif;
   font-weight: bold;
-  font-size: 28px;
-  letter-spacing: 0.2em;
+  font-size: 26px;
+  letter-spacing: 0.05em;
   height: 100%;
   display: flex;
   text-align: center;
@@ -32,11 +33,11 @@
 .card__role-title:hover {
   text-decoration: underline;
 }
-.card__line {
+/* .card__line {
   height: 15px;
   background-image: var(--color-grad-green);
   border: none;
-}
+} */
 .card__info {
   margin: 0 0 0 20px;
 }
@@ -47,12 +48,12 @@
 }
 
 .card__info-mode {
-  margin-top: 3px;
+ 
   letter-spacing: 0.05em;
 }
 
 .card__info-location {
-  margin-top: 3px;
+  
 }
 
 .card__info-location-title {

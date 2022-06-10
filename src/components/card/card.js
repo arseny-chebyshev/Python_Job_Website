@@ -4,6 +4,8 @@ import { CSSTransition } from "react-transition-group";
 import { useState } from "react";
 const Card = ({ role, salary, mode, location, technology, level }) => {
   const [showButton, setshowButton] = useState(false);
+
+
   return (
     <div
       className="card"
@@ -13,7 +15,6 @@ const Card = ({ role, salary, mode, location, technology, level }) => {
       <div className="card__role">
         <span className="card__role-title">{role}</span>
       </div>
-      {/* <hr className="card__line" /> */}
       <div className="card__info">
         <div className="card__info-salary">{salary}₽</div>
         <div className="card__info-mode">{mode}</div>
@@ -26,9 +27,9 @@ const Card = ({ role, salary, mode, location, technology, level }) => {
           <span className="card__info-technology__list">
             {technology.map((el, i) =>
               i == technology.length - 1 ? (
-                <span className="card__info-technology__list-li">{el}</span>
+                <span key={i} className="card__info-technology__list-li">{el}</span>
               ) : (
-                <span className="card__info-technology__list-li">{el}, </span>
+                <span key={i} className="card__info-technology__list-li">{el}, </span>
               )
             )}
           </span>

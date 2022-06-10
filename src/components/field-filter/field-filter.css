@@ -1,10 +1,11 @@
 .filter_field {
-  width: 450px;
-  height: 670px;
+  
+  width: 330px;
+  height: 625px;
   background-color: var(--color-standart-white);
   border-radius: 15px;
   padding-left: 20px;
-  padding-top: 10px
+  padding-top: 10px;
 }
 @media (max-width: 400px) {
   .filter_field {
