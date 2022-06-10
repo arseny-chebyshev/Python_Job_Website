@@ -3,8 +3,10 @@ import { Card } from "../card/card";
 import { FieldFilter } from "../field-filter/field-filter";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import { defaultEqualityCheck } from "reselect";
 const Field = () => {
   const defvacancy = useSelector((el) => el.filter.vacancy);
+  const deflevel = useSelector((el) => el.filter.level);
   const [vacancy, setVacancy] = useState(defvacancy);
   const distantWork = useSelector((el) => el.filter.check);
   const filterDistant = () => {
@@ -20,6 +22,14 @@ const Field = () => {
       setVacancy(defvacancy);
     }
   }, [distantWork]);
+  useEffect(() => {
+    if (deflevel != "Любой") {
+      setVacancy(vacancy.filter((el) => el.mode.match(/Частичная занятость/)));
+    } else {
+      setVacancy(defvacancy);
+    }
+  }, [deflevel]);
+
   return (
     <div className="field">
       <div className="field__children">

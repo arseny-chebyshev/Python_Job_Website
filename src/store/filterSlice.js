@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   check: false,
+  level: 'Любой',
   vacancy: [
     {
       role: "React Native Developer",
@@ -36,11 +37,14 @@ export const filterSlice = createSlice({
   reducers: {
     distantWork_filter(state) {
       state.check = !state.check;
-
+    },
+    level_filter(state, action) {
+      state.level = action.payload;
+      console.log(state.level);
     },
   },
 });
 
-export const { distantWork_filter } = filterSlice.actions;
+export const { distantWork_filter, level_filter } = filterSlice.actions;
 
 export default filterSlice.reducer;

@@ -1,6 +1,6 @@
 .app {
   margin: 0 auto;
-  width: 1100px;
+  width: 1085px;
 }
 
 .app__title {
@@ -10,8 +10,7 @@
   color: transparent;
   font-size: 48px;
   background-image: var(--color-grad-alice);
-	background-clip: text;
-  
+  background-clip: text;
 }
 @media (max-width: 1400px) {
   .app {
@@ -53,7 +52,7 @@
   .app {
     width: 390px;
   }
-  .app__title{
+  .app__title {
     font-size: 37px;
   }
 }

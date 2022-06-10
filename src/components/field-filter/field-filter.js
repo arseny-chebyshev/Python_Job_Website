@@ -1,9 +1,10 @@
 import "./field-filter.css";
 import { Select } from "../select/select";
 import { Checkbox } from "../checkbox/checkbox";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { level_filter } from "../../store/filterSlice";
 const FieldFilter = () => {
+  const dispatch = useDispatch();
 
   return (
     <div className="filter_field">
@@ -20,6 +21,7 @@ const FieldFilter = () => {
         title={"Тип занятости"}
         option_arr={["Полный день", "Частичная занятость"]}
         defolt={"Любой"}
+        onChange={(event) => dispatch(level_filter(event.target.value))}
       />
       <Checkbox title={"Можно удалённо"} />
     </div>
