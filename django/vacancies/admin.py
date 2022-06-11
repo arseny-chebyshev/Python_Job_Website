@@ -15,8 +15,8 @@ class TechnologiesAdmin(admin.ModelAdmin):
 
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ['country', 'city']
-    search_fields = ('city',)
+    list_display = ['name']
+    search_fields = ('name',)
 
 
 class RoleGroupAdmin(admin.ModelAdmin):

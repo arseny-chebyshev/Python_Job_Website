@@ -1,3 +1,4 @@
+from django.http import HttpResponseBadRequest
 from rest_framework import viewsets
 from rest_framework.response import Response
 from vacancies.models import Vacancy, Technology, Role, Location, Channel
@@ -14,24 +15,29 @@ class VacanciesViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         data = request.data
 
-        # Ниже хендлим все поля ForeignKey/Many-to-Many, т.е. с зависимостями от других таблиц
-
-        # роли нельзя добавить POST-ом, поэтому при отсутствии роли в БД поднимается Exception
-        # С ошибкой 500. Нужен try/except с raise Role.DoesNotExists.
+        # Если роли из запроса не в БД, возвращаем 400 BAD REQUEST со списком доступных
         role_obj = Role.objects.filter(**data['role']).first()
+        if not role_obj:
+            roles = '\n'.join([str(role_dct) for role_dct in Role.objects.all().values()])
+            return HttpResponseBadRequest(f'Данной "role" нет в базе данных. Попробуйте следующие:\n'
+                                          f'{roles}')
         data['role'] = role_obj
 
-        # ищем локацию в БД, если её нет - создаём
-        location_obj = Location.objects.filter(**data['location']).first()
-        if not location_obj:
-            location_obj = Location(**data['location'])
-            location_obj.save()
-        data['location'] = location_obj
-
-        # канал нельзя создать POST-ом, поэтому при отсутсвии канала в БД поднимается Exception
-        # С ошибкой 500. Нужен try/except с raise Channel.DoesNotExists
+        # Если канала из запроса нет в БД, возвращаем 400 BAD REQUEST со списком доступных
         channel_obj = Channel.objects.filter(**data['channel_id']).first()
+        if not channel_obj:
+            channels = '\n'.join([str(ch_dct) for ch_dct in Channel.objects.all().values()])
+            return HttpResponseBadRequest(f'Данного "channel_id" нет в базе данных. Попробуйте следующие:\n'
+                                          f'{channels}')
         data['channel_id'] = channel_obj
+
+        # ищем локацию в БД, если её нет - создаём
+        if 'location' in data.keys():
+            location_obj = Location.objects.filter(**data['location']).first()
+            if not location_obj:
+                location_obj = Location(**data['location'])
+                location_obj.save()
+            data['location'] = location_obj
 
         # распаковываем и создаём технологии при отсутствии их в БД
         old_tech = data.pop('technologies')
