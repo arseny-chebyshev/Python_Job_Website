@@ -41,6 +41,17 @@
   margin-top: 8px;
   right: 10px;
 }
+.header_bulb-on,.header_bulb-off{
+  height: 30px;
+  width: 30px;
+ 
+}
+.header_bulb-on{
+  color: yellow;
+}
+.header_bulb-off{
+  color: white;
+}
 .header__search-gosearch_noshow {
   opacity: 0;
 }

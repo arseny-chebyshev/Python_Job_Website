@@ -1,9 +1,9 @@
 import { useLayoutEffect, useState } from "react";
-const isDarkTheme = window?.matchMedia("prefers-color-scheme dark").matches;
-const defaultTheme = isDarkTheme ? false : true;
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("app-theme") || defaultTheme);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("app-theme") || false
+  );
 
   useLayoutEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);

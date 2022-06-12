@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   check: false,
-  level: 'Любой',
+  level: "Любой",
   vacancy: [
     {
       role: "React Native Developer",

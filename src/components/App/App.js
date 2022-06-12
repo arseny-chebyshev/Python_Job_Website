@@ -1,18 +1,22 @@
 import "./app.css";
 import { Header } from "../header/header";
-import { Field } from "../field/field";
-import { useTheme } from "../hooks/useTheme";
+import { Main } from "../../pages/main";
+import { NotFound } from "../../pages/nofFound";
+import { Vacancy } from "../../pages/vacancy";
+import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
 const App = () => {
-  const {theme,setTheme} = useTheme(false)
+
   return (
     <div className="app">
       <Header />
-      <button onClick={() => setTheme(!theme)}>111111</button>
-      <p className="app__title">Найди работу прямо сейчас</p>
-      <Field></Field>
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/:id" element={<Vacancy />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
     </div>
   );
 };
-
 export default App;

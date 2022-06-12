@@ -1,29 +1,33 @@
 import "./header.css";
-import { AiOutlineSearch } from "react-icons/ai";
-import { FcReadingEbook } from "react-icons/fc";
-import { useState } from "react";
+import { useTheme } from "../hooks/useTheme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faResearchgate } from "@fortawesome/free-brands-svg-icons";
 import {
   faMagnifyingGlass,
   faLaptopCode,
+  faLightbulb,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [value, setValue] = useState("");
-  const inputCheck = (event) => {
-    setValue(event.target.value);
-  };
-
+  const { theme, setTheme } = useTheme(false);
   return (
     <div className="header">
       <div className="header__logo">
-        <FontAwesomeIcon className="header__logo-logo" icon={faLaptopCode} />
+        <Link to="/">
+          <FontAwesomeIcon className="header__logo-logo" icon={faLaptopCode} />
+        </Link>
       </div>
+      <FontAwesomeIcon
+        className={theme ? "header_bulb-on" : "header_bulb-off"}
+        onClick={() => setTheme(!theme)}
+        icon={faLightbulb}
+      />
       <div className="header__search">
         <input
           value={value}
-          onChange={inputCheck}
+          onChange={(event) => setValue(event.target.value)}
           className="header__search-input"
           placeholder="Поиск по вакансиям"
         />
