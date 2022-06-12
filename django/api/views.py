@@ -10,6 +10,37 @@ class VacanciesViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         vacancy = Vacancy.objects.all()
+
+        # Собираем все query-параметры для дальнейшей фильтрации
+        params = self.request.query_params
+        cleaned_params = {}
+
+        # Переводим данные из QueryDict в понятный для фильтрации формат
+        if len(params.dict()) > 0:
+            for key, value in params.items():
+                value = ''.join(value)
+                if value == 'true':
+                    value = True
+                elif value == 'false':
+                    value = False
+                # Специально исключаем технологии из этого фильтра, так как при простой
+                # распаковке они не передадутся по названиям
+                if key == 'technologies':
+                    tech_list = value.split()
+                else:
+                    cleaned_params[key] = value
+
+            vacancy = vacancy.filter(**cleaned_params)
+            # Фильтруем по каждой вакансии отдельно
+            if len(tech_list) > 0:
+                for tech in tech_list:
+                    tech_obj = Technology.objects.get(name=tech)
+                    vacancy = vacancy.filter(technologies=tech_obj)
+
+        # На данный момент модуль не обрабатывает ситуаций, когда в поисковых параметрах
+        # появился какой-то мусор (условно ?ahaha=ahaha). Подразумевается, что единственные,
+        # кто будет взаимодействовать с API - это фронтэнд и бот, так что в теории не так 
+        # критично, но возможно проверка была бы полезна
         return vacancy
 
     def create(self, request, *args, **kwargs):
