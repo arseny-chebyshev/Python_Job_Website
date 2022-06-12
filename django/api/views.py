@@ -46,6 +46,7 @@ class VacanciesViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         data = request.data
 
+
         # Если роли из запроса не в БД, возвращаем 400 BAD REQUEST со списком доступных
         role_obj = Role.objects.filter(**data['role']).first()
         if not role_obj:
@@ -53,6 +54,7 @@ class VacanciesViewSet(viewsets.ModelViewSet):
             return HttpResponseBadRequest(f'Данной "role" нет в базе данных. Попробуйте следующие:\n'
                                           f'{roles}')
         data['role'] = role_obj
+
 
         # Если канала из запроса нет в БД, возвращаем 400 BAD REQUEST со списком доступных
         channel_obj = Channel.objects.filter(**data['channel_id']).first()
