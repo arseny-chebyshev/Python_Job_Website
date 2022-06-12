@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'psycopg2',
+    'rest_framework',
+    'djmoney',
     'vacancies.apps.VacanciesConfig',
-    'rest_framework'
 ]
 
 MIDDLEWARE = [

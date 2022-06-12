@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import RegexValidator
+from djmoney.models.fields import MoneyField
 from .utils import slugify_cyrillic
 
 
@@ -40,18 +42,26 @@ class Role(models.Model):
 
 
 class Location(models.Model):
-    country = models.CharField(verbose_name='Страна', 
-                               max_length=50, unique=True) # добавить валидаторы на то, чтобы страна и город были capitalized?
-    city = models.CharField(verbose_name='Город',
-                            max_length=50)
+    name = models.CharField(verbose_name='Название локации',
+                            max_length=50, unique=True,
+                            validators=
+                               [RegexValidator('^[А-ЯA-Z]',
+                                               "Название локации должно начинаться с заглавной буквы")])
+
+    @classmethod
+    def get_default_loc_id(cls):
+        default_obj = Location.objects.filter(name="Не указана").first()
+        if not default_obj:
+            default_obj = Location(name="Не указана")
+            default_obj.save()
+        return default_obj.id
 
     def __str__(self):
-        return f"{self.country}, {self.city}"
+        return self.name
 
     class Meta:
         verbose_name = 'Локация'
         verbose_name_plural = 'Локации'
-        unique_together = ('country', 'city')
 
 
 class Channel(models.Model):
@@ -72,22 +82,23 @@ class Vacancy(models.Model):
     desc = models.TextField(verbose_name='Описание вакансии')
     add_date = models.DateTimeField(verbose_name='Дата добавления вакансии',
                                     auto_now=True)
-    min_salary = models.PositiveIntegerField(verbose_name='Минимальная заработная плата', default=0)
-    max_salary = models.PositiveIntegerField(verbose_name='Максимальная заработная плата', blank=True)
+    min_salary = MoneyField(verbose_name='Минимальная заработная плата', default=0,
+                            max_digits=12, decimal_places=2, default_currency='RUB',
+                            blank=True)
+    max_salary = MoneyField(verbose_name='Максимальная заработная плата', default=0,
+                            max_digits=12, decimal_places=2, default_currency='RUB',
+                            blank=True)
     remote = models.BooleanField(verbose_name='Удаленная работа', 
-                                 default=True)
+                                 default=False)
     relocation = models.BooleanField(verbose_name='Релокация',
-                                     default=True)
+                                     default=False)
     technologies = models.ManyToManyField(to='Technology',
-                                          related_name='technologies_required',  # параметр определяет возможность
-                                                                                 # запросов по типу:
-                                                                                 # vacancies = Technology.objects.technologies_required.all(),
-                                                                                 # т.е. чтобы можно было получить лист объектов Vacancy для технологии
+                                          related_name='technologies_required',
                                           verbose_name='Технологии')
     location = models.ForeignKey(to='Location',
                                  related_name='from_location',
                                  on_delete=models.CASCADE,
-                                 default='',
+                                 default=Location.get_default_loc_id,
                                  verbose_name='Локация',
                                  blank=True)
     employment = models.CharField(choices=[
@@ -98,30 +109,32 @@ class Vacancy(models.Model):
                                 ('NONE', 'Не указана'),
                                 ],
                                 verbose_name='Занятость',
-                                max_length=7)
+                                max_length=7, default='NONE')
     skill = models.CharField(choices=[
                             ('IN', 'Intern'),
                             ('JR', 'Junior'),
                             ('MD', 'Middle'),
                             ('SR', 'Senior'),
                             ('TL', 'TeamLead'),
+                            ('NONE', 'Не указан')
                             ],
                             verbose_name='Уровень квалификации',
-                            max_length=2)
+                            max_length=4,
+                            default='NONE')
     tasks = models.TextField(verbose_name='Задачи')
     requirements = models.TextField(verbose_name='Требования')
     url = models.SlugField(verbose_name='Адрес для вакансии на сайте', max_length=255,
                            unique=True, blank=True)
     channel_id = models.ForeignKey(Channel, on_delete=models.CASCADE,
                                             verbose_name="Telegram-канал, откуда пришла вакансия")
-    message_id = models.PositiveIntegerField(verbose_name='ID cообщения в telegram-канале',
-                                             null=True) # если не поставить default value/blank=True, то makemigrations не выполняется и предлагает утановить default value, даже при условии что в таблице нет записей (проверено TRUNCATE-ом). Сраная магия :\
+    message_id = models.PositiveIntegerField(verbose_name='ID cообщения в telegram-канале')
 
     def _create_unique_vacancy_slug(self):
-        if self.max_salary:
-            slug = slugify_cyrillic(f"{self.role.name}-{self.location.city}-{self.max_salary}-рублей")
+        if self.max_salary.amount > 0:
+            slug = slugify_cyrillic(f"{self.role.name}-{self.location.name}"
+                                    f"-{int(self.max_salary.amount)}-{self.max_salary.currency}")
         else:
-            slug = slugify_cyrillic(f"{self.role.name}-{self.location.city}")
+            slug = slugify_cyrillic(f"{self.role.name}-{self.location.name}-{self.get_skill_display()}")
 
         unique_slug = slug
         num = 1
