@@ -58,7 +58,8 @@ class VacanciesViewSet(viewsets.ModelViewSet):
 
         data['role'] = get_object_or_raise_400(Role, **data['role'])
         data['channel_id'] = get_object_or_raise_400(Channel, **data['channel_id'])
-        data['location'] = get_object_or_create_new(Location, **data['location'])
+        if 'location' in data:
+            data['location'] = get_object_or_create_new(Location, **data['location'])
 
         # распаковываем и создаём технологии при отсутствии их в БД, удаляем невалидные из data
         new_tech = get_m2m_objects_or_create_new(Technology, data.pop('technologies'))
