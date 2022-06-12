@@ -1,8 +1,8 @@
 .filter_field {
-  
-  width: 330px;
-  height: 675px;
-  background-color: var(--color-standart-white);
+  padding: 60px;
+  width: 260px;
+  height: 670px;
+  background-color: var(--card-color);
   border-radius: 15px;
   padding-left: 20px;
   padding-top: 10px;

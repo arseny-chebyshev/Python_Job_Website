@@ -1,11 +1,16 @@
 import "./select.css";
 import { useSelector } from "react-redux";
-const Select = ({ title, option_arr, defolt,onChange }) => {
-  const level = useSelector((el) => el.filter.level);
+import { useState } from "react";
+const Select = ({ title, option_arr, defolt, onSelect }) => {
+  const [value, setValue] = useState();
+  const onChange = (event) => {
+    setValue(event.target.value);
+    onSelect(event.target.value);
+  };
   return (
     <>
       <div className="select_title">{title}</div>
-      <select onChange={onChange} defaultValue={level} className="select" id="select">
+      <select placeholder="выберите местоположние" onChange={onChange} value={value} className="select">
         <option>{defolt}</option>
         {option_arr.map((el, i) => (
           <option key={i} className="select__option">

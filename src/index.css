@@ -1,10 +1,12 @@
-:root {
-  --color-standart-black: #16161a;
-  --color-standart-white: #f8f4ff;
-  --color-standart-gray: #72757e;
-  --color-standart-gray2: #DCDCDC;
-  --color-standart-green: #2cb67d;
-  --color-standart-purple: #7f5af0;
+html[data-theme="false"] {
+  --background-color: #16161a;
+  --text-color: #16161a;
+  --text-color-salary: #e87208;
+  --card-color: #№989898;
+  --select-color: #e8e8e8;
+  --color-standart-gray2: #e8e8e8;
+  --search-color: #2cb67d;
+  --title-color: #7f5af0;
   --color-grad-green: linear-gradient(
     269.96deg,
     #23d940 1.42%,
@@ -36,6 +38,41 @@
     rgba(221, 130, 244, 0.7) 100%
   );
 }
+html[data-theme="true"] {
+  --background-color: #eeeeee;
+  --card-color: #fffffe;
+  --text-color: black;
+  --text-color-salary: #e87208;
+  --select-color: #e8e8e8;
+  --color-standart-gray2: #e8e8e8;
+  --search-color: #7f5af0;
+  --title-color: #7f5af0;
+  --color-grad-green: linear-gradient(
+    269.96deg,
+    #23d940 1.42%,
+    #52ef93 52.75%,
+    #6afbbf 99.97%
+  );
+  --color-grad-red: linear-gradient(
+    270deg,
+    #f52525 4.01%,
+    rgba(242, 45, 45, 0.678051) 54.5%,
+    rgba(240, 51, 51, 0.45173) 75%,
+    rgba(239, 52, 52, 0.416667) 95.5%,
+    rgba(241, 47, 47, 0.606291) 99.97%,
+    #ff0000 99.98%,
+    rgba(240, 50, 50, 0.480419) 99.99%,
+    rgba(235, 63, 63, 0) 100%
+  );
+  --color-grad-orange: linear-gradient(
+    270deg,
+    #ea971b 0%,
+    rgba(233, 212, 23, 0.801073) 54.69%,
+    rgba(233, 212, 23, 0.760417) 85.94%,
+    rgba(232, 210, 8, 0) 100%
+  );
+  --color-grad-alice: #2cb67d;
+}
 
 @media (max-width: 1200px) {
   body {
@@ -47,7 +84,8 @@ body {
   padding: 0;
   border: 0;
   font-family: "Mulish", sans-serif, "Outfit", sans-serif;
-  background: #16161a;
-  color: var(--color-standart-black);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 200ms linear;
   font-size: 20px;
 }

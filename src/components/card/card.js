@@ -17,6 +17,7 @@ const Card = ({ role, salary, mode, location, technology, level }) => {
       </div>
       <div className="card__info">
         <div className="card__info-salary">{salary}₽</div>
+        <div className="card__info-mode">{level}</div>
         <div className="card__info-mode">{mode}</div>
         <div className="card__info-location">
           <span className="card__info-location-title">Локация: </span>

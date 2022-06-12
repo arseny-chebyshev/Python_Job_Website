@@ -15,7 +15,7 @@ const initialState = {
     {
       role: "Python Developer",
       salary: "от 100 000 до 150 000",
-      level: "Junior",
+      level: "Middle",
       mode: "Частичная занятость, удалённая",
       location: "Беларусь, Минск",
       techology: ["Python", "Django"],
@@ -23,7 +23,7 @@ const initialState = {
     {
       role: " JavaScript developer",
       salary: "от 90 000 до 130 000",
-      level: "Junior",
+      level: "Senior",
       mode: "Полный день, офис",
       location: "Россия, Казань",
       techology: ["JS ES6+", "Angular", "Redux"],

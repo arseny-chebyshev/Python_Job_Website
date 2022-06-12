@@ -1,9 +1,9 @@
 .card {
-  padding: 8px;
-  width: 710px;
-  height: 205px;
+  padding: 20px;
+  width: 680px;
+  height: 200px;
   margin-bottom: 10px;
-  background-color: var(--color-standart-white);
+  background-color: var(--card-color);
   border-radius: 15px;
   font-size: 18px;
   line-height: 28px;
@@ -33,27 +33,17 @@
 .card__role-title:hover {
   text-decoration: underline;
 }
-/* .card__line {
-  height: 15px;
-  background-image: var(--color-grad-green);
-  border: none;
-} */
 .card__info {
   margin: 0 0 0 20px;
 }
 .card__info-salary {
-  color: var(--color-standart-green);
+  color: var( --text-color-salary);
   font-weight: 700;
   font-size: 20px;
 }
-
 .card__info-mode {
  
   letter-spacing: 0.05em;
-}
-
-.card__info-location {
-  
 }
 
 .card__info-location-title {

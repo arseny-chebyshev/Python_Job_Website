@@ -1,15 +1,16 @@
-import { useS } from "react-redux";
-import { distantWork_filter } from "../../store/filterSlice";
-import { useDispatch,useSelector } from "react-redux";
-import "./checkbox.css";
-const Checkbox = ({ title }) => {
-  const dispatch = useDispatch();
-  const check = useSelector((el) => el.filter.check);
+import { useState } from "react";
 
+import "./checkbox.css";
+const Checkbox = ({ title, clickCheck }) => {
+  const [check, setCheck] = useState(false);
+  const goCheck = () => {
+    setCheck(!check);
+    clickCheck(!check);
+  };
   return (
     <div className="checkbox">
       <input
-        onChange={() => dispatch(distantWork_filter())}
+        onChange={goCheck}
         className="checkbox__input"
         type="checkbox"
         checked={check}

@@ -1,6 +1,6 @@
 .app {
   margin: 0 auto;
-  width: 1085px;
+  width: 1070px;
 }
 
 .app__title {
@@ -9,6 +9,7 @@
   font-weight: bold;
   color: transparent;
   font-size: 48px;
+  color:var(--color-grad-alice) ;
   background-image: var(--color-grad-alice);
   background-clip: text;
 }
