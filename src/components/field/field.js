@@ -1,4 +1,4 @@
-import "./field.css";
+import styles from "./field.module.css";
 import { Card } from "../card/card";
 import { FieldFilter } from "../field-filter/field-filter";
 import { useEffect, useState } from "react";
@@ -18,8 +18,8 @@ const Field = () => {
   );
 
   return (
-    <div className="field">
-      <div className="field__children">
+    <div className={styles.field}>
+      <div>
         {isLoading ? (
           <p>1111111</p>
         ) : (
@@ -36,10 +36,7 @@ const Field = () => {
           ))
         )}
       </div>
-
-      <div className="field-filter">
-        <FieldFilter />
-      </div>
+      <FieldFilter />
     </div>
   );
 };

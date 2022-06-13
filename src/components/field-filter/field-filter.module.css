@@ -1,4 +1,4 @@
-.filter_field {
+.field {
   padding: 50px;
   width: 260px;
   height: 670px;
@@ -9,7 +9,7 @@
   
 }
 @media (max-width: 400px) {
-  .filter_field {
+  .field {
     display: none;
   }
 }

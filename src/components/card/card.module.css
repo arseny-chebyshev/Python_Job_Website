@@ -12,7 +12,7 @@
 .card:hover {
   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.25);
 }
-.card__role {
+.role {
   height: 40px;
   display: flex;
   justify-content: flex-start;
@@ -20,7 +20,7 @@
   margin-left: 20px;
   cursor: pointer;
 }
-.card__role-title {
+.role_title {
   border-radius: 25px 25px 0 0;
   font-family: PT Sans, sans-serif;
   font-weight: bold;
@@ -31,49 +31,32 @@
   text-align: center;
   align-items: center;
 }
-.card__role-title:hover {
+.role_title:hover {
   text-decoration: underline;
 }
-.card__info {
+.info {
   margin: 0 0 0 20px;
 }
-.card__info-salary {
+.salary {
   color: var(--text-color-salary);
   font-weight: 700;
   font-size: 20px;
 }
-.card__info-mode {
+.mode {
   letter-spacing: 0.05em;
 }
 
-.card__info-location-title {
+.location_title {
   font-weight: 600;
   letter-spacing: 0.05em;
 }
 
-.card__info-technology {
+.technology {
   margin-top: 3px;
 }
-.card__info-technology-title {
+.technology_title {
   font-weight: 600;
   letter-spacing: 0.05em;
-}
-.alert-enter {
-  opacity: 0;
-  transform: scale(0.9);
-}
-.alert-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 400ms, transform 300ms;
-}
-.alert-exit {
-  opacity: 1;
-}
-.alert-exit-active {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 400ms, transform 300ms;
 }
 
 @media (max-width: 1200px) {
@@ -94,12 +77,12 @@
     line-height: 20px;
   }
 
-  .card__role-title {
+  .role_title {
     font-size: 25px;
     line-height: 25px;
   }
 
-  .card__info-salary {
+  .salary {
     font-size: 15px;
   }
 }
@@ -107,7 +90,7 @@
   .card {
     width: 100%;
   }
-  .card__info-salary {
+  .salary {
     font-size: 12px;
   }
 }

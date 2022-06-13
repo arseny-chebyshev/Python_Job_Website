@@ -3,13 +3,12 @@
   margin-top: 10px;
   align-items: center;
 }
-.checkbox__input {
+.input {
   cursor: pointer;
   border: none;
   transform: scale(1.35);
-  
 }
-.checkbox__title {
+.title {
   font-size: 17px;
   margin-left: 6px;
 }

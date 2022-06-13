@@ -5,20 +5,20 @@
   align-items: center;
   margin-top: 20px;
 }
-.header__logo-logo {
+.logo_logo {
   color: #a1a1a1;
   height: 45px;
   width: 45px;
 }
-.header__search-input:focus::-webkit-input-placeholder {
+.search_input:focus::-webkit-input-placeholder {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-.header__search {
+.search {
   background: var(--search-color);
   border-radius: 5px;
 }
-.header__search-input {
+.search_input {
   text-align: center;
   font-size: 1.05rem;
   font-family: "Outfit";
@@ -30,11 +30,11 @@
   outline: none;
   border-radius: 5px;
 }
-.header__search-input::placeholder {
+.search_input::placeholder {
   color: var(--card-color);
 }
-.header__search-gosearch,
-.header__search-gosearch_noshow {
+.gosearch,
+.gosearchnoshow {
   position: relative;
   cursor: pointer;
   color: var(--title-color);
@@ -42,24 +42,24 @@
   right: 10px;
 }
 
-.moon-icons {
+.moon{
   cursor: pointer;
   height: 30px;
   width: 30px;
 }
-.sun-icons {
+.sun{
   cursor: pointer;
   height: 36px;
   width: 36px;
 }
-.header__search-gosearch_noshow {
+.gosearchnoshow {
   opacity: 0;
 }
-.header__search-gosearch {
+.gosearch {
   opacity: 1;
 }
 @media (max-width: 576px) {
-  .header__search-input {
+  .search_input {
     width: 300px;
   }
 }

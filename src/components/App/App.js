@@ -1,14 +1,13 @@
-import "./app.css";
+import styles from "./app.module.css";
 import { Header } from "../header/header";
-import { Main } from "../../pages/main";
-import { NotFound } from "../../pages/nofFound";
-import { Vacancy } from "../../pages/vacancy";
+import { Main } from "../../pages/main/main";
+import { NotFound } from "../../pages/notFound/nofFound";
+import { Vacancy } from "../../pages/vacancy/vacancy";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
-
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header />
       <Routes>
         <Route path="/" element={<Main />}></Route>

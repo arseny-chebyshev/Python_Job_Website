@@ -73,12 +73,6 @@ html[data-theme="true"] {
   );
   --color-grad-alice: #2cb67d;
 }
-
-@media (max-width: 1200px) {
-  body {
-    background-color: red;
-  }
-}
 body {
   margin: 0;
   padding: 0;

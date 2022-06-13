@@ -1,59 +1,33 @@
-.app {
-  margin: 0 auto;
-  width: 1070px;
-}
-
-.app__title {
+.title {
   text-align: center;
   margin-top: 90px;
   font-weight: bold;
   color: transparent;
   font-size: 48px;
-  color:var(--color-grad-alice) ;
+  color: var(--color-grad-alice);
   background-image: var(--color-grad-alice);
   background-clip: text;
 }
 @media (max-width: 1400px) {
-  .app {
-    width: 1200px;
-  }
-
-  .app__title {
+  title {
     font-size: 60px;
   }
 }
 
 @media (max-width: 1200px) {
-  .app {
-    width: 1000px;
-  }
-
-  .app__title {
+  .title {
     font-size: 60px;
   }
 }
 
 @media (max-width: 992px) {
-  .app {
-    width: 800px;
-  }
-
-  .app__title {
+  .title {
     font-size: 60px;
   }
 }
 
-@media (max-width: 768px) {
-  .app {
-    width: 650px;
-  }
-}
-
 @media (max-width: 576px) {
-  .app {
-    width: 390px;
-  }
-  .app__title {
+  .title {
     font-size: 37px;
   }
 }

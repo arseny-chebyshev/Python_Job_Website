@@ -1,14 +1,7 @@
-import "./technologyItem.css";
+import styles from "./technologyItem.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+
 const TechnologyItem = ({ icon }) => {
-  const [select, setSelect] = useState(false);
-  return (
-    <FontAwesomeIcon
-      onClick={() => setSelect(!select)}
-      className={select ? "technology-icons-on" : "technology-icons"}
-      icon={icon}
-    />
-  );
+  return <FontAwesomeIcon className={`${styles.icons}`} icon={icon} />;
 };
 export { TechnologyItem };

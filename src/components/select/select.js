@@ -1,6 +1,7 @@
-import "./select.css";
+import styles from "./select.module.css";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { faStaylinked } from "@fortawesome/free-brands-svg-icons";
 const Select = ({ title, option_arr, defolt, onSelect }) => {
   const [value, setValue] = useState();
   const onChange = (event) => {
@@ -9,13 +10,16 @@ const Select = ({ title, option_arr, defolt, onSelect }) => {
   };
   return (
     <>
-      <div className="select_title">{title}</div>
-      <select placeholder="выберите местоположние" onChange={onChange} value={value} className="select">
+      <div className={styles.title}>{title}</div>
+      <select
+        placeholder="выберите местоположние"
+        onChange={onChange}
+        value={value}
+        className={styles.select}
+      >
         <option>{defolt}</option>
         {option_arr.map((el, i) => (
-          <option key={i} className="select__option">
-            {el}
-          </option>
+          <option key={i}>{el}</option>
         ))}
       </select>
     </>

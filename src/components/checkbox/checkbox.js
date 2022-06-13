@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import "./checkbox.css";
+import styles from "./checkbox.module.css";
 const Checkbox = ({ title, clickCheck }) => {
   const [check, setCheck] = useState(false);
   const goCheck = () => {
@@ -8,14 +7,14 @@ const Checkbox = ({ title, clickCheck }) => {
     clickCheck(!check);
   };
   return (
-    <div className="checkbox">
+    <div className={styles.checkbox}>
       <input
         onChange={goCheck}
-        className="checkbox__input"
+        className={styles.input}
         type="checkbox"
         checked={check}
       />
-      <span className="checkbox__title">{title}</span>
+      <span className={styles.title}>{title}</span>
     </div>
   );
 };

@@ -1,9 +1,9 @@
-import "./input.css";
+import styles from "./input.module.css";
 const Input = ({ title }) => {
   return (
-    <div className="input">
-      <div className="input-title">{title}</div>
-      <input className="input-input" placeholder="От" />
+    <div className={styles.input}>
+      <div className={styles.title}>{title}</div>
+      <input className={styles.input_input} placeholder="От" />
     </div>
   );
 };

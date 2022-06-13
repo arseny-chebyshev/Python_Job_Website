@@ -1,48 +1,37 @@
-import "./card.css";
-import { Button } from "../button/button";
-import { CSSTransition } from "react-transition-group";
+import styles from "./card.module.css";
 import { useState } from "react";
 const Card = ({ role, salary, mode, location, technology, level }) => {
   const [showButton, setshowButton] = useState(false);
 
-
   return (
     <div
-      className="card"
+      className={styles.card}
       onMouseEnter={() => setshowButton(true)}
       onMouseLeave={() => setshowButton(false)}
     >
-      <div className="card__role">
-        <span className="card__role-title">{role}</span>
+      <div className={styles.role}>
+        <span className={styles.role_title}>{role}</span>
       </div>
-      <div className="card__info">
-        <div className="card__info-salary">{salary}₽</div>
-        <div className="card__info-mode">{level}</div>
-        <div className="card__info-mode">{mode}</div>
-        <div className="card__info-location">
-          <span className="card__info-location-title">Локация: </span>
-          <span className="card__info-location-city">{location}</span>
+      <div className={styles.info}>
+        <div className={styles.salary}>{salary}₽</div>
+        <div className={styles.mode}>{level}</div>
+        <div className={styles.mode}>{mode}</div>
+        <div className={styles.location}>
+          <span className={styles.location_title}>Локация: </span>
+          <span className={styles.location_title}>{location}</span>
         </div>
-        <div className="card__info-technology">
-          <span className="card__info-technology-title">Технологии: </span>
-          <span className="card__info-technology__list">
+        <div className={styles.technology}>
+          <span className={styles.technology_title}>Технологии: </span>
+          <span>
             {technology.map((el, i) =>
               i == technology.length - 1 ? (
-                <span key={i} className="card__info-technology__list-li">{el}</span>
+                <span key={i}>{el}</span>
               ) : (
-                <span key={i} className="card__info-technology__list-li">{el}, </span>
+                <span key={i}>{el}, </span>
               )
             )}
           </span>
         </div>
-        {/* <CSSTransition
-          in={showButton}
-          classNames="alert"
-          timeout={500}
-          unmountOnExit
-        >
-          <Button />
-        </CSSTransition> */}
       </div>
     </div>
   );
