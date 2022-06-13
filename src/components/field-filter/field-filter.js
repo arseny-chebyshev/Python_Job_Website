@@ -1,11 +1,9 @@
 import "./field-filter.css";
 import { Select } from "../select/select";
 import { Checkbox } from "../checkbox/checkbox";
-import { useDispatch } from "react-redux";
+import { TechnologyList } from "../techologyList/technologyList";
 import { Input } from "../input/input";
 const FieldFilter = ({ clickCheck,clickSelectMode,clickSelectLevel }) => {
-  const dispatch = useDispatch();
-
   return (
     <div className="filter_field">
       <Select
@@ -36,6 +34,7 @@ const FieldFilter = ({ clickCheck,clickSelectMode,clickSelectLevel }) => {
       />
       <Checkbox clickCheck={clickCheck} title={"Можно удалённо"} />
       <Input title={'Зарплата'}/>
+        <TechnologyList/>
     </div>
   );
 };

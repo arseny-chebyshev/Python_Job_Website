@@ -4,7 +4,6 @@ import { Main } from "../../pages/main";
 import { NotFound } from "../../pages/nofFound";
 import { Vacancy } from "../../pages/vacancy";
 import { Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
 
 const App = () => {
 

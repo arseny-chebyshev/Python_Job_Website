@@ -41,16 +41,16 @@
   margin-top: 8px;
   right: 10px;
 }
-.header_bulb-on,.header_bulb-off{
+
+.moon-icons {
+  cursor: pointer;
   height: 30px;
   width: 30px;
- 
 }
-.header_bulb-on{
-  color: yellow;
-}
-.header_bulb-off{
-  color: white;
+.sun-icons {
+  cursor: pointer;
+  height: 36px;
+  width: 36px;
 }
 .header__search-gosearch_noshow {
   opacity: 0;

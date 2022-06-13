@@ -1,11 +1,12 @@
 .filter_field {
-  padding: 60px;
+  padding: 50px;
   width: 260px;
   height: 670px;
   background-color: var(--card-color);
   border-radius: 15px;
   padding-left: 20px;
   padding-top: 10px;
+  
 }
 @media (max-width: 400px) {
   .filter_field {

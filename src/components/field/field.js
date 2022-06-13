@@ -16,7 +16,6 @@ const Field = () => {
         }),
     []
   );
-  console.log(vacancy);
 
   return (
     <div className="field">

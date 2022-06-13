@@ -7,6 +7,7 @@
   border-radius: 15px;
   font-size: 18px;
   line-height: 28px;
+  transition: color 800ms linear;
 }
 .card:hover {
   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.25);
@@ -37,12 +38,11 @@
   margin: 0 0 0 20px;
 }
 .card__info-salary {
-  color: var( --text-color-salary);
+  color: var(--text-color-salary);
   font-weight: 700;
   font-size: 20px;
 }
 .card__info-mode {
- 
   letter-spacing: 0.05em;
 }
 

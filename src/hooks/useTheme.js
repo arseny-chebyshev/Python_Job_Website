@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from "react";
 
 export const useTheme = () => {
   const [theme, setTheme] = useState(
-    localStorage.getItem("app-theme") || false
+    localStorage.getItem("app-theme") || "false"
   );
 
   useLayoutEffect(() => {

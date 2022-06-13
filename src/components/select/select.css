@@ -4,9 +4,7 @@
   font-weight: bold;
 }
 .select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+
   cursor: pointer;
   padding: 10px;
   width: 100%;

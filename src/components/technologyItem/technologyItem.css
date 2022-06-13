@@ -1,0 +1,19 @@
+.technology-icons {
+  cursor: pointer;
+  padding: 5px;
+  color: gray;
+  height: 38px;
+  width: 38px;
+  margin: 2px;
+}
+.technology-icons:hover {
+}
+.technology-icons-on {
+  cursor: pointer;
+  padding: 5px;
+  color: gray;
+  height: 38px;
+  width: 38px;
+  margin: 2px;
+  color: red;
+}
