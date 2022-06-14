@@ -1,10 +1,12 @@
 .icons {
+  padding: 0;
   cursor: pointer;
-  padding: 5px;
   color: gray;
-  height: 38px;
-  width: 38px;
-  margin: 2px;
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+  margin-top: 10px;
 }
-
-
+.icons:hover {
+  transform: scale(1.1);
+}

@@ -1,6 +1,8 @@
 import styles from "./card.module.css";
 import { useState } from "react";
-const Card = ({ role, salary, mode, location, technology, level }) => {
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+const Card = ({ i, role, salary, mode, location, technology, level }) => {
   const [showButton, setshowButton] = useState(false);
 
   return (
@@ -9,9 +11,11 @@ const Card = ({ role, salary, mode, location, technology, level }) => {
       onMouseEnter={() => setshowButton(true)}
       onMouseLeave={() => setshowButton(false)}
     >
-      <div className={styles.role}>
-        <span className={styles.role_title}>{role}</span>
-      </div>
+      <Link to={`/${i}`}>
+        <div className={styles.role}>
+          <span className={styles.role_title}>{role}</span>
+        </div>
+      </Link>
       <div className={styles.info}>
         <div className={styles.salary}>{salary}₽</div>
         <div className={styles.mode}>{level}</div>

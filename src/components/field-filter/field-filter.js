@@ -5,7 +5,7 @@ import { TechnologyList } from "../techologyList/technologyList";
 import { Input } from "../input/input";
 const FieldFilter = ({ clickCheck, clickSelectMode, clickSelectLevel }) => {
   return (
-    <div className={styles.field}>
+    <div className={styles.filter}>
       <Select
         title={"Квалификация"}
         option_arr={["Junior", "Middle", "Senior"]}
