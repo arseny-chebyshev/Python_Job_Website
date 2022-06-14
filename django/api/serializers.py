@@ -27,8 +27,8 @@ class VacancySerializer(serializers.ModelSerializer):
         rep = super(VacancySerializer, self).to_representation(instance)
         # здесь можно прописать красивые атрибуты через rep['имя поля'] = "красивый атрибут"
         # на какое-то время для интеграции с фронтом делаем поля не вложенными при представлении
-        rep['min_salary'] = f"{instance.min_salary.amount}, {instance.min_salary.currency}"
-        rep['max_salary'] = f"{instance.max_salary.amount}, {instance.max_salary.currency}"
+        rep['min_salary'] = f"{int(instance.min_salary.amount)}, {instance.min_salary.currency}"
+        rep['max_salary'] = f"{int(instance.max_salary.amount)}, {instance.max_salary.currency}"
         rep['role'] = instance.role.name
         rep['location'] = instance.location.name
         rep['channel_id'] = instance.channel_id.url
