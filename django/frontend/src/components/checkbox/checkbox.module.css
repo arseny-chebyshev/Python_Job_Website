@@ -1,0 +1,14 @@
+.checkbox {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+.input {
+  cursor: pointer;
+  border: none;
+  transform: scale(1.35);
+}
+.title {
+  font-size: 17px;
+  margin-left: 6px;
+}

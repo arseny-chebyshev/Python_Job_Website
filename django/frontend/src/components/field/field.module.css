@@ -1,0 +1,10 @@
+.field {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  
+}
+.field2{
+    width: 730px;
+}

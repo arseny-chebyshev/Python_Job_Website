@@ -1,0 +1,65 @@
+.header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.logo_logo {
+  color: #a1a1a1;
+  height: 45px;
+  width: 45px;
+}
+.search_input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.search {
+  background: var(--search-color);
+  border-radius: 5px;
+}
+.search_input {
+  text-align: center;
+  font-size: 1.05rem;
+  font-family: "Outfit";
+  color: var(--card-color);
+  height: 35px;
+  width: 450px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+}
+.search_input::placeholder {
+  color: var(--card-color);
+}
+.gosearch,
+.gosearchnoshow {
+  position: relative;
+  cursor: pointer;
+  color: var(--title-color);
+  margin-top: 8px;
+  right: 10px;
+}
+
+.moon{
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+.sun{
+  cursor: pointer;
+  height: 36px;
+  width: 36px;
+}
+.gosearchnoshow {
+  opacity: 0;
+}
+.gosearch {
+  opacity: 1;
+}
+@media (max-width: 576px) {
+  .search_input {
+    width: 300px;
+  }
+}

@@ -1,0 +1,101 @@
+.card {
+  padding: 20px;
+  width: 680px;
+  height: 200px;
+  margin-bottom: 10px;
+  background-color: var(--card-color);
+  border-radius: 15px;
+  font-size: 18px;
+  line-height: 28px;
+  transition: color 800ms linear;
+}
+.card:hover {
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.25);
+}
+.role {
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  max-width: max-content;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.role_title {
+  color: rgb(196, 130, 0);
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 26px;
+  letter-spacing: 0.05em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.role_title:hover {
+  text-decoration: underline;
+}
+.info {
+  margin: 0 0 0 20px;
+}
+.salary {
+  margin-top: 5px;
+  color: rgb(206, 163, 61);
+  font-weight: 700;
+  font-size: 21px;
+}
+.mode {
+  letter-spacing: 0.05em;
+}
+.location_title {
+  font-weight: 100;
+  font-size: 19px;
+}
+.location {
+  margin-top: 8px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.technology {
+  margin-top: 5px;
+}
+.technology_title {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: 600px;
+  }
+}
+@media (max-width: 992px) {
+  .card {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    width: 500px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .role_title {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .salary {
+    font-size: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+  }
+  .salary {
+    font-size: 12px;
+  }
+}

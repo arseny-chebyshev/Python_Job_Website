@@ -1,0 +1,34 @@
+.title {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  color: transparent;
+  font-size: 48px;
+  color: var(--color-grad-alice);
+  background-image: var(--color-grad-alice);
+  background-clip: text;
+}
+
+@media (max-width: 1400px) {
+  title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 37px;
+  }
+}
