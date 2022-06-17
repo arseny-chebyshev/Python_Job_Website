@@ -1,27 +1,90 @@
 .card {
   padding: 20px;
   width: 680px;
-  height: 200px;
-  margin-bottom: 10px;
+  height: 190px;
+  margin-bottom: 20px;
   background-color: var(--card-color);
   border-radius: 15px;
   font-size: 18px;
   line-height: 28px;
   transition: color 800ms linear;
 }
-.card:hover {
-  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.25);
+
+.role_title:hover {
+  text-decoration: underline;
 }
-.role {
+
+.card:hover {
+  box-shadow: var(--card-shadow);
+}
+
+.header {
+  display: flex;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+.add {
+  font-size: 15px;
+  margin-left: 10px;
+}
+.role_title {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--title-color);
+}
+.date {
+  font-size: 14px;
+  margin: 20px;
+  margin-right: 0px;
+  color: #686868;
+}
+.main {
+  display: flex;
+  margin-left: 10px;
+}
+.salary {
+  margin-top: 3px;
+  font-size: 18px;
+}
+.smile {
+  color: #ff4040;
+  margin-top: 5px;
+}
+.smileSalary {
+  height: 20px;
+  width: 20px;
+  color: green;
+}
+.info {
+  margin-left: 13px;
+}
+.smileTechnologies {
+  color: #151719;
+}
+.location {
+  margin-top: 8px;
+}
+.technologies {
+  margin-top: 6px;
+}
+.clearNone {
+  display: none;
+}
+/* .role {
   height: 40px;
   display: flex;
   justify-content: flex-start;
   max-width: max-content;
-  margin-left: 20px;
+  margin-left: 10px;
   cursor: pointer;
 }
 .role_title {
-  color: rgb(196, 130, 0);
+  color: var(--color-standart-black);
   font-family: "Outfit", sans-serif;
   font-weight: bold;
   font-size: 26px;
@@ -29,18 +92,18 @@
   height: 100%;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .role_title:hover {
   text-decoration: underline;
 }
 .info {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 10px;
 }
 .salary {
-  margin-top: 5px;
-  color: rgb(206, 163, 61);
-  font-weight: 700;
+  color: var(--color-standart-black);
+  font-weight: 400;
   font-size: 21px;
 }
 .mode {
@@ -50,12 +113,10 @@
   font-weight: 100;
   font-size: 19px;
 }
-.location {
-  margin-top: 8px;
-  font-weight: 600;
+.remote {
   letter-spacing: 0.05em;
+  font-size: 16px;
 }
-
 .technology {
   margin-top: 5px;
 }
@@ -98,4 +159,4 @@
   .salary {
     font-size: 12px;
   }
-}
+} */

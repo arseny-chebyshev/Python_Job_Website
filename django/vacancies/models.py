@@ -81,7 +81,7 @@ class Vacancy(models.Model):
     role = models.ForeignKey(Role, on_delete=models.CASCADE, verbose_name="Специализация")
     desc = models.TextField(verbose_name='Описание вакансии')
     add_date = models.DateTimeField(verbose_name='Дата добавления вакансии',
-                                    auto_now=True)
+                                    auto_now_add=True)
     min_salary = MoneyField(verbose_name='Минимальная заработная плата', default=0,
                             max_digits=12, decimal_places=2, default_currency='RUB',
                             blank=True)
@@ -129,24 +129,6 @@ class Vacancy(models.Model):
                                             verbose_name="Telegram-канал, откуда пришла вакансия")
     message_id = models.PositiveIntegerField(verbose_name='ID cообщения в telegram-канале')
 
-    def _create_unique_vacancy_slug(self):
-        if self.max_salary.amount > 0:
-            slug = slugify_cyrillic(f"{self.role.name}-{self.location.name}"
-                                    f"-{int(self.max_salary.amount)}-{self.max_salary.currency}")
-        else:
-            slug = slugify_cyrillic(f"{self.role.name}-{self.location.name}-{self.get_skill_display()}")
-
-        unique_slug = slug
-        num = 1
-        while Vacancy.objects.filter(url=unique_slug).exclude(id=self.id).exists():
-            unique_slug = f'{slug}-{num}'
-            num += 1
-        return unique_slug
-
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        if not self.url:
-            self.url = self._create_unique_vacancy_slug()
 
     def __str__(self):
         return self.desc
@@ -157,7 +139,7 @@ class Vacancy(models.Model):
         
     # фильтр по последней дате+арги
     class Meta:
-        ordering = ['-add_date']
+        ordering = ['add_date']
         verbose_name = 'Вакансия'
         verbose_name_plural = 'Вакансии'
         unique_together = ('channel_id', 'message_id')

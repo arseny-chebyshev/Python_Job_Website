@@ -3,7 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 6rem;
 }
 .logo_logo {
   color: #a1a1a1;
@@ -22,7 +23,7 @@
   text-align: center;
   font-size: 1.05rem;
   font-family: "Outfit";
-  color: var(--card-color);
+  color: var(--text-color);
   height: 35px;
   width: 450px;
   border: none;
@@ -37,20 +38,20 @@
 .gosearchnoshow {
   position: relative;
   cursor: pointer;
-  color: var(--title-color);
+  color: var(--search-loop-color);
   margin-top: 8px;
   right: 10px;
 }
 
-.moon{
+.moon {
   cursor: pointer;
   height: 30px;
   width: 30px;
 }
-.sun{
+.sun {
   cursor: pointer;
-  height: 36px;
-  width: 36px;
+  height: 30px;
+  width: 30px;
 }
 .gosearchnoshow {
   opacity: 0;

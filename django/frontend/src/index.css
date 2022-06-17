@@ -1,89 +1,38 @@
 html[data-theme="false"] {
-  --background-color: #16161a;
-  --text-color: #16161a;
-  --text-color-salary: #9db105;
-  --card-color: #fffffe;
-  --select-color: #e8e8e8;
-  --color-standart-gray2: #e8e8e8;
-  --search-color: #2cb67d;
-  --title-color: #5020f0;
-  --color-grad-green: linear-gradient(
-    269.96deg,
-    #23d940 1.42%,
-    #52ef93 52.75%,
-    #6afbbf 99.97%
-  );
-  --color-grad-red: linear-gradient(
-    270deg,
-    #f52525 4.01%,
-    rgba(242, 45, 45, 0.678051) 54.5%,
-    rgba(240, 51, 51, 0.45173) 75%,
-    rgba(239, 52, 52, 0.416667) 95.5%,
-    rgba(241, 47, 47, 0.606291) 99.97%,
-    #ff0000 99.98%,
-    rgba(240, 50, 50, 0.480419) 99.99%,
-    rgba(235, 63, 63, 0) 100%
-  );
-  --color-grad-orange: linear-gradient(
-    270deg,
-    #ea971b 0%,
-    rgba(233, 212, 23, 0.801073) 54.69%,
-    rgba(233, 212, 23, 0.760417) 85.94%,
-    rgba(232, 210, 8, 0) 100%
-  );
-  --color-grad-alice: linear-gradient(
-    224.21deg,
-    #4c3df8 1.34%,
-    #a165d0 71.47%,
-    rgba(221, 130, 244, 0.7) 100%
-  );
+  --background-color: rgba(1, 1, 3, 0.9);
+  --text-color: rgb(243, 243, 243);
+  --card-color: rgba(80, 80, 80, 0.404);
+  --select-color: rgba(80, 80, 80, 0.404);
+  --color-standart-gray2: #a7a7a795;
+  --search-color: rgba(80, 80, 80, 0.404);
+  --title-color: #bb76fb;
+  --card-shadow: -5px -5px 20px rgba(198, 198, 198, 0.2),
+    5px 5px 20px rgba(198, 198, 198, 0.2);
+  --search-loop-color: #bb76fb;
 }
 html[data-theme="true"] {
-  --background-color: #eeeeee;
-  --card-color: #fffffe;
+  --background-color: linear-gradient(
+    89.71deg,
+    rgba(219, 219, 219, 0.8) 0.23%,
+    #bfbbea 51.06%,
+    rgba(219, 219, 219, 0.8) 99.74%
+  );
+  --card-color: rgba(255, 255, 254, 0.8);
   --text-color: black;
-  --text-color-salary: #e87208;
   --select-color: #e8e8e8;
   --color-standart-gray2: #e8e8e8;
-  --search-color: #7f5af0;
-  --title-color: #2cb67d;
-  --color-grad-green: linear-gradient(
-    269.96deg,
-    #23d940 1.42%,
-    #52ef93 52.75%,
-    #6afbbf 99.97%
-  );
-  --color-grad-red: linear-gradient(
-    270deg,
-    #f52525 4.01%,
-    rgba(242, 45, 45, 0.678051) 54.5%,
-    rgba(240, 51, 51, 0.45173) 75%,
-    rgba(239, 52, 52, 0.416667) 95.5%,
-    rgba(241, 47, 47, 0.606291) 99.97%,
-    #ff0000 99.98%,
-    rgba(240, 50, 50, 0.480419) 99.99%,
-    rgba(235, 63, 63, 0) 100%
-  );
-  --color-grad-orange: linear-gradient(
-    270deg,
-    #ea971b 0%,
-    rgba(233, 212, 23, 0.801073) 54.69%,
-    rgba(233, 212, 23, 0.760417) 85.94%,
-    rgba(232, 210, 8, 0) 100%
-  );
-  --color-grad-alice: linear-gradient(
-    224.21deg,
-    #4c3df8 1.34%,
-    #a165d0 71.47%,
-    rgba(221, 130, 244, 0.7) 100%
-  );
+  --search-color: rgba(255, 255, 255, 0.848);
+  --title-color: #4925b6;
+  --card-shadow: -5px -5px 20px rgba(113, 113, 113, 0.2),
+    5px 5px 20px rgba(113, 113, 113, 0.2);
+  --search-loop-color: #bb76fb;
 }
 body {
   margin: 0;
   padding: 0;
   border: 0;
   font-family: "Mulish", sans-serif, "Outfit", sans-serif;
-  background-color: var(--background-color);
+  background: var(--background-color);
   color: var(--text-color);
   transition: background-color 200ms linear;
   font-size: 20px;

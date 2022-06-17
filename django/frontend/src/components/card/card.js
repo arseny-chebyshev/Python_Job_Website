@@ -1,7 +1,13 @@
 import styles from "./card.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import  {getNormalDate, getNormalEmployment}  from "../../functionCard/fucntion";
+import {
+  faLocationDot,
+  faMoneyCheckDollar,
+  faCode,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Card = ({
   role,
   min_salary,
@@ -9,42 +15,56 @@ const Card = ({
   level,
   location,
   technologies,
+  employment,
+  remote,
+  relocation,
+  id,
+  date,
 }) => {
   const [showButton, setshowButton] = useState(false);
-  const checkSalary = (min_salary, max_salary) => {
-    let str;
-    if (+min_salary && +max_salary) {
-      str = `от ${min_salary / 1000}.000 до ${max_salary / 1000}.000 ₽`;
-    } else if (!+max_salary) {
-      str = `от ${+min_salary / 1000}.000 ₽`;
-    } else {
-      str = `до ${+max_salary / 1000}.000 ₽`;
-    }
-    return str;
-  };
+ 
+
   return (
     <div
       className={styles.card}
       onMouseEnter={() => setshowButton(true)}
       onMouseLeave={() => setshowButton(false)}
     >
-      <div className={styles.role}>
-        <span className={styles.role_title}>
-          <div className={styles.mode}>{level}</div>
-          &nbsp;{role}
-        </span>
+      <div className={styles.header}>
+        <Link className={styles.role_title} to={`/${id}`}>
+          {level} {role}
+        </Link>
+        <div className={styles.date}>{getNormalDate(date)}</div>
       </div>
-      <div className={styles.info}>
-        <div className={styles.salary}>
-          💵 {checkSalary(min_salary, max_salary)}
+      <div className={styles.add}>
+        {getNormalEmployment(employment)}
+        {remote ? " #Можно удалённо" : ""}
+        {relocation ? " #Возможна релокация" : ""}
+      </div>
+      <div className={styles.main}>
+        <div>
+          <div className={styles.smile}>
+            <FontAwesomeIcon
+              className={styles.smileSalary}
+              icon={faMoneyCheckDollar}
+            />
+          </div>
+          <div className={styles.smile}>
+            <FontAwesomeIcon className={styles.smile} icon={faLocationDot} />
+          </div>
+          <div className={styles.smile}>
+            <FontAwesomeIcon
+              className={styles.smileTechnologies}
+              icon={faCode}
+            />
+          </div>
         </div>
-        <div className={styles.location}>
-          <span className={styles.location_title}>📍 </span>
-          <span className={styles.location_title}>{location}</span>
-        </div>
-        <div className={styles.technology}>
-          <span className={styles.technology_title}>🖥️ </span>
-          <span>
+        <div className={styles.info}>
+          <div className={styles.salary}>
+            {` ${min_salary} - ${max_salary}  `}
+          </div>
+          <div className={styles.location}>{location}</div>
+          <div className={styles.technologies}>
             {technologies.map((el, i) =>
               i == technologies.length - 1 ? (
                 <span key={i}>{el}</span>
@@ -52,7 +72,7 @@ const Card = ({
                 <span key={i}>{el}, </span>
               )
             )}
-          </span>
+          </div>
         </div>
       </div>
     </div>

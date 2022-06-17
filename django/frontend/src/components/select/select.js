@@ -9,7 +9,7 @@ const Select = ({ title, option_arr, defolt, onSelect }) => {
     onSelect(event.target.value);
   };
   return (
-    <>
+    <div>
       <div className={styles.title}>{title}</div>
       <select
         placeholder="выберите местоположние"
@@ -22,7 +22,7 @@ const Select = ({ title, option_arr, defolt, onSelect }) => {
           <option key={i}>{el}</option>
         ))}
       </select>
-    </>
+    </div>
   );
 };
 export { Select };

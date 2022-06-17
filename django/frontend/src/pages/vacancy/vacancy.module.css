@@ -1,0 +1,30 @@
+.role {
+  font-size: 35px;
+}
+
+.salary,
+.desc,
+.location,
+.tasks {
+  margin-top: 30px;
+}
+
+.desc,
+.tasks {
+  line-height: 30px;
+}
+
+.location {
+  font-size: 20px;
+}
+.smile {
+  color: #ff4040;
+}
+.desc {
+  text-align: justify;
+  max-height: fit-content;
+}
+
+.tasks {
+  height: 100px;
+}

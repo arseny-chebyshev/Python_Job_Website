@@ -18,8 +18,6 @@ const TechnologyList = () => {
     { icon: faPython, color: "blue" },
     { icon: faJava, color: "blue" },
     { icon: faJs, color: "yellow" },
-    { icon: faAndroid, color: "#a4ca39" },
-    { icon: faApple, color: "#1d1d1f" },
   ];
   return (
     <div className={styles.technology}>

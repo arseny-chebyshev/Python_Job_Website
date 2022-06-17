@@ -12,10 +12,7 @@ const FieldFilter = ({ clickCheck, clickSelectMode, clickSelectLevel }) => {
         defolt={"Любая"}
         onSelect={clickSelectLevel}
       />
-      <Select
-        title={"Местоположение"}
-        option_arr={["Москва", "Пермь", "Воронеж"]}
-      />
+      <Input title={"Зарплата"} />
       <Select
         onSelect={clickSelectMode}
         title={"Тип занятости"}
@@ -23,7 +20,6 @@ const FieldFilter = ({ clickCheck, clickSelectMode, clickSelectLevel }) => {
         defolt={"Любой"}
       />
       <Checkbox clickCheck={clickCheck} title={"Можно удалённо"} />
-      <Input title={"Зарплата"} />
       <TechnologyList />
     </div>
   );

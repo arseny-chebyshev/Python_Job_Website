@@ -1,8 +1,9 @@
 import styles from "./field.module.css";
+import axios from "axios";
 import { Card } from "../card/card";
 import { FieldFilter } from "../field-filter/field-filter";
 import { Skeleton } from "../skeleton/skeleton";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const Field = () => {
   const [vacancy, setVacancy] = useState([]);
@@ -10,25 +11,25 @@ const Field = () => {
   const API_URL = "http://localhost:8000";
   const url = `${API_URL}/api/vacancy/`;
   const fetchAsycn = async () => {
-    const el = await fetch(url);
-    const resp = await el.json();
-    setVacancy(resp);
+    const res = await axios(url);
+    setVacancy(res.data);
+    console.log(res.data);
+
     setisLoading(false);
   };
   useEffect(() => {
     fetchAsycn();
   }, []);
- 
-  console.log(vacancy);
-  
+
   return (
     <div className={styles.field}>
-      <div className={styles.field2}>
+      <div className={styles.main}>
+    
         {isLoading
-          ? [1, 1, 1].map((_, i) => <Skeleton key={i} />)
+          ? [1, 1, 1, 1, 1, 1, 1].map((_, i) => <Skeleton key={i} />)
           : vacancy.map((el, i) => (
               <Card
-                i={i}
+                id={el.id}
                 key={i}
                 role={el.role}
                 min_salary={el.min_salary}
@@ -36,6 +37,10 @@ const Field = () => {
                 location={el.location}
                 level={el.skill}
                 technologies={el.technologies}
+                employment={el.employment}
+                remote={el.remote}
+                relocation={el.relocation}
+                date={el.add_date}
               />
             ))}
       </div>
