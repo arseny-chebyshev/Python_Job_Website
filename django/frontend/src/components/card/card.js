@@ -1,7 +1,11 @@
 import styles from "./card.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import  {getNormalDate, getNormalEmployment}  from "../../functionCard/fucntion";
+import {
+  getNormalDate,
+  getNormalEmployment,
+  getNormalSkill,
+} from "../../functionCard/fucntion";
 import {
   faLocationDot,
   faMoneyCheckDollar,
@@ -12,7 +16,7 @@ const Card = ({
   role,
   min_salary,
   max_salary,
-  level,
+  skill,
   location,
   technologies,
   employment,
@@ -22,7 +26,6 @@ const Card = ({
   date,
 }) => {
   const [showButton, setshowButton] = useState(false);
- 
 
   return (
     <div
@@ -31,15 +34,15 @@ const Card = ({
       onMouseLeave={() => setshowButton(false)}
     >
       <div className={styles.header}>
-        <Link className={styles.role_title} to={`/${id}`}>
-          {level} {role}
+        <Link className={styles.role_title} to={`/vacancy/${id}`}>
+          {role} {getNormalSkill(skill)}
         </Link>
         <div className={styles.date}>{getNormalDate(date)}</div>
       </div>
       <div className={styles.add}>
         {getNormalEmployment(employment)}
-        {remote ? " #Можно удалённо" : ""}
-        {relocation ? " #Возможна релокация" : ""}
+        {remote && " #Можно удалённо"}
+        {relocation && " #Возможна релокация"}
       </div>
       <div className={styles.main}>
         <div>

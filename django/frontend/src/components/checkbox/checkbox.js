@@ -5,6 +5,8 @@ const Checkbox = ({ title, clickCheck }) => {
   const goCheck = () => {
     setCheck(!check);
     clickCheck(!check);
+    console.log(!check);
+    
   };
   return (
     <div className={styles.checkbox}>

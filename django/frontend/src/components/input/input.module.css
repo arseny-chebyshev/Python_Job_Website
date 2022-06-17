@@ -26,12 +26,12 @@
   border-radius: 4px;
 }
 .clear {
-  right: 10px;
+  right: 20px;
+  bottom: 18px;
   z-index: 2;
   position: absolute;
   font-size: 25px;
   color: gray;
-  
   cursor: pointer;
 }
 .clearNone {

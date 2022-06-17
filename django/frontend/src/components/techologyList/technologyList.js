@@ -16,7 +16,6 @@ const TechnologyList = () => {
     { icon: faVuejs, color: "#42b884" },
     { icon: faAngular, color: "#dd0031" },
     { icon: faPython, color: "blue" },
-    { icon: faJava, color: "blue" },
     { icon: faJs, color: "yellow" },
   ];
   return (

@@ -8,7 +8,7 @@ const FieldFilter = ({ clickCheck, clickSelectMode, clickSelectLevel }) => {
     <div className={styles.filter}>
       <Select
         title={"Квалификация"}
-        option_arr={["Junior", "Middle", "Senior"]}
+        option_arr={["JR", "MD", "SR", "TD"]}
         defolt={"Любая"}
         onSelect={clickSelectLevel}
       />
@@ -16,7 +16,7 @@ const FieldFilter = ({ clickCheck, clickSelectMode, clickSelectLevel }) => {
       <Select
         onSelect={clickSelectMode}
         title={"Тип занятости"}
-        option_arr={["Полный день", "Частичная занятость"]}
+        option_arr={["FULLDAY", "PRJ","NOTFULL"]}
         defolt={"Любой"}
       />
       <Checkbox clickCheck={clickCheck} title={"Можно удалённо"} />

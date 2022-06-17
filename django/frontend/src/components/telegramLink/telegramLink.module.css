@@ -1,0 +1,13 @@
+.button {
+  padding: 10px;
+  border: none;
+  background-color: var(--title-color);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.link {
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+}

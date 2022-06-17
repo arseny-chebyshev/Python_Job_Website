@@ -28,6 +28,7 @@ html[data-theme="true"] {
   --search-loop-color: #bb76fb;
 }
 body {
+  overflow-y: scroll;
   margin: 0;
   padding: 0;
   border: 0;

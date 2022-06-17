@@ -3,6 +3,16 @@ export const getNormalDate = (date) => {
   const day = date.substr(8, 2);
   return `Дата добавления: ${day}.${month}`;
 };
+export const getTechnologies = (tags) => {
+  if (tags)
+    return tags.map((el, i) =>
+      i == tags.length - 1 ? (
+        <span key={i}>{el}</span>
+      ) : (
+        <span key={i}>{el}, </span>
+      )
+    );
+};
 export const getNormalEmployment = (employment) => {
   let typeWork;
   switch (employment) {
@@ -23,4 +33,31 @@ export const getNormalEmployment = (employment) => {
       break;
   }
   return typeWork;
+};
+export const getNormalSkill = (skill) => {
+  let typeSkill;
+  switch (skill) {
+    case "JR":
+      typeSkill = "(Junior)";
+      break;
+    case "MD":
+      typeSkill = "(Middle)";
+      break;
+    case "SR":
+      typeSkill = "(Senior)";
+      break;
+    case "TL":
+      typeSkill = "(Team Lead)";
+      break;
+    case "NONE":
+      typeSkill = "";
+      break;
+  }
+  return typeSkill;
+};
+export const getNormalTasks = (tasks) => {
+  return (
+    tasks &&
+    tasks.split("\r\n").map((el, i) => <li key={i}>{el.replace("- ", "")}</li>)
+  );
 };

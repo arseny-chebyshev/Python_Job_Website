@@ -42,16 +42,17 @@
   margin-top: 8px;
   right: 10px;
 }
-
 .moon {
   cursor: pointer;
   height: 30px;
   width: 30px;
+  color: #f9dc80;
 }
 .sun {
   cursor: pointer;
   height: 30px;
   width: 30px;
+  color:  #ffcc00;
 }
 .gosearchnoshow {
   opacity: 0;
@@ -59,8 +60,4 @@
 .gosearch {
   opacity: 1;
 }
-@media (max-width: 576px) {
-  .search_input {
-    width: 300px;
-  }
-}
+

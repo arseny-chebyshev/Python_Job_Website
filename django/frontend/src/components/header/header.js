@@ -5,6 +5,7 @@ import {
   faMagnifyingGlass,
   faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons";
+import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -27,22 +28,18 @@ const Header = () => {
         />
         <FontAwesomeIcon
           icon={faMagnifyingGlass}
-          className={
-            value ? `${styles.gosearch}` : `${styles.gosearchnoshow}`
-          }
+          className={value ? `${styles.gosearch}` : `${styles.gosearchnoshow}`}
         />
       </div>
       {theme !== "false" ? (
-        <img
+        <BsFillMoonStarsFill
           onClick={() => setTheme("false")}
           className={styles.moon}
-          src="./image/image-app/moon.png"
         />
       ) : (
-        <img
+        <BsFillSunFill
           onClick={() => setTheme("true")}
           className={styles.sun}
-          src="./image/image-app/sunny.png"
         />
       )}
     </div>
