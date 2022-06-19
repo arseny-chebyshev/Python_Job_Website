@@ -144,9 +144,9 @@ class Vacancy(models.Model):
         return unique_slug
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
         if not self.url:
             self.url = self._create_unique_vacancy_slug()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.desc
