@@ -6,24 +6,25 @@ html[data-theme="false"] {
   --color-standart-gray2: #a7a7a795;
   --search-color: rgba(80, 80, 80, 0.404);
   --title-color: #bb76fb;
-  --card-shadow: -5px -5px 20px rgba(198, 198, 198, 0.2),
+  --card-shadow: -2px -2px 10px rgba(198, 198, 198, 0.2),
     5px 5px 20px rgba(198, 198, 198, 0.2);
   --search-loop-color: #bb76fb;
 }
 html[data-theme="true"] {
-  --background-color: linear-gradient(
+  --background-color2: linear-gradient(
     89.71deg,
     rgba(219, 219, 219, 0.8) 0.23%,
     #bfbbea 51.06%,
     rgba(219, 219, 219, 0.8) 99.74%
   );
+  --background-color: #e0e0e0;
   --card-color: rgba(255, 255, 254, 0.8);
   --text-color: black;
   --select-color: #e8e8e8;
   --color-standart-gray2: #e8e8e8;
   --search-color: rgba(255, 255, 255, 0.848);
   --title-color: #4925b6;
-  --card-shadow: -5px -5px 20px rgba(113, 113, 113, 0.2),
+  --card-shadow: -5px -5px 10px rgba(113, 113, 113, 0.2),
     5px 5px 20px rgba(113, 113, 113, 0.2);
   --search-loop-color: #bb76fb;
 }

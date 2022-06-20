@@ -29,4 +29,4 @@ def get_m2m_objects_or_create_new(cls: Model, obj_list: List[Dict]):
             obj = cls(**dct)
             obj.save()
         new_list.append(obj)
-    return new_list
+    return 

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import {
   getNormalDate,
   getNormalEmployment,
-  getNormalSkill,
-} from "../../functionCard/fucntion";
+  getNormalSalary
+} from "../../core/helpers/cardHelpers";
 import {
   faLocationDot,
   faMoneyCheckDollar,
@@ -23,6 +23,7 @@ const Card = ({
   remote,
   relocation,
   id,
+  currency,
   date,
 }) => {
   const [showButton, setshowButton] = useState(false);
@@ -35,7 +36,7 @@ const Card = ({
     >
       <div className={styles.header}>
         <Link className={styles.role_title} to={`/vacancy/${id}`}>
-          {role} {getNormalSkill(skill)}
+          {role} {skill}
         </Link>
         <div className={styles.date}>{getNormalDate(date)}</div>
       </div>
@@ -64,7 +65,7 @@ const Card = ({
         </div>
         <div className={styles.info}>
           <div className={styles.salary}>
-            {` ${min_salary} - ${max_salary}  `}
+            {getNormalSalary(min_salary,max_salary,currency)}
           </div>
           <div className={styles.location}>{location}</div>
           <div className={styles.technologies}>

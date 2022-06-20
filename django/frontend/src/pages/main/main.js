@@ -1,11 +1,11 @@
 import { Field } from "../../components/field/field";
-import { FieldFilter } from "../../components/field-filter/field-filter";
-import styles from "./main.module.css";
-
+import { TechnologyField } from "../../components/technologyField/techonologyField";
+import { VacancyNumber } from "../../components/vacancyNumber/vacancyNumber";
 const Main = () => {
   return (
     <>
-      <p className={styles.title}>Найди работу прямо сейчас</p>
+      <VacancyNumber />
+      <TechnologyField />
       <Field />
     </>
   );

@@ -2,19 +2,17 @@
   padding: 20px;
   width: 680px;
   height: 190px;
-  margin-bottom: 20px;
+  margin-bottom: 23px;
   background-color: var(--card-color);
   border-radius: 15px;
   font-size: 18px;
   line-height: 28px;
   transition: color 800ms linear;
 }
-
 .role_title:hover {
   text-decoration: underline;
 }
-
-.card:hover {
+.card {
   box-shadow: var(--card-shadow);
 }
 

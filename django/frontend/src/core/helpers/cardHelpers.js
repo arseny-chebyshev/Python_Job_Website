@@ -61,3 +61,16 @@ export const getNormalTasks = (tasks) => {
     tasks.split("\r\n").map((el, i) => <li key={i}>{el.replace("- ", "")}</li>)
   );
 };
+export const getNormalSalary = (min, max, currency) => {
+  let salary;
+  if (min && max) {
+    salary = `${min} ${currency} - ${max} ${currency} `;
+  } else if (!max && min) {
+    salary = ` от ${min}  ${currency}`;
+  } else if (max && !min) {
+    salary = `до ${max}  ${currency}`;
+  } else {
+    salary = "По результатам собеседования";
+  }
+  return salary;
+};

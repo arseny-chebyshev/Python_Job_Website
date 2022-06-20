@@ -1,0 +1,15 @@
+.root {
+  text-align: center;
+  margin: 25px;
+  margin-top: 0;
+  cursor: pointer;
+}
+.img {
+  height: 60px;
+  width: 60px;
+}
+.text {
+  width: 100px;
+  margin-top: 5px;
+  font-size: 16px;
+}

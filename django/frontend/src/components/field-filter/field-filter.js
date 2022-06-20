@@ -1,26 +1,34 @@
 import styles from "./field-filter.module.css";
 import { Select } from "../select/select";
 import { Checkbox } from "../checkbox/checkbox";
-import { TechnologyList } from "../techologyList/technologyList";
+import {
+  setLevel,
+  setMode,
+  setRemote,
+} from "../../core/redux-toolkit/slices/filterSlice";
 import { Input } from "../input/input";
-const FieldFilter = ({ clickCheck, clickSelectMode, clickSelectLevel }) => {
+import { useDispatch } from "react-redux";
+const FieldFilter = ({ clickCheck, clickInputSalary }) => {
+  const dispatch = useDispatch();
   return (
     <div className={styles.filter}>
       <Select
         title={"Квалификация"}
-        option_arr={["JR", "MD", "SR", "TD"]}
+        option_arr={["Junior", "Middle", "Senior", "Team Lead"]}
         defolt={"Любая"}
-        onSelect={clickSelectLevel}
+        onSelect={(value) => dispatch(setLevel(value))}
       />
-      <Input title={"Зарплата"} />
+      <Input title={"Зарплата"} goSalary={clickInputSalary} />
       <Select
-        onSelect={clickSelectMode}
         title={"Тип занятости"}
-        option_arr={["FULLDAY", "PRJ","NOTFULL"]}
+        option_arr={["FULLDAY", "PRJ", "NOTFULL"]}
         defolt={"Любой"}
+        onSelect={(value) => dispatch(setMode(value))}
       />
-      <Checkbox clickCheck={clickCheck} title={"Можно удалённо"} />
-      <TechnologyList />
+      <Checkbox
+        clickCheck={(value) => dispatch(setRemote(value))}
+        title={"Можно удалённо"}
+      />
     </div>
   );
 };

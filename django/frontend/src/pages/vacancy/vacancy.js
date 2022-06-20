@@ -7,8 +7,9 @@ import {
   getNormalEmployment,
   getTechnologies,
   getNormalDate,
-} from "../../functionCard/fucntion";
-import { TelegramLink } from "../../components/telegramLink/telegramLink";
+  getNormalSalary,
+} from "../../core/helpers/cardHelpers";
+import { ButtonLink } from "../../components/buttonLink/buttonLink";
 import { VacancyList } from "../../components/vacancyList/vacancyList";
 import axios from "axios";
 import styles from "./vacancy.module.css";
@@ -41,7 +42,11 @@ const Vacancy = () => {
             <div className={styles.date}>{getNormalDate(vacancy.add_date)}</div>
           </div>
           <div className={styles.salary}>
-            {vacancy.min_salary} - {vacancy.max_salary}
+            {getNormalSalary(
+              vacancy.min_salary,
+              vacancy.max_salary,
+              vacancy.salary_currency
+            )}
             <br />
           </div>
           <div className={styles.location}>
@@ -64,7 +69,10 @@ const Vacancy = () => {
           <VacancyList title={"Задачи"} list={vacancy.tasks} />
           <VacancyList title={"Требования"} list={vacancy.requirements} />
           <div className={styles.link}>
-            <TelegramLink />
+            <ButtonLink
+              channel_id={vacancy.channel_id}
+              message_id={vacancy.message_id}
+            />
           </div>
         </div>
       )}
