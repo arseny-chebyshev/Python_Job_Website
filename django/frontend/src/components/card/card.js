@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import {
   getNormalDate,
   getNormalEmployment,
-  getNormalSalary
+  getNormalSalary,
+  comma,
 } from "../../core/helpers/cardHelpers";
 import {
   faLocationDot,
@@ -65,18 +66,10 @@ const Card = ({
         </div>
         <div className={styles.info}>
           <div className={styles.salary}>
-            {getNormalSalary(min_salary,max_salary,currency)}
+            {getNormalSalary(min_salary, max_salary, currency)}
           </div>
           <div className={styles.location}>{location}</div>
-          <div className={styles.technologies}>
-            {technologies.map((el, i) =>
-              i == technologies.length - 1 ? (
-                <span key={i}>{el}</span>
-              ) : (
-                <span key={i}>{el}, </span>
-              )
-            )}
-          </div>
+          <div className={styles.technologies}>{comma(technologies)}</div>
         </div>
       </div>
     </div>

@@ -8,13 +8,13 @@
   font-weight: bold;
   color: transparent;
   font-size: 48px;
-  color:var(--color-grad-alice) ;
+  color: var(--color-grad-alice);
   background-image: var(--color-grad-alice);
   background-clip: text;
 }
 @media (max-width: 1400px) {
   .app {
-    width: 1200px;
+    width: 85%;
   }
 
   .app__title {
@@ -24,7 +24,7 @@
 
 @media (max-width: 1200px) {
   .app {
-    width: 1000px;
+    width: 85%;
   }
 
   .app__title {
@@ -34,7 +34,7 @@
 
 @media (max-width: 992px) {
   .app {
-    width: 800px;
+    width: 85%;
   }
 
   .app__title {
@@ -44,13 +44,13 @@
 
 @media (max-width: 768px) {
   .app {
-    width: 650px;
+    width: 85%;
   }
 }
 
 @media (max-width: 576px) {
   .app {
-    width: 390px;
+    width: 85%;
   }
   .app__title {
     font-size: 37px;

@@ -6,6 +6,8 @@ import { Vacancy } from "../../pages/vacancy/vacancy";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
+ 
+
   return (
     <div className={styles.app}>
       <Header />

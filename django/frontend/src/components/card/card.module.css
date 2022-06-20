@@ -8,12 +8,10 @@
   font-size: 18px;
   line-height: 28px;
   transition: color 800ms linear;
+  box-shadow: var(--card-shadow);
 }
 .role_title:hover {
   text-decoration: underline;
-}
-.card {
-  box-shadow: var(--card-shadow);
 }
 
 .header {
@@ -73,88 +71,64 @@
 .clearNone {
   display: none;
 }
-/* .role {
-  height: 40px;
-  display: flex;
-  justify-content: flex-start;
-  max-width: max-content;
-  margin-left: 10px;
-  cursor: pointer;
+@media (max-width: 1400px) {
+  .card {
+    width: 90%;
+  }
+  .role_title {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--title-color);
+  }
 }
-.role_title {
-  color: var(--color-standart-black);
-  font-family: "Outfit", sans-serif;
-  font-weight: bold;
-  font-size: 26px;
-  letter-spacing: 0.05em;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.role_title:hover {
-  text-decoration: underline;
-}
-.info {
-  margin: 0 0 0 10px;
-}
-.salary {
-  color: var(--color-standart-black);
-  font-weight: 400;
-  font-size: 21px;
-}
-.mode {
-  letter-spacing: 0.05em;
-}
-.location_title {
-  font-weight: 100;
-  font-size: 19px;
-}
-.remote {
-  letter-spacing: 0.05em;
-  font-size: 16px;
-}
-.technology {
-  margin-top: 5px;
-}
-.technology_title {
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-
 @media (max-width: 1200px) {
   .card {
-    width: 600px;
+    width: 90%;
+  }
+  .role_title {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--title-color);
   }
 }
+
 @media (max-width: 992px) {
   .card {
-    width: 100%;
-    font-size: 15px;
-  }
-}
-@media (max-width: 768px) {
-  .card {
-    width: 500px;
-    font-size: 15px;
-    line-height: 20px;
+    width: 85%;
   }
 
   .role_title {
-    font-size: 25px;
-    line-height: 25px;
-  }
-
-  .salary {
+    text-decoration: none;
     font-size: 15px;
+    font-weight: bold;
+    color: var(--title-color);
   }
 }
+
+@media (max-width: 768px) {
+  .card {
+    width: 85%;
+  }
+
+  .role_title {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--title-color);
+  }
+}
+
 @media (max-width: 576px) {
   .card {
-    width: 100%;
+    width: 85%;
   }
-  .salary {
-    font-size: 12px;
+
+  .role_title {
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--title-color);
   }
-} */
+}

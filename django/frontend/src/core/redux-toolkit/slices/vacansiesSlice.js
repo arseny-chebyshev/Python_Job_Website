@@ -3,9 +3,9 @@ import axios from "axios";
 
 export const fetchVacansies = createAsyncThunk(
   "vacansies/fetchVacansies",
-  async ({ sortLevel, sortMode, sortRemote }) => {
+  async ({ sortLevel, sortMode, sortRemote,sortSalary }) => {
     const { data } = await axios(
-      `http://localhost:8000/api/vacancy/?${sortLevel}${sortMode}${sortRemote}`
+      `http://localhost:8000/api/vacancy/?${sortLevel}${sortMode}${sortRemote}${sortSalary}`
     );
     console.log(data);
     return data;

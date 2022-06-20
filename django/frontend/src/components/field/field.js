@@ -12,12 +12,12 @@ const Field = () => {
   const vacancy = useSelector((state) => state.vacansies.vacansies);
   const isLoading = useSelector((state) => state.vacansies.isLoading);
 
-  const { sortLevel, sortMode, sortRemote } = useFilters();
+  const { sortLevel, sortMode, sortRemote, sortSalary } = useFilters();
 
   useEffect(() => {
-    dispatch(fetchVacansies({ sortLevel, sortMode, sortRemote }));
+    dispatch(fetchVacansies({ sortLevel, sortMode, sortRemote, sortSalary }));
     window.scrollTo(0, 0);
-  }, [sortLevel, sortMode, sortRemote]);
+  }, [sortLevel, sortMode, sortRemote, sortSalary]);
 
   return (
     <div className={styles.field}>

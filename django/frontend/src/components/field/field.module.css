@@ -6,3 +6,26 @@
 .main {
   width: 690px;
 }
+
+@media (max-width: 1400px) {
+  .field {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .field {
+    display: flex;
+    align-items: center;
+    flex-flow: column-reverse;
+  }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+}

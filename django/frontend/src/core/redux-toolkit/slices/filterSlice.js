@@ -4,6 +4,7 @@ const initialState = {
   qualification: "Любая",
   mode: "Любой",
   remote: false,
+  salary: "",
 };
 
 export const filterSlice = createSlice({
@@ -19,9 +20,12 @@ export const filterSlice = createSlice({
     setRemote(state, actions) {
       state.remote = actions.payload;
     },
+    setSalary(state, actions) {
+      state.salary = actions.payload;
+    },
   },
 });
 
-export const { setLevel, setMode, setRemote } = filterSlice.actions;
+export const { setLevel, setMode, setRemote,setSalary } = filterSlice.actions;
 
 export default filterSlice.reducer;

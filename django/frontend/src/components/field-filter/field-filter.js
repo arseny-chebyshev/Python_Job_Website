@@ -5,10 +5,11 @@ import {
   setLevel,
   setMode,
   setRemote,
+  setSalary,
 } from "../../core/redux-toolkit/slices/filterSlice";
 import { Input } from "../input/input";
 import { useDispatch } from "react-redux";
-const FieldFilter = ({ clickCheck, clickInputSalary }) => {
+const FieldFilter = ({ clickInputSalary }) => {
   const dispatch = useDispatch();
   return (
     <div className={styles.filter}>
@@ -18,7 +19,10 @@ const FieldFilter = ({ clickCheck, clickInputSalary }) => {
         defolt={"Любая"}
         onSelect={(value) => dispatch(setLevel(value))}
       />
-      <Input title={"Зарплата"} goSalary={clickInputSalary} />
+      <Input
+        title={"Зарплата"}
+        goSalary={(salary) => dispatch(setSalary(salary))}
+      />
       <Select
         title={"Тип занятости"}
         option_arr={["FULLDAY", "PRJ", "NOTFULL"]}

@@ -74,3 +74,13 @@ export const getNormalSalary = (min, max, currency) => {
   }
   return salary;
 };
+
+export const comma = (arr) => {
+  return arr.map((el, i) =>
+    i == arr.length - 1 ? (
+      <span key={i}>{el}</span>
+    ) : (
+      <span key={i}>{el}, </span>
+    )
+  );
+};

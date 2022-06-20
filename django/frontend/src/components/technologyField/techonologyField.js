@@ -1,18 +1,24 @@
-import styles from "./technologyField.module.css";
-import vue from "../../assets/image/vue.png";
-import nodejs from "../../assets/image/nodejs.png";
-import python from "../../assets/image/python.png";
-import react from "../../assets/image/react.png";
-import phone from "../../assets/image/phone.png";
-import js from "../../assets/image/js.png";
-import java from "../../assets/image/java.png";
+import Java from "../../assets/image/java.png";
+import JavaScript from "../../assets/image/js.png";
+import Python from "../../assets/image/python.png";
+import React from "../../assets/image/react.png";
+import Vue from "../../assets/image/vue.png";
+import NodeJS from "../../assets/image/nodejs.png";
 import { Icons } from "../icons/icons";
+import styles from "./technologyField.module.css";
 const TechnologyField = () => {
-  const img = [vue, nodejs, python, react, phone, js, java];
+  const img = [
+    { path: Vue, name: "Vue" },
+    { path: Python, name: "Python" },
+    { path: React, name: "React" },
+    { path: NodeJS, name: "NodeJs" },
+    { path: JavaScript, name: "JavaScript" },
+    { path: Java, name: "Java" },
+  ];
   return (
     <div className={styles.root}>
       {img.map((el) => (
-        <Icons key={el} path={el} />
+        <Icons key={el.path} path={el.path} name={el.name} />
       ))}
     </div>
   );

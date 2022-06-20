@@ -1,14 +1,14 @@
 import { useState } from "react";
 import styles from "./input.module.css";
 const Input = ({ title, goSalary }) => {
-  const [salary, setSalary] = useState();
+  const [salary, setSalary] = useState("");
   return (
     <div>
       <div className={styles.title}>{title}</div>
       <div className={styles.input}>
         <input
           onChange={(event) => {
-            const str = event.target.value.replace(/\D/g, "");
+            const str = event.target.value;
             setSalary(str);
             goSalary(str);
           }}
