@@ -1,3 +1,5 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import styles from "./app.module.css";
 import { Header } from "../header/header";
 import { Main } from "../../pages/main/main";

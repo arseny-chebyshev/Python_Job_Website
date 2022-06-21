@@ -9,7 +9,7 @@ export const useFilters = () => {
   const sortLevel = level && level !== "Любая" ? `&skill=${level}` : "";
   const sortMode = mode && mode !== "Любой" ? `&employment=${mode}` : "";
   const sortRemote = remote ? `&remote=true` : "";
-  const sortSalary = salary ? `&min_salary=${salary}` : "";
+  const sortSalary = salary && +salary > 30000 ? `&salary_above=${salary}` : "";
 
   return { sortLevel, sortMode, sortRemote, sortSalary };
 };

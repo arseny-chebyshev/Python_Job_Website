@@ -17,7 +17,10 @@ const Input = ({ title, goSalary }) => {
           placeholder="От"
         />
         <div
-          onClick={() => setSalary("")}
+          onClick={() => {
+            setSalary("")
+            goSalary('');
+          }}
           className={salary ? styles.clear : styles.clearNone}
         >
           ×

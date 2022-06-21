@@ -42,13 +42,7 @@ const Field = () => {
               />
             ))}
       </div>
-      <FieldFilter
-        clickCheck={(check) => setDistant(check)}
-        clickSelectMode={(mode) => {
-          setMode(mode);
-        }}
-        clickInputSalary={(salary) => setSalary(salary)}
-      />
+      <FieldFilter/>
     </div>
   );
 };

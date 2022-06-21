@@ -20,14 +20,15 @@ class VacanciesViewSet(viewsets.ModelViewSet):
         params = self.request.query_params.dict()
         # если есть параметры запроса:
         if params:
-            pagination_params = {'page': None, 'limit': None}
+            pagination_params = ('page', 'limit')
             for key in pagination_params:
                 if key in params:
                     params.pop(key)
 
             # проверка на допустимые параметры запроса
             valid_param_keys = {f.name for f in Vacancy._meta.get_fields()}
-            valid_param_keys.update(pagination_params.keys())
+            special_param_keys = ('role', 'location', 'channel_id', 'technologies', 'salary_above')
+            valid_param_keys.update(pagination_params, special_param_keys)
             param_keys = set(params)
             if not param_keys.issubset(valid_param_keys):
                 invalid_params = '\n'.join(param_keys - valid_param_keys)
@@ -37,8 +38,8 @@ class VacanciesViewSet(viewsets.ModelViewSet):
             # чистим true/false до питоновских True/False
             params = {key: value.capitalize() if (value == 'true' or value == 'false') else value
                       for key, value in params.items()}
-            # смотрим, нет ли nested полей в запросе:
-            if not any([key in params for key in ('role', 'location', 'channel_id', 'technologies')]):
+            # смотрим, нет ли nested и не-модельных полей в запросе:
+            if not any([key in params for key in special_param_keys]):
                 # если их нет - стандартно фильтруем по всем параметрам.
                 queryset = Vacancy.objects.filter(**params)
             else:
@@ -49,19 +50,20 @@ class VacanciesViewSet(viewsets.ModelViewSet):
                     if key == 'technologies':
                         tech_list = value.split(', ')
                     elif key == 'role':
-                        cleaned_params[key] = Role.objects.filter(name=value).first().id
+                        cleaned_params[key] = Role.objects.filter(name__iexact=value).first().id
                     elif key == 'location':
-                        value = value.capitalize()
-                        cleaned_params[key] = Location.objects.filter(name=value).first().id
+                        cleaned_params[key] = Location.objects.filter(name__iexact=value).first().id
                     elif key == 'channel_id':
-                        cleaned_params[key] = Channel.objects.filter(name=value).first().id
+                        cleaned_params[key] = Channel.objects.filter(name__iexact=value).first().id
+                    elif key == 'salary_above':
+                        cleaned_params['min_salary__gte'] = value
                     else:
                         cleaned_params[key] = value
                 queryset = Vacancy.objects.filter(**cleaned_params)
                 # Фильтруем по каждой вакансии отдельно
                 if 'technologies' in params.keys():
                     for tech in tech_list:
-                        tech_obj = Technology.objects.get(name=tech)
+                        tech_obj = Technology.objects.get(name__iexact=tech)
                         queryset = queryset.filter(technologies=tech_obj)
 
         # если нет параметров запроса:

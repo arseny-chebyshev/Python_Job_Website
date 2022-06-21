@@ -25,7 +25,7 @@ const FieldFilter = ({ clickInputSalary }) => {
       />
       <Select
         title={"Тип занятости"}
-        option_arr={["FULLDAY", "PRJ", "NOTFULL"]}
+        option_arr={["Полный день", "Неполный день","Проектная занятость", "Частичная занятость"]}
         defolt={"Любой"}
         onSelect={(value) => dispatch(setMode(value))}
       />

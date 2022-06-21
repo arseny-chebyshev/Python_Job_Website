@@ -7,7 +7,7 @@ const Select = ({ title, option_arr, defolt, onSelect }) => {
     onSelect(event.target.value);
   };
   return (
-    <div>
+      <div>
       <div className={styles.title}>{title}</div>
       <select onChange={onChange} value={value} className={styles.select}>
         <option>{defolt}</option>
