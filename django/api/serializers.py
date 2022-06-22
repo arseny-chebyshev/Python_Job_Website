@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from vacancies.models import Vacancy, Technology, Channel
+from vacancies.models import *
 
 
 class ChannelSerializer(serializers.ModelSerializer):
@@ -11,6 +11,17 @@ class ChannelSerializer(serializers.ModelSerializer):
 class TechnologySerializer(serializers.ModelSerializer):
     class Meta:
         model = Technology
+        fields = ['id', 'name']
+
+class RoleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Role
+        fields = ['id', 'group_id', 'name']
+
+
+class LocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Location
         fields = ['id', 'name']
 
 
@@ -38,3 +49,4 @@ class VacancySerializer(serializers.ModelSerializer):
         rep['channel_id'] = instance.channel_id.url
         rep['technologies'] = [tech.name for tech in instance.technologies.all()]
         return rep
+        
