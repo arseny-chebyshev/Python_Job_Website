@@ -40,34 +40,28 @@ def validate_get_params(params: set, valid_params:set):
         raise ParseError(detail=f"Данные параметры GET-запроса недопустимы: {invalid_params}."
                                 f"Попробуйте следующие: {valid_params}")
 
-def clean_vacancy_queryset(params: Dict, special_params: Tuple, target_model: Model):
-    # чистим true/false до питоновских True/False
-    params = {key: value.capitalize() if (value == 'true' or value == 'false') else value
-              for key, value in params.items()}
-    if not any([key in params for key in special_params]):
-        queryset = target_model.objects.filter(**params)
-    else:
-        cleaned_params = {}
-        for key, value in params.items():
-            # Специально исключаем FK и Many-to-Many из этого фильтра, так как при простой
-            # распаковке они не передадутся по названиям
-            if key == 'technologies':
-                tech_list = value.split(', ')
-            elif key == 'role':
-                cleaned_params[key] = Role.objects.filter(name__iexact=value).first()
-            elif key == 'location':
-                cleaned_params[key] = Location.objects.filter(name__iexact=value).first()
-            elif key == 'channel_id':
-                cleaned_params[key] = Channel.objects.filter(name__iexact=value).first()
-            elif key == 'salary_above':
-                cleaned_params['min_salary__gte'] = value
-            else:
-                cleaned_params[key] = value
-        queryset = target_model.objects.filter(**cleaned_params)
-        # Фильтруем по каждой вакансии отдельно
-        if 'technologies' in params.keys():
+def clean_nested_queryset(params: Dict, special_params: Dict, filter_mapping: Dict, target_model: Model):
+    """
+    Пример аргументов для модели Vacancy:
+    params: {"remote": True, "employment": "FULLDAY"} - по обычным полям модели без отношений к другим моделям
+    special_params: {"location": "Москва"} - вложенные поля, в GET запросе указанные не по id, а по другому полю
+    filter_mapping: {"location": "location__name__iexact"} - фильтр к QuerySet, по которому будут находится 
+                                                            вложенные объекты
+    target_model: Vacancy - модель, к которой будет применяться QuerySet                                                        
+    1. Метод создаёт queryset по обычным полям модели
+    2. Метод начинает фильтровать QuerySet дальше по специальным (вложенным, кастомным) полям:
+       если параметр фильтровки указан в filter_mapping, то параметр применяется.
+       Пример: в filter_mapping указан фильтр {"location": "location__name__iexact"},
+       то queryset дальше фильтуется вот так: queryset.filter(location__name__iexact=Москва)   
+    """
+    queryset = target_model.objects.filter(**params)
+    for key, value in special_params.items():
+        if key in filter_mapping:
+            filter = {filter_mapping[key]: value}
+            queryset = queryset.filter(**filter)
+        if key == 'technologies':
+            tech_list = value.split(', ')
             for tech in tech_list:
-                tech_obj = Technology.objects.get(name__iexact=tech)
-                queryset = queryset.filter(technologies=tech_obj)
+                related_obj = Technology.objects.get(name__iexact=tech)
+                queryset = queryset.filter(technologies=related_obj)
     return queryset
-    

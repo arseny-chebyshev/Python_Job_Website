@@ -4,7 +4,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from vacancies.models import *
 from .serializers import *
-from .utils import NestedObjectManager, clean_vacancy_queryset, validate_get_params
+from .utils import NestedObjectManager, clean_nested_queryset, validate_get_params
 
 
 class VacanciesPagination(PageNumberPagination):
@@ -22,7 +22,7 @@ class VacanciesViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         params = self.request.query_params.dict()
-        nested_manager = NestedObjectManager()
+
         # если есть параметры запроса:
         if params:
             pagination_params = ('page', 'page_count', 'limit')
@@ -35,8 +35,15 @@ class VacanciesViewSet(viewsets.ModelViewSet):
             special_param_keys = ('role', 'location', 'channel_id', 'technologies', 'salary_above')
             valid_param_keys.update(pagination_params, special_param_keys)
             validate_get_params(set(params), valid_param_keys)
-            # смотрим, нет ли nested и не-модельных полей в запросе:
-            queryset = clean_vacancy_queryset(params, special_param_keys, Vacancy)
+            # чистим параметры GET запроса для специальных(вложенных, кастомных) полей
+            params = {key: value.capitalize() if (value == 'true' or value == 'false') else value
+                      for key, value in params.items()}
+            special_params = {key: params.pop(key) for key in special_param_keys if key in params}
+            filter_mapping = {"role": "role__name__iexact",
+                              "location": "location__name__iexact",
+                              "channel_id": "channel_id__url__iexact",
+                              "salary_above": "min_salary__gte"}
+            queryset = clean_nested_queryset(params, special_params, filter_mapping, Vacancy)
         # если нет параметров запроса:
         else:
             queryset = Vacancy.objects.all()
