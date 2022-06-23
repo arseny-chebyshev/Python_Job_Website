@@ -1,15 +1,19 @@
 from rest_framework import viewsets
+from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.exceptions import ParseError
 from rest_framework.response import Response
-from vacancies.models import Vacancy, Technology, Role, Location, Channel
-from .serializers import VacancySerializer, TechnologySerializer
-from .utils import get_object_or_create_new, get_object_or_raise_400, get_m2m_objects_or_create_new
+from vacancies.models import *
+from .serializers import *
+from .utils import NestedObjectManager, clean_vacancy_queryset, validate_get_params
 
 
 class VacanciesPagination(PageNumberPagination):
     page_size = 10
     page_size_query_param = 'limit'
+    def get_paginated_response(self, data):
+        response = super().get_paginated_response(data)
+        response.data['page_count'] = self.page.paginator.num_pages
+        return response
 
 
 class VacanciesViewSet(viewsets.ModelViewSet):
@@ -18,52 +22,21 @@ class VacanciesViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         params = self.request.query_params.dict()
+        nested_manager = NestedObjectManager()
         # если есть параметры запроса:
         if params:
-            pagination_params = {'page': None, 'limit': None}
+            pagination_params = ('page', 'page_count', 'limit')
             for key in pagination_params:
                 if key in params:
                     params.pop(key)
 
             # проверка на допустимые параметры запроса
             valid_param_keys = {f.name for f in Vacancy._meta.get_fields()}
-            valid_param_keys.update(pagination_params.keys())
-            param_keys = set(params)
-            if not param_keys.issubset(valid_param_keys):
-                invalid_params = '\n'.join(param_keys - valid_param_keys)
-                raise ParseError(detail=f"Данные параметры GET-запроса недопустимы: {invalid_params}."
-                                        f"Попробуйте следующие: {valid_param_keys}")
-
-            # чистим true/false до питоновских True/False
-            params = {key: value.capitalize() if (value == 'true' or value == 'false') else value
-                      for key, value in params.items()}
-            # смотрим, нет ли nested полей в запросе:
-            if not any([key in params for key in ('role', 'location', 'channel_id', 'technologies')]):
-                # если их нет - стандартно фильтруем по всем параметрам.
-                queryset = Vacancy.objects.filter(**params)
-            else:
-                cleaned_params = {}
-                for key, value in params.items():
-                    # Специально исключаем FK и Many-to-Many из этого фильтра, так как при простой
-                    # распаковке они не передадутся по названиям
-                    if key == 'technologies':
-                        tech_list = value.split(', ')
-                    elif key == 'role':
-                        cleaned_params[key] = Role.objects.filter(name=value).first().id
-                    elif key == 'location':
-                        value = value.capitalize()
-                        cleaned_params[key] = Location.objects.filter(name=value).first().id
-                    elif key == 'channel_id':
-                        cleaned_params[key] = Channel.objects.filter(name=value).first().id
-                    else:
-                        cleaned_params[key] = value
-                queryset = Vacancy.objects.filter(**cleaned_params)
-                # Фильтруем по каждой вакансии отдельно
-                if 'technologies' in params.keys():
-                    for tech in tech_list:
-                        tech_obj = Technology.objects.get(name=tech)
-                        queryset = queryset.filter(technologies=tech_obj)
-
+            special_param_keys = ('role', 'location', 'channel_id', 'technologies', 'salary_above')
+            valid_param_keys.update(pagination_params, special_param_keys)
+            validate_get_params(set(params), valid_param_keys)
+            # смотрим, нет ли nested и не-модельных полей в запросе:
+            queryset = clean_vacancy_queryset(params, special_param_keys, Vacancy)
         # если нет параметров запроса:
         else:
             queryset = Vacancy.objects.all()
@@ -71,14 +44,14 @@ class VacanciesViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         data = request.data
-
-        data['role'] = get_object_or_raise_400(Role, **data['role'])
-        data['channel_id'] = get_object_or_raise_400(Channel, **data['channel_id'])
+        nested_manager = NestedObjectManager()
+        data['role'] = nested_manager.get_object_or_raise_400(Role, **data['role'])
+        data['channel_id'] = nested_manager.get_object_or_raise_400(Channel, **data['channel_id'])
         if 'location' in data:
-            data['location'] = get_object_or_create_new(Location, **data['location'])
+            data['location'] = nested_manager.get_object_or_create_new(Location, **data['location'])
 
         # распаковываем и создаём технологии при отсутствии их в БД, удаляем невалидные из data
-        new_tech = get_m2m_objects_or_create_new(Technology, data.pop('technologies'))
+        new_tech = nested_manager.get_m2m_objects_or_create_new(Technology, data.pop('technologies'))
 
         # создаём instance Вакансии, сохраняем в БД и добавляем ManytoMany технологии
         new_vacancy = Vacancy.objects.create(**data)
@@ -88,10 +61,38 @@ class VacanciesViewSet(viewsets.ModelViewSet):
         serializer = VacancySerializer(new_vacancy)
         return Response(serializer.data)
 
+class VacancyGlobalFieldSearch(ListAPIView):
+    serializer_class = VacancySerializer
+
+    def get_queryset(self):
+        queryset = Vacancy.objects.all()
+        return queryset
 
 class TechnologyViewSet(viewsets.ModelViewSet):
     serializer_class = TechnologySerializer
 
     def get_queryset(self):
-        technology = Technology.objects.all()
-        return technology
+        queryset = Technology.objects.all()
+        return queryset
+
+
+class ChannelViewSet(viewsets.ModelViewSet):
+    serializer_class = ChannelSerializer
+
+    def get_queryset(self):
+        queryset = Channel.objects.all()
+        return queryset
+
+class RoleViewSet(viewsets.ModelViewSet):
+    serializer_class = RoleSerializer
+
+    def get_queryset(self):
+        queryset = Role.objects.all()
+        return queryset
+
+class LocationViewSet(viewsets.ModelViewSet):
+    serializer_class = LocationSerializer
+
+    def get_queryset(self):
+        queryset = Location.objects.all()
+        return queryset

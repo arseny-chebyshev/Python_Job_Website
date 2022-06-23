@@ -13,10 +13,19 @@ class TechnologySerializer(serializers.ModelSerializer):
         model = Technology
         fields = ['id', 'name']
 
+
+class RoleGroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RoleGroup
+        fields = '__all__'
+
+
 class RoleSerializer(serializers.ModelSerializer):
+    #group = RoleGroupSerializer()
     class Meta:
         model = Role
-        fields = ['id', 'group_id', 'name']
+        fields = '__all__'
+        depth = 1
 
 
 class LocationSerializer(serializers.ModelSerializer):
