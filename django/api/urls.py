@@ -8,6 +8,6 @@ router.register("technology", views.TechnologyViewSet, basename="technology")
 router.register("channel", views.ChannelViewSet, basename="channel")
 router.register("role", views.RoleViewSet, basename="role")
 router.register("location", views.LocationViewSet, basename="location")
+router.register("search", views.VacancyGlobalFieldSearch, basename="search")
 
-urlpatterns = [path('', include(router.urls)),
-               path('search', views.VacancyGlobalFieldSearch.as_view(), name="search")]
+urlpatterns = [path('', include(router.urls)),]

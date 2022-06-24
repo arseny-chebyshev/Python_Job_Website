@@ -41,19 +41,6 @@ def validate_get_params(params: set, valid_params:set):
                                 f"Попробуйте следующие: {valid_params}")
 
 def clean_nested_queryset(params: Dict, special_params: Dict, filter_mapping: Dict, target_model: Model):
-    """
-    Пример аргументов для модели Vacancy:
-    params: {"remote": True, "employment": "FULLDAY"} - по обычным полям модели без отношений к другим моделям
-    special_params: {"location": "Москва"} - вложенные поля, в GET запросе указанные не по id, а по другому полю
-    filter_mapping: {"location": "location__name__iexact"} - фильтр к QuerySet, по которому будут находится 
-                                                            вложенные объекты
-    target_model: Vacancy - модель, к которой будет применяться QuerySet                                                        
-    1. Метод создаёт queryset по обычным полям модели
-    2. Метод начинает фильтровать QuerySet дальше по специальным (вложенным, кастомным) полям:
-       если параметр фильтровки указан в filter_mapping, то параметр применяется.
-       Пример: в filter_mapping указан фильтр {"location": "location__name__iexact"},
-       то queryset дальше фильтуется вот так: queryset.filter(location__name__iexact=Москва)   
-    """
     queryset = target_model.objects.filter(**params)
     for key, value in special_params.items():
         if key in filter_mapping:

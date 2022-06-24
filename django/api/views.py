@@ -2,6 +2,7 @@ from rest_framework import viewsets
 from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
+from django.db.models import Q
 from vacancies.models import *
 from .serializers import *
 from .utils import NestedObjectManager, clean_nested_queryset, validate_get_params
@@ -68,11 +69,37 @@ class VacanciesViewSet(viewsets.ModelViewSet):
         serializer = VacancySerializer(new_vacancy)
         return Response(serializer.data)
 
-class VacancyGlobalFieldSearch(ListAPIView):
+class VacancyGlobalFieldSearch(viewsets.ReadOnlyModelViewSet):
     serializer_class = VacancySerializer
+    pagination_class = VacanciesPagination
+
+    def list(self, request, *args, **kwargs):
+        import re
+        search_query=request.query_params.dict().get('search', None)
+        response =  super().list(request, *args, **kwargs)
+        for vacancy in response.data['results']:
+            found_in = []
+            for key, value in vacancy.items():
+                if re.search(str(search_query), str(value), re.IGNORECASE):
+                    found_in.append(key)
+            vacancy['found_in'] = found_in
+        return response
 
     def get_queryset(self):
-        queryset = Vacancy.objects.all()
+        field_filter_mapping = {"desc": "__icontains",
+                                "tasks": "__icontains",
+                                "requirements": "__icontains",
+                                "role": "__name__icontains",
+                                "location": "__name__icontains",} 
+        search_query = self.request.query_params.dict().get('search', None)
+        if search_query:
+            query = Q(technologies__name__in=[search_query])
+            for field, filter in field_filter_mapping.items():
+                concat_filter = {f"{field}{filter}": search_query}
+                query.add(Q(**concat_filter), Q.OR)
+            queryset = Vacancy.objects.filter(query).distinct() 
+        else:
+            queryset = Vacancy.objects.all()
         return queryset
 
 class TechnologyViewSet(viewsets.ModelViewSet):
