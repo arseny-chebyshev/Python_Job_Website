@@ -33,7 +33,8 @@ class VacanciesViewSet(viewsets.ModelViewSet):
 
             # проверка на допустимые параметры запроса
             valid_param_keys = {f.name for f in Vacancy._meta.get_fields()}
-            special_param_keys = ('role', 'location', 'channel_id', 'technologies', 'salary_above')
+            special_param_keys = ('role', 'location', 'channel_id', 
+                                  'technologies', 'salary_above')
             valid_param_keys.update(pagination_params, special_param_keys)
             validate_get_params(set(params), valid_param_keys)
             # чистим параметры GET запроса для специальных(вложенных, кастомных) полей
@@ -43,7 +44,7 @@ class VacanciesViewSet(viewsets.ModelViewSet):
             filter_mapping = {"role": "role__name__iexact",
                               "location": "location__name__iexact",
                               "channel_id": "channel_id__url__iexact",
-                              "salary_above": "min_salary__gte"}
+                              "salary_above": "min_salary__gt",}
             queryset = clean_nested_queryset(params, special_params, filter_mapping, Vacancy)
         # если нет параметров запроса:
         else:
