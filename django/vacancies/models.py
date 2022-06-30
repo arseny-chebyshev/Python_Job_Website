@@ -121,8 +121,8 @@ class Vacancy(models.Model):
                             verbose_name='Уровень квалификации',
                             max_length=4,
                             default='NONE')
-    tasks = models.TextField(verbose_name='Задачи', blank=True, default="Задачи не указаны")
-    requirements = models.TextField(verbose_name='Требования', blank=True, default="Требования не указаны")
+    tasks = models.TextField(verbose_name='Задачи', blank=True, default="Не указано")
+    requirements = models.TextField(verbose_name='Требования', blank=True, default="Не указано")
     url = models.SlugField(verbose_name='Адрес для вакансии на сайте', max_length=255,
                            unique=True, blank=True)
     channel_id = models.ForeignKey(Channel, on_delete=models.CASCADE,
