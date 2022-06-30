@@ -3,7 +3,12 @@ import re
 from dotenv import load_dotenv
 from telethon.sync import TelegramClient
 load_dotenv()
-
+technologies_list = [tech.replace('\n', '') for tech in 
+                    open('technologies.txt', 'r', encoding='utf-8') if len(tech)> 3]
+'''with open('technologies.txt', 'r', encoding='utf-8') as f:
+    for tech in f:
+        technologies_list.append(tech.replace('\n', ''))
+    f.close()'''
 client = TelegramClient('parse_session', os.getenv('TELEGRAM_API_ID'), os.getenv('TELEGRAM_API_HASH'))
 py_channel = 'https://t.me/job_python'
 client.start()
@@ -18,6 +23,7 @@ for msg in client.iter_messages(py_channel):
             if len(vac_arr) > 8:
                 skill_regex = 'Стажёр|Intern|Джуниор|Junior|Мид?дл|Middle|Сень[ое]р|Senior|TeamLead|Lead|Тимлид|Ведущий'
                 vac_dct['skill'] = re.findall(skill_regex, vac_arr[0], re.IGNORECASE)
+                vac_dct['technologies'] = {tech for tech in technologies_list if tech in ''.join(vac_arr)}
                 if '(' in vac_arr[0]:
                     vac_dct['role'] = vac_arr[0].split('(')[0]
                 else:
