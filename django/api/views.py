@@ -53,6 +53,7 @@ class VacanciesViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         data = request.data
+        print(data)
         nested_manager = NestedObjectManager()
         data['role'] = nested_manager.get_object_or_create_new(Role, **data['role'])
         data['channel_id'] = nested_manager.get_object_or_raise_400(Channel, **data['channel_id'])

@@ -48,11 +48,11 @@ def get_salary(text_indice: str) -> dict:
     salary_range = re.findall('\d+?\s\d+', text_indice)
     if salary_range:
         if len(salary_range) > 1:
-            salary_dict.update({'min_salary': salary_range[0], 
-                                'max_salary': salary_range[1]})
+            salary_dict.update({'min_salary': int(salary_range[0].replace(' ', '')), 
+                                'max_salary': int(salary_range[1].replace(' ', ''))})
         else:
-            salary_dict.update({'min_salary': salary_range[0], 
-                                'max_salary': salary_range[0]})
+            salary_dict.update({'min_salary': int(salary_range[0].replace(' ', '')), 
+                                'max_salary': int(salary_range[0].replace(' ', ''))})
         for name, currency in currency_regex.items():
             if re.findall(currency, text_indice, re.IGNORECASE):
                 salary_dict.update({'min_salary_currency': name,

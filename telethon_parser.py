@@ -1,5 +1,4 @@
 import os
-import re
 from dotenv import load_dotenv
 from telethon.sync import TelegramClient
 import parser_utils
@@ -23,14 +22,14 @@ def parse_vacancies(tg_client, channel):
                         vac_dct = {"channel_id": {"url": msg.chat.username}, 
                                    "message_id": msg.id}   
                         vac_dct['role'] = {"name": parser_utils.get_role(vac_arr[0])}
-                        vac_dct['technologies'] = {tech for tech in technologies_list if tech in ''.join(vac_arr)}
+                        vac_dct['technologies'] = [{"name": t} for t in 
+                                                   {tech for tech in technologies_list if tech in ''.join(vac_arr)}]
                         vac_dct['remote'] = any(tag in ''.join(vac_arr) for tag in ['#гибрид', '#удаленка'])
                         vac_dct['relocation'] = any(tag in ''.join(vac_arr) for tag in ['#релокация', '#relocation'])
                         vac_dct.update(parser_utils.get_skill(''.join(vac_arr[0:3])))
                         vac_dct.update(parser_utils.get_salary(''.join(vac_arr[0:3])))
                         vac_dct.update(parser_utils.get_employment(''.join(vac_arr)))
                         vac_dct.update(parser_utils.get_location('\n'.join(vac_arr)))
-                        
                         if 'Требования:' in vac_arr:
                             if 'Задачи:' in vac_arr:
                                 vac_dct['desc'] = '\n'.join([part for part in vac_arr[4:vac_arr.index('Задачи:')]])

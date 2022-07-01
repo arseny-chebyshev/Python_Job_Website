@@ -20,6 +20,14 @@ class RoleGroup(models.Model):
     name = models.CharField(verbose_name='Имя группы',
                             max_length=50, unique=True)
 
+    @classmethod
+    def get_default_group_id(cls):
+        default_obj = RoleGroup.objects.filter(name="Не указана").first()
+        if not default_obj:
+            default_obj = RoleGroup(name="Не указана")
+            default_obj.save()
+        return default_obj.id
+
     def __str__(self):
         return self.name
 
@@ -31,7 +39,7 @@ class RoleGroup(models.Model):
 class Role(models.Model):
     name = models.CharField(verbose_name='Название специализации',
                             max_length=50, unique=True)
-    group = models.ForeignKey(RoleGroup, on_delete=models.CASCADE)
+    group = models.ForeignKey(RoleGroup, on_delete=models.CASCADE, default=RoleGroup.get_default_group_id)
 
     def __str__(self):
         return self.name
