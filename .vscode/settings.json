@@ -1,0 +1,11 @@
+{
+    "git.ignoreLimitWarning": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": false,
+    "python.autoComplete.extraPaths": [
+        "./Python_Job_Website"
+    ],
+    "python.analysis.extraPaths": [
+        "./Python_Job_Website"
+    ]
+}
