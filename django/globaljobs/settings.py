@@ -90,7 +90,11 @@ DATABASES = {
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
+        # 'HOST': os.getenv('DB_HOST', 'localhost'), - Контейнер PostgreSQL 
+        # Docker запускает не на 'localhost', а на имени контейнера 
+        # в docker-compose: в данном случае, 'db'. 
+        # https://stackoverflow.com/questions/70633841/django-docker-connection-to-server-at-localhost-127-0-0-1-port-5432-fail
+        'HOST': 'db',
         'PORT': os.getenv('DB_PORT'),
     }
 }
@@ -134,7 +138,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'vacancies\static')
+    os.path.join(BASE_DIR, 'vacancies/static')
 ]
 
 # Default primary key field type
