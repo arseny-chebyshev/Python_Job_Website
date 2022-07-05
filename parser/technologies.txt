@@ -376,7 +376,6 @@ SAS
 SAP
 SMB
 SMM
-SOA
 SQL
 Saas
 Sass

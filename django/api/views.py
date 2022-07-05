@@ -69,7 +69,7 @@ class VacanciesViewSet(viewsets.ModelViewSet):
         for technology in new_tech:
             new_vacancy.technologies.add(technology)
         serializer = VacancySerializer(new_vacancy)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 class VacancyGlobalFieldSearch(viewsets.ReadOnlyModelViewSet):
     serializer_class = VacancySerializer

@@ -2,9 +2,9 @@ import re
 
 def get_role(text_indice: str) -> str:
     if '(' in text_indice:
-        return text_indice.split('(')[0]
+        return text_indice.split('(')[0].strip()
     else:
-        return text_indice
+        return text_indice.strip()
 
 
 def get_skill(text_indice: str) -> dict:
@@ -60,18 +60,18 @@ def get_salary(text_indice: str) -> dict:
     return salary_dict
 
 
-def find_description_indice(location_index, text_arr):
-    end_index = -1
-    if 'Задачи:' in text_arr:
-        end_index = text_arr.index('Задачи:')
-    elif 'Требования:' in text_arr:
-        end_index = text_arr.index('Требования:')
-    return text_arr[location_index + 1: end_index]
-
-
-def find_tasks_indice(desc_index, text_arr):
-    end_index = -1
-    if 'Задачи' in desc_index:
-        pass
-    if '' in text_arr:
-        end_index
+def get_desc_tasks_requirements(vac_arr: list) -> dict:
+    dct = {}
+    if 'Требования:' in vac_arr:
+        if 'Задачи:' in vac_arr:
+            dct['desc'] = '\n'.join([part for part in vac_arr[4:vac_arr.index('Задачи:')]])
+            dct['tasks'] = '\n'.join([part for part in 
+                                vac_arr[vac_arr.index('Задачи:') + 1: vac_arr.index('Требования:')]])
+            dct['requirements'] = '\n'.join([part for part in
+                                vac_arr[vac_arr.index('Требования:') + 1:]])
+        else:
+            dct['desc'] = '\n'.join([part for part in vac_arr[4:vac_arr.index('Требования:')]])
+            dct['requirements'] = '\n'.join([part for part in vac_arr[vac_arr.index('Требования:') + 1:]])
+    else:
+        dct['desc'] = '\n'.join(vac_arr[4:])
+    return dct

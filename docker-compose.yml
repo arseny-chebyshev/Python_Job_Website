@@ -1,24 +1,5 @@
 version: '3.7'
 services:
-  django:
-    build: ./
-    command: [sh, -c, "python django/manage.py migrate && 
-                       python django/manage.py runserver 0.0.0.0:8000"]
-    volumes:
-      - ./PYTHON_JOB_WEBSITE/:/usr/src/PYTHON_JOB_WEBSITE/
-    ports:
-      - 8000:8000
-    env_file:
-      - ./.env
-    depends_on: 
-      - db
-
-  parser:
-    build: ./
-    command: tail -F anything
-    env_file:
-      - ./.env
-
   db:
     image: postgres:12.0-alpine
     volumes:
@@ -30,6 +11,28 @@ services:
       - POSTGRES_DB=$DB_NAME
     env_file:
       - ./.env
+  django:
+    build: ./
+    command: [sh, -c, "cd django &&
+                       python manage.py migrate && 
+                       python manage.py runserver 0.0.0.0:8000"]
+    #volumes:
+    #  - ./PYTHON_JOB_WEBSITE/:/usr/src/PYTHON_JOB_WEBSITE/
+    ports:
+      - $DJANGO_PORT:$DJANGO_PORT
+    env_file:
+      - ./.env
+    depends_on: 
+      - db
+  parser:
+    build: ./
+    command: [sh, -c, "cd parser &&
+                       python post_prev_vacancies.py &&
+                       python live_parser.py"]
+    env_file:
+      - ./.env
+    depends_on:
+      - django
   
 volumes:
   postgres_data:
