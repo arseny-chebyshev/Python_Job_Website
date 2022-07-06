@@ -1,0 +1,17 @@
+.button {
+  padding: 9px;
+  border: none;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.link {
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+}
+.telegram {
+  width: 20px;
+  height: 20px;
+  color: var(--main-color);
+}

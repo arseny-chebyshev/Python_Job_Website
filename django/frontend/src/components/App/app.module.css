@@ -1,0 +1,33 @@
+.app {
+  margin: 0 auto;
+  min-height: 1800px;
+  margin-top: 10px;
+}
+.root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+@media (min-width: 576px) {
+  .app {
+    margin: 0 auto;
+    width: 1070px;
+    min-height: 1800px;
+    margin-top: 70px;
+  }
+  .root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}

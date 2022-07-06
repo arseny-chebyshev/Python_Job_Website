@@ -1,0 +1,16 @@
+.root {
+  font-size: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ededed;
+}
+.role {
+  font-weight: 700;
+}
+.salary {
+  font-weight: 700;
+  color: rgb(39, 163, 226);
+}
+.location {
+  color: gray;
+}

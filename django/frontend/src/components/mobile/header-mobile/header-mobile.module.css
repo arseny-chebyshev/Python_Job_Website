@@ -1,0 +1,30 @@
+.header_mobile {
+  padding: 0 10px 0 12px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+}
+.title {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.title_icon {
+  height: 28px;
+  width: 28px;
+  color: var(--main-color);
+  margin: 10px;
+}
+.burger_сlick {
+  position: relative;
+  margin-right: 5px;
+  height: 23px;
+  width: 23px;
+  color: gray;
+  cursor: pointer;
+}
+.burger_сlick:hover {
+  color: var(--main-color);
+}

@@ -11,24 +11,39 @@ services:
       - POSTGRES_DB=$DB_NAME
     env_file:
       - ./.env
+
   django:
     build: ./
     command: [sh, -c, "cd django &&
                        python manage.py migrate && 
                        python manage.py runserver 0.0.0.0:8000"]
-    #volumes:
-    #  - ./PYTHON_JOB_WEBSITE/:/usr/src/PYTHON_JOB_WEBSITE/
     ports:
       - $DJANGO_PORT:$DJANGO_PORT
     env_file:
       - ./.env
     depends_on: 
       - db
+
   parser:
     build: ./
     command: [sh, -c, "cd parser &&
                        python post_prev_vacancies.py &&
                        python live_parser.py"]
+    restart: on-failure
+    env_file:
+      - ./.env
+    depends_on:
+      - django
+
+  react:
+    image: "node:18-alpine3.15"
+    build: ./
+    ports:
+      - $REACT_PORT:$REACT_PORT
+    command: [sh, -c, "cd django/frontend &&
+                      apk add npm &&
+                      npm install &&
+                      npm start"]
     env_file:
       - ./.env
     depends_on:

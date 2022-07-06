@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # в Docker network контейнеры связываются друг с другом по названиям вместо IP
-ALLOWED_HOSTS = ['localhost', 'django', 'parser'] 
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'django', 'parser'] 
 
 # Application definition
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'psycopg2',
     'rest_framework',
     'djmoney',
+    'corsheaders',
     'vacancies.apps.VacanciesConfig',
 ]
 
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'globaljobs.urls'
@@ -142,5 +144,29 @@ STATICFILES_DIRS = [
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
