@@ -9,11 +9,11 @@ def get_role(text_indice: str) -> str:
 
 def get_skill(text_indice: str) -> dict:
     skill_dict = {}
-    skill_regex = {"IN": 'Intern|Стаж[её]р',
-                   "JR": 'Junior|Джуниор|Младший',
-                   "MD": 'Middle|Мид[д]?л',
-                   "SR": 'Senior|Сень[еёо]р|Старший',
-                   "TL": 'TeamLead|Lead|Тимлид|Ведущий',}
+    skill_regex = {"Intern": 'Intern|Стаж[её]р',
+                   "Junior": 'Junior|Джуниор|Младший',
+                   "Middle": 'Middle|Мид[д]?л',
+                   "Senior": 'Senior|Сень[еёо]р|Старший',
+                   "Team Lead": 'TeamLead|Lead|Тимлид|Ведущий',}
     for name, regex in skill_regex.items():
         if re.findall(regex, text_indice, re.IGNORECASE):
             skill_dict.update({"skill": name})
@@ -22,10 +22,10 @@ def get_skill(text_indice: str) -> dict:
 
 def get_employment(text_indice: str) -> dict:
     emp_dict = {}
-    emp_regex = {"FULLDAY": '#полныйдень|#fulltime|#?Полный[_ ]день',
-                 "NOTFULL": '#гибкийграфик|#?Неполный[_ ]день',
-                 "PRJ": '#проектнаязанятость|#?Проектная[_ ]занятость',
-                 "PRTTIME": '#частичнаязанятость|#parttime|#?Частичная[_ ]занятость'}
+    emp_regex = {"Полный день": '#полныйдень|#fulltime|#?Полный[_ ]день',
+                 "Гибкий график": '#гибкийграфик|#?Неполный[_ ]день',
+                 "Проектная занятость": '#проектнаязанятость|#?Проектная[_ ]занятость',
+                 "Частичная занятость": '#частичнаязанятость|#parttime|#?Частичная[_ ]занятость'}
     for name, regex in emp_regex.items():
         if re.findall(regex, text_indice, re.IGNORECASE):
             emp_dict.update({"employment": name})

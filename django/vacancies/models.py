@@ -110,25 +110,25 @@ class Vacancy(models.Model):
                                  verbose_name='Локация',
                                  blank=True)
     employment = models.CharField(choices=[
-                                ('FULLDAY', 'Полный день'),
-                                ('NOTFULL', 'Неполный день'),
-                                ('PRJ', 'Проектная занятость'),
-                                ('PRTTIME', 'Частичная занятость'),
-                                ('NONE', 'Не указана'),
+                                ('Полный день', 'Полный день'),
+                                ('Гибкий график', 'Гибкий график'),
+                                ('Проектная занятость', 'Проектная занятость'),
+                                ('Частичная занятость', 'Частичная занятость'),
+                                ('Не указана', 'Не указана'),
                                 ],
                                 verbose_name='Занятость',
-                                max_length=7, default='NONE')
+                                max_length=20, default='Не указана')
     skill = models.CharField(choices=[
-                            ('IN', 'Intern'),
-                            ('JR', 'Junior'),
-                            ('MD', 'Middle'),
-                            ('SR', 'Senior'),
-                            ('TL', 'TeamLead'),
-                            ('NONE', 'Не указан')
+                            ('Intern', 'Intern'),
+                            ('Junior', 'Junior'),
+                            ('Middle', 'Middle'),
+                            ('Senior', 'Senior'),
+                            ('Team Lead', 'Team Lead'),
+                            ('Не указан', 'Не указан')
                             ],
                             verbose_name='Уровень квалификации',
-                            max_length=4,
-                            default='NONE')
+                            max_length=10,
+                            default='Не указан')
     tasks = models.TextField(verbose_name='Задачи', blank=True, default="Не указано")
     requirements = models.TextField(verbose_name='Требования', blank=True, default="Не указано")
     url = models.SlugField(verbose_name='Адрес для вакансии на сайте', max_length=255,
