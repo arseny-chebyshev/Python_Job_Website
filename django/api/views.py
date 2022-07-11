@@ -20,27 +20,45 @@ class VacanciesPagination(PageNumberPagination):
 class VacanciesViewSet(viewsets.ModelViewSet):
     serializer_class = VacancySerializer
     pagination_class = VacanciesPagination
+    
+    def list(self, request, *args, **kwargs):
+        import re
+        search_query=request.query_params.dict().get('search', None)
+        response =  super().list(request, *args, **kwargs)
+        if search_query:
+            for vacancy in response.data['results']:
+                found_in = []
+                for key, value in vacancy.items():
+                    if re.search(str(search_query), str(value), re.IGNORECASE):
+                        found_in.append(key)
+                vacancy['found_in'] = found_in
+        return response
 
     def get_queryset(self):
         params = self.request.query_params.dict()
-
-        # если есть параметры запроса:
+        # Если есть параметры запроса:
         if params:
+            # Параметры пагинации не участвуют в фильтрах по вакансиям
             pagination_params = ('page', 'page_count', 'limit')
             for key in pagination_params:
                 if key in params:
                     params.pop(key)
 
+            # Выдергиваем параметр глобального поиска
+            search_query = params.get('search', None)
+            
             # проверка на допустимые параметры запроса
             valid_param_keys = {f.name for f in Vacancy._meta.get_fields()}
             special_param_keys = ('role', 'location', 'channel_id', 
                                   'technologies', 'salary_above',
-                                  'employment', 'skill')
+                                  'employment', 'skill', 'search')
             valid_param_keys.update(pagination_params, special_param_keys)
             validate_get_params(set(params), valid_param_keys)
-            # чистим параметры GET запроса для специальных(вложенных, кастомных) полей
+
+            # Поднимаем true/false запроса до Питоновских True/False
             params = {key: value.capitalize() if (value == 'true' or value == 'false') else value
                       for key, value in params.items()}
+            # Чистим параметры GET запроса для специальных(вложенных, кастомных) полей
             special_params = {key: params.pop(key) for key in special_param_keys if key in params}
             filter_mapping = {"role": "role__name__iexact",
                               "location": "location__name__iexact",
@@ -49,14 +67,26 @@ class VacanciesViewSet(viewsets.ModelViewSet):
                               "employment": "employment__iexact",
                               "skill": "skill__iexact"}
             queryset = clean_nested_queryset(params, special_params, filter_mapping, Vacancy)
-        # если нет параметров запроса:
+
+            if search_query:
+                field_filter_mapping = {"desc": "__icontains",
+                                        "tasks": "__icontains",
+                                        "requirements": "__icontains",
+                                        "role": "__name__icontains",
+                                        "location": "__name__icontains",}
+                query = Q(technologies__name__in=[search_query])
+                for field, filter in field_filter_mapping.items():
+                    concat_filter = {f"{field}{filter}": search_query}
+                    query.add(Q(**concat_filter), Q.OR)
+                    q = queryset.filter(query).distinct()
+                queryset = q    
+        # Если нет параметров запроса:
         else:
             queryset = Vacancy.objects.all()
         return queryset
 
     def create(self, request, *args, **kwargs):
         data = request.data
-        print(data)
         nested_manager = NestedObjectManager()
         data['role'] = nested_manager.get_object_or_create_new(Role, **data['role'])
         data['channel_id'] = nested_manager.get_object_or_raise_400(Channel, **data['channel_id'])
@@ -74,7 +104,8 @@ class VacanciesViewSet(viewsets.ModelViewSet):
         serializer = VacancySerializer(new_vacancy)
         return Response(serializer.data, status=201)
 
-class VacancyGlobalFieldSearch(viewsets.ReadOnlyModelViewSet):
+# Заменён аналогичными методами в VacancyViewSet
+"""class VacancyGlobalFieldSearch(viewsets.ReadOnlyModelViewSet):
     serializer_class = VacancySerializer
     pagination_class = VacanciesPagination
 
@@ -82,12 +113,13 @@ class VacancyGlobalFieldSearch(viewsets.ReadOnlyModelViewSet):
         import re
         search_query=request.query_params.dict().get('search', None)
         response =  super().list(request, *args, **kwargs)
-        for vacancy in response.data['results']:
-            found_in = []
-            for key, value in vacancy.items():
-                if re.search(str(search_query), str(value), re.IGNORECASE):
-                    found_in.append(key)
-            vacancy['found_in'] = found_in
+        if search_query:
+            for vacancy in response.data['results']:
+                found_in = []
+                for key, value in vacancy.items():
+                    if re.search(str(search_query), str(value), re.IGNORECASE):
+                        found_in.append(key)
+                vacancy['found_in'] = found_in
         return response
 
     def get_queryset(self):
@@ -105,7 +137,7 @@ class VacancyGlobalFieldSearch(viewsets.ReadOnlyModelViewSet):
             queryset = Vacancy.objects.filter(query).distinct() 
         else:
             queryset = Vacancy.objects.all()
-        return queryset
+        return queryset"""
 
 class TechnologyViewSet(viewsets.ModelViewSet):
     serializer_class = TechnologySerializer

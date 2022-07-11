@@ -5,6 +5,7 @@ import { delFilters } from "../../core/redux-toolkit/slices/filterSlice";
 import { clearFilters } from "../../core/redux-toolkit/slices/filterSlice";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
+import {pickFiltersHelpers} from "../../core/helpers/pickFiltersHelpers";
 const PickFilter = () => {
   const { pick } = useFilters();
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const PickFilter = () => {
         <div className={styles.title}> Выбранные фильтры:</div>
         {Object.keys(pick).map((el) => (
           <div key={el} className={styles.pick}>
-            {pick[el]}
+            {pickFiltersHelpers(pick[el])}
             <button
               onClick={() => {
                 dispatch(delFilters(el));

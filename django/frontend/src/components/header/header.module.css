@@ -1,34 +1,24 @@
 .root {
   background-color: var(--header-color);
-  height: 40px;
-  z-index: 100;
-  padding: 8px;
-  box-shadow: var(--card-shadow);
+  height: 45px;
+  padding: 15px 0;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
-  margin-bottom: 20px;
+  left: 0;
   width: 100%;
+
 }
 .header_mobile {
   display: none;
 }
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 1070px;
-  margin: 0 auto;
+.logo{
+  padding: 33px;
+  font-size: 55px;
 }
-.title {
-  color: rgb(39, 163, 226);
-  text-decoration: none;
-  font-size: 45px;
-  font-family: "Teko", sans-serif;
-}
-
 .login {
   cursor: pointer;
   height: 27px;

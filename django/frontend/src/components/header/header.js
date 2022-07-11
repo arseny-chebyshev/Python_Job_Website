@@ -5,6 +5,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import { HeaderMobile } from "../mobile/header-mobile/header-mobile";
 import { Title } from "../title/title";
+import Login from "../login/login";
 
 const Header = () => {
   return (
@@ -13,13 +14,11 @@ const Header = () => {
         <HeaderMobile />
       </div>
       <div className={styles.root}>
-        <div className={styles.header}>
           <div className={styles.logo}>
-            <Title size={45}/>
+            <Title size={35}/>
           </div>
-          <Navbar />
-          <FontAwesomeIcon icon={faUser} className={styles.login} />
-        </div>
+          {/*<Navbar />*/}
+         <Login/>
       </div>
     </>
   );

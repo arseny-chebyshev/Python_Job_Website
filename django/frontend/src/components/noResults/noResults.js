@@ -1,5 +1,5 @@
 import styles from "./noResults.module.css";
-import empty from "../../assets/image/empty.png";
+import empty from "../../assets/image/technology/empty.png";
 const NoResult = () => {
   return (
     <div className={styles.root}>

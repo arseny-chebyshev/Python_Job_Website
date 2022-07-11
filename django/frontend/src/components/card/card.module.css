@@ -1,14 +1,14 @@
 .card {
-  padding: 20px ;
+  padding: 15px ;
+  padding-top: 5px;
   width: 810px;
   height: 240px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   background-color: var(--card-color);
-  border-radius: var(--main-radius);
   font-size: 18px;
   line-height: 22px;
   transition: color 800ms linear;
-  box-shadow: var(--card-shadow);
+  border-bottom: 1px solid #d4d6de
 }
 .role_title:hover {
   text-decoration: underline;
@@ -29,12 +29,13 @@
 }
 .role_title {
   text-decoration: none;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--main-color);
 }
 .desc {
   margin-top: 10px;
+  font-size: 16px;
   height: 65px;
   display: flex;
   align-items: center;
@@ -57,15 +58,14 @@
   display: flex;
 }
 .salary {
-  color: var(--text-blue);
-  margin-top: 3px;
+  margin-top: 5px;
   font-size: 17px;
 }
 .smile {
-  color: var(--text-blue);
+  color: var(--main-orange);
   height: 15px;
   width: 15px;
-  margin-right: 5px;
+  margin-right: 10px;
   margin-bottom: 2px;
 }
 .info {
@@ -77,6 +77,7 @@
 .location {
   display: flex;
   align-items: center;
+  font-size: 17px;
   margin-top: 10px;
 }
 .technologies {

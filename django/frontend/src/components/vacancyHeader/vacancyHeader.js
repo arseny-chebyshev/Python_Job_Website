@@ -1,9 +1,9 @@
 // Используется на странице просмотра вакансии
 
 import {
-  getNormalDate,
-  getNormalSalary,
-  getNormalSkill,
+    getNormalDate, getNormalEmployment,
+    getNormalSalary,
+    getNormalSkill,
 } from "../../core/helpers/cardHelpers";
 import { comma } from "../../core/helpers/cardHelpers";
 import { Comma } from "../comma/comma";
@@ -39,13 +39,13 @@ const VacancyHeader = ({
       <div className={styles.technologies}>
         <div className={styles.title}>Стек технологий</div>
         <div className={styles.body}>
-          {getNormalSkill(skill)} {comma(technologies)}
+          {getNormalSkill(skill,role)} {comma(technologies)}
         </div>
       </div>
       <div className={styles.add}>
         <div className={styles.title}>Тип занятости и местоположение</div>
         <div className={styles.body_employment}>
-          {location} {employment && <Comma text={employment} />}
+          {location} {getNormalEmployment(employment)}
           {remote && <Comma text={"Можно удалённо"} />}
           {relocation && <Comma text={"Возможна релокация"} />}
         </div>

@@ -67,19 +67,6 @@ const ModalFilters = () => {
             </div>
             <div className={styles.checkbox}>
               <Checkbox
-                clickCheck={(value) => dispatch(setRelocation(value))}
-                title={"Без опыта работы"}
-              />
-            </div>
-
-            <div className={styles.checkbox}>
-              <Checkbox
-                clickCheck={(value) => dispatch(setRelocation(value))}
-                title={"Указана зарплата"}
-              />
-            </div>
-            <div className={styles.checkbox}>
-              <Checkbox
                 keys="remote"
                 clickCheck={(value) => dispatch(setRemote(value))}
                 title={"Удалённая работа"}

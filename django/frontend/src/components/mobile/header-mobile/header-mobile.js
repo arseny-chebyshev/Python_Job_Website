@@ -16,7 +16,7 @@ const HeaderMobile = () => {
           onClick={() => setActive(!active)}
         />
         <div className={styles.title}>
-          <Title size={38} />
+          <Title />
         </div>
       </div>
       <BurgerMenu menu={active} setMenu={setActive} />

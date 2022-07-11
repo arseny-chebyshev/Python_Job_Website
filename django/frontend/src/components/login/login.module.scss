@@ -1,0 +1,14 @@
+.login_wrap{
+  padding: 33px;
+  .login{
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    padding: 10px 26px;
+    background-color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    border-radius: 34px;
+  }
+}

@@ -22,7 +22,7 @@ const Select = ({ title, option_arr, defolt, onSelect, keys }) => {
       <select onChange={onChange} value={value} className={styles.select}>
         <option>{defolt}</option>
         {option_arr.map((el, i) => (
-          <option key={i}>{el}</option>
+          <option value={el.notfull} key={i}>{el.full}</option>
         ))}
       </select>
     </div>
