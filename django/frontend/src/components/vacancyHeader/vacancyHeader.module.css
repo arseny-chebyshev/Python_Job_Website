@@ -1,0 +1,44 @@
+.root {
+  margin-top: 20px;
+  background-color: var(--card-color);
+  width: 680px;
+  padding: 30px 35px;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+.root_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.role {
+  font-size: 22px;
+  font-weight: 600;
+}
+.data {
+  font-size: 14px;
+  color: #686868;
+}
+.salary,
+.technologies {
+  margin: 15px 0 10px 0;
+}
+.body {
+  display: flex;
+  margin-top: 5px;
+  font-size: 18px;
+  flex-wrap: wrap;
+}
+.title {
+  font-size: 16px;
+  color: #686868;
+}
+.salary_value {
+  margin-top: 5px;
+  font-size: 18px;
+}
+.body_employment {
+  margin-top: 5px;
+  font-size: 18px;
+  display: flex;
+}

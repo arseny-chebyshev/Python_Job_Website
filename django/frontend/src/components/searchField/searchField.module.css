@@ -1,0 +1,46 @@
+.search_input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.search {
+  box-shadow: 1px 1px 0px 1px rgba(113, 113, 113, 0.15);
+  background: var(--search-color);
+  border-radius: 5px;
+  width: 350px;
+  padding: 0 1px;
+  height: 40px;
+  display: flex;
+  margin: 5px;
+  
+}
+.search_input {
+  text-align: left;
+  font-size: 1.05rem;
+  font-family: "Outfit";
+  color: var(--text-color);
+  width: 350px;
+  padding: 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+}
+.search_input::placeholder {
+  color: gray;
+  font-family: PT Sans, sans-serif;
+  font-size: 16px;
+}
+.gosearch,
+.gosearchnoshow {
+  position: relative;
+  cursor: pointer;
+  color: var(--main-color);
+  margin-top: 8px;
+  right: 10px;
+}
+.gosearchnoshow {
+  opacity: 1;
+}
+.gosearch {
+  opacity: 1;
+}

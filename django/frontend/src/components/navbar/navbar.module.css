@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PT Sans,sans-serif;
+}
+.link {
+  cursor: pointer;
+  font-size: 17px;
+  padding: 0 12px;
+  color: #909090;
+}
+.link:hover {
+  color: black;
+}

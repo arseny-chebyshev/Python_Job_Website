@@ -1,0 +1,21 @@
+.root {
+  width: 680px;
+  padding: 30px 35px;
+  background-color: var(--card-color);
+  margin-top: 12px;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ededed;
+}
+.desc {
+  font-size: 17px;
+}
+.linkTG {
+  text-align: center;
+}

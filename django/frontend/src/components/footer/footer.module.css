@@ -1,0 +1,35 @@
+.root {
+  flex-shrink: 0;
+  background-color: var(--card-color);
+  height: 70px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  margin-top: 90px;
+}
+.footer {
+  width: 1070px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1069px) {
+  .footer {
+    width: 993px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer {
+    width: 769px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    width: 577px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+.title {
+  font-size: 35px;
+  color: var(--color-grad-alice);
+  background-image: var(--color-grad-alice);
+}
+.count {
+  font-weight: bold;
+}
+.root{
+ 
+}

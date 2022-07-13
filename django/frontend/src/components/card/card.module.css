@@ -1,0 +1,107 @@
+.card {
+  padding: 20px ;
+  width: 810px;
+  height: 240px;
+  margin-bottom: 15px;
+  background-color: var(--card-color);
+  border-radius: var(--main-radius);
+  font-size: 18px;
+  line-height: 22px;
+  transition: color 800ms linear;
+  box-shadow: var(--card-shadow);
+}
+.role_title:hover {
+  text-decoration: underline;
+}
+.header {
+  display: flex;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+.add {
+  font-size: 15px;
+  margin: 10px;
+  margin-left: 5px;
+}
+.role_title {
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+.desc {
+  margin-top: 10px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
+}
+.date {
+  font-size: 14px;
+  margin: 20px;
+  margin-right: 0px;
+  color: #686868;
+}
+.main {
+  display: flex;
+}
+.salary {
+  color: var(--text-blue);
+  margin-top: 3px;
+  font-size: 17px;
+}
+.smile {
+  color: var(--text-blue);
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+.info {
+  margin-left: 10px;
+}
+.smileTechnologies {
+  color: #151719;
+}
+.location {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.technologies {
+  display: flex;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.clearNone {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .card{
+    width: 710px;
+  }
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+ 
+}
