@@ -26,15 +26,15 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.2);
-  transform: scale(1);
+  opacity:1;
   transition: 0.5s;
 }
 
 .filter_overlay_active {
-  padding: 25px;
+  padding: 10px 25px 25px;
   border-radius: 5px;
   max-width: 850px;
-  height: 220px;
+  height: auto;
   flex-wrap: wrap;
   display: flex;
   justify-content: flex-start;
@@ -42,6 +42,7 @@
   background: #fff;
   font-size: 16px;
   line-height: 1;
+
 }
 .modal_filters_title {
   font-weight: 700;
@@ -69,4 +70,40 @@
 }
 .checkbox {
   margin-top: 25px;
+}
+.filters_header{
+  font-weight: 600;
+  width: 100%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1069px) {
+}
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+  .overlay_active{
+    height: 100%;
+
+
+  }
+  .filter_overlay_active{
+    height: 100vh;
+    display: inline-block;
+    padding: 35px 20px 20px 15px;
+  }
+  .filters{
+
+  }
+  .select,
+  .input,.checkbox {
+    margin-top: 25px;
+  }
 }

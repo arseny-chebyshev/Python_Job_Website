@@ -1,85 +1,23 @@
-.root {
+.root_desktop {
   background-color: var(--card-color);
   margin-top: 10px;
   padding: 15px 20px;
   width: 810px;
   height: auto;
-  margin-bottom: 15px;
   transition: all 0.5s ease-out;
-  border-bottom: var(--border-botom);
+
 }
+.buttonFilters{
+  margin: 5px 10px 5px 5px;
+}
+
 .search {
+  display: flex;
+  align-items: center;
+}
+.root_mobile{
 
-  display: flex;
-  align-items: center;
-}
-.filter {
-  justify-content: flex-start;
-  align-items: center;
-  display: flex;
-
-  flex-wrap: wrap;
-}
-.search,
-.select,
-.input {
-}
-.filters {
-  border: var(--border);
-  padding: 0px 15px;
-  font-size: 15px;
-  height: 29px;
-  cursor: pointer;
-  outline: none;
-  margin: 5px;
-  margin-right: 10px;
-  border: 1px solid ;
-  border-color: #80b8f8;
-  color: var(--text-color);
-  box-shadow: var(--card-shadow);
-  background: var(--search-color);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-}
-.title:hover {
-  border: 1px solid #2589d1;
-  transition: opacity 1s ease;
-}
-.count_wrap {
-  width: 18px;
-  height: 18px;
-  display: flex;
-  margin-right: 5px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background: rgba(52, 149, 219, 0.1);
-}
-.count {
-  font-size: 13px;
-  font-weight: bold;
-  color: var(--main-color);
-}
-.filter_icon {
-  margin-top: 5px;
-  margin-right: 5px;
-  height: 18px;
-  width: 18px;
-  color: var(--main-color);
-}
-.checkbox {
-
-}
-.mobile_count{
- display: none;
-}
-.mobile_line{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
+  display: none;
 }
 
 @media (max-width: 1200px) {
@@ -92,40 +30,12 @@
 }
 
 @media (max-width: 576px) {
-  .root_wrap{
-    padding: 0 12px ;
-    width: 100%;
+  .root_desktop {
+   display: none;
+  }
+  .root_mobile{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border: 1px solid red;
-    margin: 0 auto;
 
-  }
-
-  .root {
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: white;
-  }
-  .search{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .checkbox{
-    display: none;
-  }
-  .mobile_count{
-    display: flex;
-  }
-  .desktop_count{
-    display: none;
   }
 
 

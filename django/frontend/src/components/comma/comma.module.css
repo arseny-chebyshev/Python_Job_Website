@@ -1,5 +1,9 @@
 .root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+
 }
+.comma{
+  font-weight: 700;
+  color: gray;
+}
+

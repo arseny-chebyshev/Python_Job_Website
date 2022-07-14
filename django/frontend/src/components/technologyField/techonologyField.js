@@ -6,7 +6,11 @@ import React from "../../assets/image/technology/react.png";
 import Vue from "../../assets/image/technology/vue.png";
 import { Icons } from "../icons/icons";
 import styles from "./technologyField.module.css";
-const TechnologyField = () => {
+import {memo} from "react";
+
+
+
+const TechnologyField = memo(() => {
   const img = [
     { path: Python, name: "Python" },
     { path: JavaScript, name: "JavaScript" },
@@ -23,6 +27,6 @@ const TechnologyField = () => {
       ))}
     </div>
   );
-};
+});
 export { TechnologyField };
 

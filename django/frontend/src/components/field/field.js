@@ -1,60 +1,19 @@
-import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {useFilters} from "../../core/hooks/useFilter";
-import {fetchVacansies} from "../../core/redux-toolkit/slices/vacansiesSlice";
 import {Card} from "../card/card";
 import {FieldFilter} from "../field-filter/field-filter";
 import {Skeleton} from "../skeleton/skeleton";
 import {TechnologyField} from "../technologyField/techonologyField";
 import {NoResult} from "../noResults/noResults";
-
 import styles from "./field.module.css";
+import {useFetchInField} from "../../core/hooks/field/useFetchInField";
 
 const Field = () => {
-    const dispatch = useDispatch();
 
-    const vacancy = useSelector((state) => state.vacansies.vacansies);
-    const isLoading = useSelector((state) => state.vacansies.isLoading);
-    const currentPage = useSelector((state) => state.pagination.currentPage);
-
-    const {
-        sortLevel,
-        sortMode,
-        sortRemote,
-        sortSalary,
-        sortRelocation,
-        sortTechnologies,
-        sortSearch
-    } = useFilters();
-
-    useEffect(() => {
-        dispatch(
-            fetchVacansies({
-                sortLevel,
-                sortMode,
-                sortRemote,
-                sortSalary,
-                currentPage,
-                sortTechnologies,
-                sortRelocation,
-                sortSearch,
-            })
-        );
-    }, [
-        sortLevel,
-        sortMode,
-        sortRemote,
-        sortSalary,
-        currentPage,
-        sortTechnologies,
-        sortRelocation,
-        sortSearch,
-    ]);
+   const {vacancy,isLoading} = useFetchInField()
 
     return <div className={styles.root}>
         <div className={styles.field}>
             <FieldFilter/>
-            <div className={styles.main}>
+            <div>
                 {isLoading ?
                     [...Array(10)].map((_, i) => <Skeleton key={i}/>
                     ) : vacancy.length ? (
@@ -86,5 +45,5 @@ const Field = () => {
         </div>
     </div>;
 };
-
+``
 export {Field};

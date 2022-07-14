@@ -10,7 +10,15 @@
   top: 0;
   left: 0;
   width: 100%;
+  border-bottom: 1px solid #e1e3eb;
+  -webkit-transition: border-color .2s ease-out;
+  transition: border-color .2s ease-out;
 
+}
+.border{
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-color .2s ease-out;
+  transition: border-color .2s ease-out;
 }
 .header_mobile {
   display: none;

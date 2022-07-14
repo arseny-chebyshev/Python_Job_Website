@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
-import { links } from "../../../core/constants/burger";
+import {links} from "../../../core/constants/burger";
 import styles from "./burger-menu.module.css";
+import LinkMobile from "../linkMobile/linkMobile";
 
 const BurgerMenu = ({ menu, setMenu }) => {
+
+
   return (
     <div
       className={menu ? styles.overlay : styles.overlayactive}
@@ -17,11 +19,7 @@ const BurgerMenu = ({ menu, setMenu }) => {
         }}
       >
         {links.map((el) => (
-          <div key={el.title} className={styles.burger_linkWrap}>
-            <Link className={styles.burger_link} to={el.to}>
-              {el.title}
-            </Link>
-          </div>
+         <LinkMobile key={el.title} title={el.title} icon={el.icon} to={el.to}/>
         ))}
       </div>
     </div>

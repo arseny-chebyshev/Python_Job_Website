@@ -1,6 +1,5 @@
 .card {
-  padding: 15px ;
-  padding-top: 5px;
+  padding: 5px 15px 15px;
   width: 810px;
   height: 240px;
   margin-bottom: 5px;
@@ -8,6 +7,7 @@
   font-size: 18px;
   line-height: 22px;
   transition: color 800ms linear;
+
   border-bottom: 1px solid #d4d6de
 }
 .role_title:hover {
@@ -49,9 +49,9 @@
   margin-bottom: 10px;
 }
 .date {
+
   font-size: 14px;
-  margin: 20px;
-  margin-right: 0px;
+  margin-bottom: 5px;
   color: #686868;
 }
 .main {
@@ -80,10 +80,14 @@
   font-size: 17px;
   margin-top: 10px;
 }
-.technologies {
+.technologies_desktop {
   display: flex;
   margin-top: 10px;
   font-size: 16px;
+}
+.technologies_mobile{
+  font-size: 15px;
+  display: none;
 }
 .clearNone {
   display: none;
@@ -104,5 +108,26 @@
 }
 
 @media (max-width: 576px) {
- 
+  .card{
+    width: 90vw;
+    margin: 0 12px;
+    padding: 0;
+
+  }
+  .date{
+
+    right: 30px;
+  }
+  .salary,.location,.add,.desc{
+    font-size: 15px;
+  }
+  .role_title{
+    font-size: 17px;
+  }
+  .technologies_desktop{
+    display: none;
+  }
+  .technologies_mobile{
+    display: flex;
+  }
 }

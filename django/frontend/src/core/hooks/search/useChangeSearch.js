@@ -8,7 +8,7 @@ export const useChangeSearch = () => {
 
     const search = useSelector((state) => state.filter.filters.search);
 
-    const [value, setValue] = useState();
+    const [value, setValue] = useState('');
 
     const dispatch = useDispatch();
 

@@ -43,4 +43,11 @@
 }
 
 @media (max-width: 576px) {
+  .checkbox{
+    width: 60vw;
+    font-size: 14px;
+  }
+  .checkbox_active{
+    width: 60vw;
+  }
 }

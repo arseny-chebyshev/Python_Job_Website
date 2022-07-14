@@ -8,7 +8,6 @@ const Title = () => {
     <div className={styles.title}>
       <Link to="/" className={styles.link}>
         devseye
-
       </Link>
         <FontAwesomeIcon icon={faEye} className={styles.icon} />
     </div>

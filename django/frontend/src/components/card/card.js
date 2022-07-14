@@ -1,13 +1,15 @@
-import {faLocationDot,faWallet} from "@fortawesome/free-solid-svg-icons";
+import {faLocationDot, faWallet} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
 import {
 	comma,
+	commaMobile,
 	getNormalDate,
 	getNormalEmployment,
 	getNormalRole,
 	getNormalSalary,
-	getNormalSkill
+	getNormalSkill,
+	moreInfo
 } from "../../core/helpers/cardHelpers";
 import styles from "./card.module.css";
 
@@ -28,6 +30,11 @@ const Card = ({
 			  }) => {
 
 	const [arr, count] = comma(technologies)
+
+	const [arrMobile, countMobile] = commaMobile(technologies)
+
+	const more = moreInfo(relocation, remote);
+
 	return (
 		<div
 			className={styles.card}
@@ -40,23 +47,32 @@ const Card = ({
 			</div>
 			<div className={styles.main}>
 				<div className={styles.info}>
-					{location === 'Не указана' ?'':<div className={styles.location}>
+					<div className={styles.location}>
 						<FontAwesomeIcon className={styles.smile} icon={faLocationDot}/>
 						{location}
-					</div>}
+					</div>
 					<div className={styles.salary}>
 						<FontAwesomeIcon className={styles.smile} icon={faWallet}/>
 						{getNormalSalary(min_salary, max_salary, currency)}
 					</div>
 					<div className={styles.desc}>{desc}</div>
 
-					<div className={styles.technologies}>{arr}&nbsp;
-						{count && ` +  ${count}`}</div>
-					<div className={styles.add}>
-						{getNormalEmployment(employment)}
-						{remote && " #Можно удалённо"}
-						{relocation && " #Возможна релокация"}
+					<div className={styles.technologies_desktop}>
+						{arr}
+						&nbsp;
+						{count && ` +  ${count}`}
 					</div>
+
+					<div className={styles.technologies_mobile}>
+						{arrMobile}
+						&nbsp;
+						{countMobile && ` +  ${countMobile}`}
+					</div>
+					<div className={styles.add}>
+						{employment !== 'Тип занятости не указан' || getNormalEmployment(employment)}
+						{more}
+					</div>
+
 				</div>
 			</div>
 		</div>

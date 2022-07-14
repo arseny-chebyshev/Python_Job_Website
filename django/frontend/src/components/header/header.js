@@ -1,26 +1,25 @@
 import styles from "./header.module.css";
-import { Navbar } from "../navbar/navbar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { Link } from "react-router-dom";
-import { HeaderMobile } from "../mobile/header-mobile/header-mobile";
-import { Title } from "../title/title";
+import {HeaderMobile} from "../mobile/header-mobile/header-mobile";
+import {Title} from "../title/title";
 import Login from "../login/login";
+import {useCheckPositionHeader} from "../../core/hooks/header/useCheckPositionHeader";
+
 
 const Header = () => {
-  return (
-    <>
-      <div className={styles.header_mobile}>
-        <HeaderMobile />
-      </div>
-      <div className={styles.root}>
-          <div className={styles.logo}>
-            <Title size={35}/>
-          </div>
-          {/*<Navbar />*/}
-         <Login/>
-      </div>
-    </>
-  );
+    const {small} = useCheckPositionHeader()
+
+    return (
+        <>
+            <div className={styles.header_mobile}>
+                <HeaderMobile/>
+            </div>
+            <div className={small ? styles.root : `${styles.border} ${styles.root}`}>
+                <div className={styles.logo}>
+                    <Title size={35}/>
+                </div>
+                <Login/>
+            </div>
+        </>
+    );
 };
-export { Header };
+export {Header};

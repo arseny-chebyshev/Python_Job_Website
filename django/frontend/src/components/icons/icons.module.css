@@ -1,28 +1,24 @@
 .root,
 .root_pick {
   text-align: center;
-  margin: 15px;
-  margin-top: 5px;
-  margin-bottom: 0;
+  margin: 10px 10px 0;
   cursor: pointer;
-  border: var(--border);
-  padding: 18px 18px;
-  border-radius: 10px;
+  padding: 15px;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.5, 1);
   background-color: transparent;
   color: var(--text-color);
 }
 .root_pick {
-  border: 1px solid #2589d1;
+  border-bottom: 1px solid var(--main-color);
 }
 .img {
-  height: 45px;
-  width: 45px;
+  height: 50px;
+  width: 50px;
 }
 .text {
-  width: 100px;
+
   margin-top: 5px;
-  font-size: 16px;
+  font-size: 14px;
 }
 @media (min-width: 576px) {
   .root,

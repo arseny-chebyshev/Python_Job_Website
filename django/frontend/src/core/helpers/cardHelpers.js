@@ -16,34 +16,33 @@ export const getNormalRole = (role) => {
 	const reg = /Senior|Middle|Junior/gi;
 	return (reg).test(role) ? role.replace(reg, '') : role;
 };
-export const getTechnologies = (tags) => {
-	if (tags)
-		return tags.map((el, i) =>
-			i == tags.length - 1 ? (
-				<span key={i}>\{el}</span>
-			) : (
-				<span key={i}>{el}, </span>
-			)
-		);
-};
+
+
+export const moreInfo = (relocation,remote) => {
+	if (relocation && remote) return 'Удалённая работа Возможна релокация'
+	if (!remote && relocation) return 'Возможна релокация'
+	if (!relocation && remote) return 'Удалённая работа'
+	return false
+}
+
 
 export const getNormalEmployment = (employment) => {
 	let typeWork;
 	switch (employment) {
 		case "PRJ":
-			typeWork = "#Проектная деятельность";
+			typeWork = "Проектная деятельность";
 			break;
 		case "PRTTIME":
-			typeWork = "#Частичная занятость";
+			typeWork = "Частичная занятость";
 			break;
 		case "NOTFULL":
-			typeWork = "#Неполный день";
+			typeWork = "Неполный день";
 			break;
 		case "FULLDAY":
-			typeWork = "#Полный день";
+			typeWork = "Полный день";
 			break;
 		case "NONE":
-			typeWork = "";
+			typeWork = "Тип занятости не указан";
 			break;
 	}
 	return typeWork;
@@ -85,9 +84,9 @@ export const getNormalSalary = (min, max, currency) => {
 	const salaryMax = shareSalary(max)
 	const valuta = getCurrency(currency)
 	if (salaryMin !== salaryMax) {
-		return `от ${salaryMin} ${valuta} до ${salaryMax} ${valuta} `;
+		return `от ${salaryMin} ${valuta} до ${salaryMax} ${valuta}`;
 	} else if (salaryMin && salaryMax){
-		return `до ${salaryMin} ${valuta} `;
+		return `до ${salaryMin} ${valuta}`;
 	} else if (!salaryMax && salaryMin) {
 		return ` от ${salaryMin}  ${valuta}`;
 	} else if (salaryMax && !salaryMin) {
@@ -99,5 +98,15 @@ export const getNormalSalary = (min, max, currency) => {
 
 export const comma = (arr) => {
 	if (arr.length > 6) return [arr.slice(0, 5).map((el, i) => <Comma key={i} text={el}/>), `${arr.length - 6} ${declensionStack(arr.length - 6)}`]
+	return [arr.map((el, i) => <Comma key={i} text={el}/>), null];
+};
+
+export const getNormalTechnologies = (arr) => {
+	if (arr.length > 12) return [arr.slice(0, 12).map((el, i) => <Comma key={i} text={el}/>), ` + ${arr.length -12} ${declensionStack(arr.length - 12)}`]
+	return arr.map((el, i) => <Comma key={i} text={el}/>);
+};
+
+export const commaMobile = (arr) => {
+	if (arr.length > 3) return [arr.slice(0, 3).map((el, i) => <Comma key={i} text={el}/>), `${arr.length - 3}`]
 	return [arr.map((el, i) => <Comma key={i} text={el}/>), null];
 };
