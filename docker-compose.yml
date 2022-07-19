@@ -41,7 +41,7 @@ services:
     build: ./
     ports:
       - $REACT_PORT:$REACT_PORT
-    command: [sh, -c, "cd django/frontend &&
+    command: [sh, -c, "cd frontend &&
                       apk add npm &&
                       npm install &&
                       npm start"]

@@ -89,7 +89,7 @@ class Vacancy(models.Model):
     role = models.ForeignKey(Role, on_delete=models.CASCADE, verbose_name="Специализация")
     desc = models.TextField(verbose_name='Описание вакансии')
     add_date = models.DateTimeField(verbose_name='Дата добавления вакансии',
-                                    auto_now=True)
+                                    auto_now=False)
     min_salary = MoneyField(verbose_name='Минимальная заработная плата', default=0,
                             max_digits=12, decimal_places=2, default_currency='RUB',
                             blank=True)

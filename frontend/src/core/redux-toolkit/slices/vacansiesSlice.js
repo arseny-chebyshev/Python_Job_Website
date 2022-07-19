@@ -23,7 +23,7 @@ export const fetchVacansies = createAsyncThunk(
 export const vacansiesCounter = createAsyncThunk(
   "vacansies/vacansiesCounter",
   async () => {
-    const { data } = await axios(`http://localhost:8000/api/vacancy/`);
+    const { data } = await axios(`http://185.104.113.54:8000/api/vacancy/`);
     return data.count;
   }
 );

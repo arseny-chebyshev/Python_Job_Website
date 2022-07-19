@@ -4,7 +4,7 @@ from telethon.sync import TelegramClient, events
 import parser_utils
 load_dotenv()
 
-channels_for_parse = ['https://t.me/job_python', 'https://t.me/job_react', 'https://t.me/job_javadevs']
+channels_for_parse = [ch.replace('\n', '') for ch in open('channels.txt', 'r', encoding='utf-8')]
 client = TelegramClient('parse_session', os.getenv('TELEGRAM_API_ID'), os.getenv('TELEGRAM_API_HASH'))
 
 def parse_vacancy(msg):
@@ -17,7 +17,8 @@ def parse_vacancy(msg):
             vac_arr = text.split('\n')
             if len(vac_arr) > 8:
                 vac_dct = {"channel_id": {"url": msg.chat.username}, 
-                           "message_id": msg.id}   
+                           "message_id": msg.id}
+                vac_dct['add_date'] = str(msg.date) 
                 vac_dct['role'] = {"name": parser_utils.get_role(vac_arr[0])}
                 vac_dct['technologies'] = [{"name": t} for t in 
                                            {tech for tech in technologies_list if tech in ''.join(vac_arr)}]
@@ -36,7 +37,7 @@ def parse_vacancy(msg):
 def parse_all_vacancies(tg_client, channel):
     vacancies = []
     with tg_client:
-        for msg in tg_client.iter_messages(channel):
+        for msg in tg_client.iter_messages(channel, reverse=True):
             vacancy = parse_vacancy(msg)
             if vacancy:
                 vacancies.append(vacancy)
