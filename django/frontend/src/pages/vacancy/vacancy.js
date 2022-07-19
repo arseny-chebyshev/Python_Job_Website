@@ -1,36 +1,32 @@
-import { useEffect, useState, useLayoutEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { SimilarListVacancy } from "../../components/similarListVacancy/similarVacancy";
-import { VacancyDescription } from "../../components/vacancyDescription/vacancyDescription";
-import { VacancyHeader } from "../../components/vacancyHeader/vacancyHeader";
-import {
-  AddFetchVacancy,
-  singleFetchVacancy,
-} from "../../core/redux-toolkit/slices/singleVacancy";
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {useParams} from "react-router-dom";
+import {VacancyDescription} from "../../components/vacancyDescription/vacancyDescription";
+import {VacancyHeader} from "../../components/vacancyHeader/vacancyHeader";
+import {singleFetchVacancy,} from "../../core/redux-toolkit/slices/singleVacancy";
 import styles from "./vacancy.module.css";
+import {ButtonLink} from "../../components/buttonLink/buttonLink";
+
 const Vacancy = () => {
   const { id } = useParams();
 
   const vacancy = useSelector((state) => state.singleVacancy.vacancy);
-  const technologies = useSelector((state) => state.singleVacancy.technologies);
+
 
   const dispatch = useDispatch();
 
-  const addVacancy = useSelector((state) => state.singleVacancy.addVacancy);
+
 
   useEffect(() => {
+
     dispatch(singleFetchVacancy({ id }));
+
   }, []);
 
-  useEffect(() => {
-    if (technologies.length !== 0) dispatch(AddFetchVacancy({ technologies }));
-    window.scroll(0, 0);
-  }, [technologies]);
+
 
   return (
     <div className={styles.root}>
-      <div>
         <VacancyHeader
           role={vacancy.role}
           skill={vacancy.skill}
@@ -44,6 +40,7 @@ const Vacancy = () => {
           remote={vacancy.remote}
           relocation={vacancy.relocation}
         />
+
         <VacancyDescription
           tasks={vacancy.tasks}
           requirements={vacancy.requirements}
@@ -51,8 +48,11 @@ const Vacancy = () => {
           message_id={vacancy.message_id}
           channel_id={vacancy.channel_id}
         />
-      </div>
-      <SimilarListVacancy similar={addVacancy} />
+
+        <div className={styles.link}>
+            <ButtonLink channel_id={vacancy.channel_id} message_id={vacancy.message_id}/>
+        </div>
+
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import {memo, useEffect, useState} from "react";
 import { useSelector } from "react-redux";
 import { useChangeCheckbox } from "../../core/hooks/checkbox/useChangeCheckbox";
 import styles from "./checkbox.module.css";
-const Checkbox = ({ title, clickCheck, keys }) => {
+const Checkbox = memo(({ title, clickCheck, keys }) => {
   const { filt, goCheck } = useChangeCheckbox(clickCheck,keys);
 
   return (
@@ -14,5 +14,5 @@ const Checkbox = ({ title, clickCheck, keys }) => {
       {title}
     </button>
   );
-};
+});
 export { Checkbox };

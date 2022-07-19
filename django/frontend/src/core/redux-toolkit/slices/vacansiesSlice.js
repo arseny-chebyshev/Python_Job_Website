@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import {BaseURL} from "../../constants/api";
 
 export const fetchVacansies = createAsyncThunk(
   "vacansies/fetchVacansies",
@@ -11,11 +12,11 @@ export const fetchVacansies = createAsyncThunk(
     currentPage,
     sortTechnologies,
     sortRelocation,
+      sortSearch
   }) => {
     const { data } = await axios(
-      `http://localhost:8000/api/vacancy/?limit=10&page=${currentPage}${sortLevel}${sortMode}${sortRemote}${sortSalary}${sortRelocation}${sortTechnologies}`
+      `${BaseURL}vacancy/?limit=10&page=${currentPage}${sortSearch}${sortLevel}${sortMode}${sortRemote}${sortSalary}${sortRelocation}${sortTechnologies}`
     );
-    console.log(data);
     return data;
   }
 );
@@ -30,7 +31,7 @@ export const vacansiesCounter = createAsyncThunk(
 const initialState = {
   vacansies: [],
   isLoading: true,
-  counter: "14",
+  counter: "",
   page_count: 0,
 };
 

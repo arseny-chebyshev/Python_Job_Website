@@ -1,14 +1,14 @@
 .card {
-  padding: 20px ;
+  padding: 5px 15px 15px;
   width: 810px;
   height: 240px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   background-color: var(--card-color);
-  border-radius: var(--main-radius);
   font-size: 18px;
   line-height: 22px;
   transition: color 800ms linear;
-  box-shadow: var(--card-shadow);
+
+  border-bottom: 1px solid #d4d6de
 }
 .role_title:hover {
   text-decoration: underline;
@@ -29,12 +29,13 @@
 }
 .role_title {
   text-decoration: none;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--main-color);
 }
 .desc {
   margin-top: 10px;
+  font-size: 16px;
   height: 65px;
   display: flex;
   align-items: center;
@@ -48,24 +49,23 @@
   margin-bottom: 10px;
 }
 .date {
+
   font-size: 14px;
-  margin: 20px;
-  margin-right: 0px;
+  margin-bottom: 5px;
   color: #686868;
 }
 .main {
   display: flex;
 }
 .salary {
-  color: var(--text-blue);
-  margin-top: 3px;
+  margin-top: 5px;
   font-size: 17px;
 }
 .smile {
-  color: var(--text-blue);
+  color: var(--main-orange);
   height: 15px;
   width: 15px;
-  margin-right: 5px;
+  margin-right: 10px;
   margin-bottom: 2px;
 }
 .info {
@@ -77,12 +77,17 @@
 .location {
   display: flex;
   align-items: center;
+  font-size: 17px;
   margin-top: 10px;
 }
-.technologies {
+.technologies_desktop {
   display: flex;
   margin-top: 10px;
   font-size: 16px;
+}
+.technologies_mobile{
+  font-size: 15px;
+  display: none;
 }
 .clearNone {
   display: none;
@@ -103,5 +108,26 @@
 }
 
 @media (max-width: 576px) {
- 
+  .card{
+    width: 90vw;
+    margin: 0 12px;
+    padding: 0;
+
+  }
+  .date{
+
+    right: 30px;
+  }
+  .salary,.location,.add,.desc{
+    font-size: 15px;
+  }
+  .role_title{
+    font-size: 17px;
+  }
+  .technologies_desktop{
+    display: none;
+  }
+  .technologies_mobile{
+    display: flex;
+  }
 }

@@ -12,9 +12,10 @@
 .title {
   margin: 5px;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 600;
 }
-.sbros {
+.sbros_title {
+  cursor: pointer;
   font-size: 15px;
   margin-left: 5px;
   margin-bottom: 10px;
@@ -45,17 +46,33 @@
   border-radius: 50%;
 }
 .del {
-  margin-top: 3px;
+  margin-top: 2px;
   height: 14px;
   width: 14px;
   color: var(--text-color);
 }
-.sbros {
-  color: gray;
-  font-size: 15px;
-  margin-top: 5px;
-  cursor: pointer;
-}
+
 .sbros_title {
   border-bottom: 1px dashed rgba(20, 99, 217, 0.3);
+}
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .title{
+    font-size: 15px;
+  }
+  .pick{
+    font-size: 14px;
+  }
+  .sbros_title {
+    font-size: 14px;
+  }
+
 }

@@ -14,10 +14,13 @@ import { Input } from "../input/input";
 import { PickFilter } from "../pickFilter/pickFilter";
 import { Select } from "../select/select";
 import styles from "./modal-filters.module.css";
+import CloseWindow from "../closeWindow/closeWindow";
 
 const ModalFilters = () => {
   const dispatch = useDispatch();
+
   const show = useSelector((state) => state.modal.modal_filters);
+
   return (
     <>
       <div
@@ -30,6 +33,10 @@ const ModalFilters = () => {
           }
           onClick={(e) => e.stopPropagation()}
         >
+          <div className={styles.filters_header}>
+            <div>Фильтры</div>
+            <div><CloseWindow/></div>
+          </div>
           <VacancyNumber/>
           <div className={styles.filters}>
             <div className={styles.select}>
@@ -50,32 +57,10 @@ const ModalFilters = () => {
                 onSelect={(value) => dispatch(setMode(value))}
               />
             </div>
-            <div className={styles.select}>
-              <Select
-                keys="location"
-                defolt={"Любое"}
-                title={"Местоположение"}
-                option_arr={location}
-                onSelect={(value) => dispatch(setMode(value))}
-              />
-            </div>
             <div className={styles.input}>
               <Input
                 title={"Зарплата"}
-                goSalary={(salary) => dispatch(setSalary(salary))}
-              />
-            </div>
-            <div className={styles.checkbox}>
-              <Checkbox
-                clickCheck={(value) => dispatch(setRelocation(value))}
-                title={"Без опыта работы"}
-              />
-            </div>
-
-            <div className={styles.checkbox}>
-              <Checkbox
-                clickCheck={(value) => dispatch(setRelocation(value))}
-                title={"Указана зарплата"}
+                goSalary={(value) => dispatch(setSalary(value))}
               />
             </div>
             <div className={styles.checkbox}>
@@ -94,12 +79,6 @@ const ModalFilters = () => {
             </div>
           </div>
           <PickFilter />
-        </div>
-        <div
-          onClick={() => dispatch(close_modal_filters())}
-          className={styles.close}
-        >
-          ×
         </div>
       </div>
     </>

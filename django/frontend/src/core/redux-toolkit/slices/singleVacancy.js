@@ -15,7 +15,6 @@ export const AddFetchVacancy = createAsyncThunk(
     const { data } = await axios(
       `http://localhost:8000/api/vacancy/?&technologies=${technologies}`
     );
-    console.log(data);
     return data.results;
   }
 );
@@ -46,7 +45,7 @@ export const singleVacancySlice = createSlice({
       state.addVacancy = actions.payload;
     },
     [AddFetchVacancy.rejected]: (state) => {
-      console.log(1);
+
     },
   },
 });

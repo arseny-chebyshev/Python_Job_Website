@@ -1,12 +1,12 @@
 import styles from "./comma.module.css";
 const Comma = ({ text }) => {
   return (
-    <div className={styles.root}>
+    <span className={styles.root}>
       &nbsp;
-      <div className="comma">•</div>
+      <span className={styles.comma}>•</span>
       &nbsp;
-      <div>{text}</div>
-    </div>
+      <span>{text}</span>
+    </span>
   );
 };
 export { Comma };

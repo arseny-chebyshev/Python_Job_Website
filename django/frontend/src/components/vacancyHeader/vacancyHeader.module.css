@@ -1,44 +1,89 @@
 .root {
-  margin-top: 20px;
-  background-color: var(--card-color);
-  width: 680px;
-  padding: 30px 35px;
-  flex-wrap: wrap;
-  border-radius: 5px;
+    margin-top: 20px;
+    background-color: var(--card-color);
+    padding: 40px 10px;
+    flex-wrap: wrap;
+
+    border-bottom: var(--border-botom);
 }
 .root_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .role {
-  font-size: 22px;
-  font-weight: 600;
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
+
 .data {
-  font-size: 14px;
-  color: #686868;
+    font-size: 14px;
+    color: #686868;
 }
-.salary,
-.technologies {
-  margin: 15px 0 10px 0;
+.technologies{
+    white-space: pre-wrap;
+
+    white-space: -moz-pre-wrap;
+
+    white-space: pre-wrap;
+
+    white-space: -o-pre-wrap;
+
+    word-wrap: break-word;
+    font-size: 17px;
+    display: flex;
 }
 .body {
-  display: flex;
-  margin-top: 5px;
-  font-size: 18px;
-  flex-wrap: wrap;
+    display: flex;
+    margin-top: 5px;
+    font-size: 18px;
+    flex-wrap: wrap;
 }
-.title {
-  font-size: 16px;
-  color: #686868;
-}
+
+
 .salary_value {
-  margin-top: 5px;
-  font-size: 18px;
+    margin-top: 5px;
+    font-size: 18px;
 }
+
 .body_employment {
-  margin-top: 5px;
-  font-size: 18px;
-  display: flex;
+    margin-top: 5px;
+    font-size: 18px;
+    display: flex;
+}
+
+@media (max-width: 1200px) {
+    .card {
+        width: 710px;
+    }
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+   .root{
+       margin-top: 15px;
+       padding: 30px 10px;
+       width: 90vw;
+
+   }
+    .role{
+        font-size: 21px;
+    }
+    .technologies{
+        font-size: 15px;
+
+
+
+
+
+    }
+
 }

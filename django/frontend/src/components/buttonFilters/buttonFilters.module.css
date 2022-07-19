@@ -1,0 +1,40 @@
+.filters {
+    border: var(--border);
+    padding: 0px 15px;
+    font-size: 15px;
+    height: 29px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid ;
+    border-color: #80b8f8;
+    color: var(--text-color);
+    box-shadow: var(--card-shadow);
+    background: var(--search-color);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.count_wrap {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    margin-right: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(52, 149, 219, 0.1);
+}
+.count {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+.filter_icon {
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 18px;
+    width: 18px;
+    color: var(--main-color);
+}

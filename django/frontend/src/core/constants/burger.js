@@ -1,7 +1,10 @@
+import {faEnvelope, faCircleQuestion, faAddressBook} from "@fortawesome/free-regular-svg-icons";
+
+
 export const links = [
-  { title: "Войти / Зарегистрироваться", to: "/" },
-  { title: "О сервисе", to: "/" },
-  { title: "Вакансии", to: "/" },
-  { title: "Сообщить о проблеме", to: "/" },
-  { title: "Авторы проекта", to: "/" },
+    {title: "Вакансии", to: "/", icon: faAddressBook},
+
+    {title: "О сервисе", to: "/about-us", icon: faCircleQuestion},
+
+    {title: "Сообщить о проблеме", to: "/report-a-problem", icon: faEnvelope},
 ];

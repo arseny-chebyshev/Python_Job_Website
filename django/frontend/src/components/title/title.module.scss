@@ -1,0 +1,22 @@
+.title {
+  color: rgb(39, 163, 226);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-family: "Teko", sans-serif;
+
+  .link {
+    text-decoration: none;
+    color: var(--main-color);
+
+  }
+
+  .icon {
+    height: 35px;
+    width: 35px;
+    color: var(--main-color);
+    margin: 10px;
+  }
+}
+
+

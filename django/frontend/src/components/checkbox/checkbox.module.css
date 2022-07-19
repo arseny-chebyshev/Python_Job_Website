@@ -9,6 +9,8 @@
   box-shadow: var(--card-shadow);
   background: var(--search-color);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  border: 1px solid ;
+  border-color: #80b8f8;
   border-radius: 3px;
 }
 .checkbox:hover {
@@ -41,4 +43,11 @@
 }
 
 @media (max-width: 576px) {
+  .checkbox{
+    width: 60vw;
+    font-size: 14px;
+  }
+  .checkbox_active{
+    width: 60vw;
+  }
 }
