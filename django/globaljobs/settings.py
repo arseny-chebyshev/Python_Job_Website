@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-fn%fj7336xm_4()z#jym%b0yhdw0(frww#p%ob=25*bvnc^w7a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -88,15 +88,11 @@ WSGI_APPLICATION = 'globaljobs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        # 'HOST': os.getenv('DB_HOST', 'localhost'), 
-        # Docker запускает контейнер PostgreSQL не на 'localhost', 
-        # а на имени контейнера в docker-compose: в данном случае, 'db'. 
-        # https://stackoverflow.com/questions/70633841/django-docker-connection-to-server-at-localhost-127-0-0-1-port-5432-fail
-        'HOST': 'db',
-        'PORT': os.getenv('DB_PORT'),
+        'NAME': 'vacancies',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
