@@ -7,8 +7,8 @@ export const useFetchVacancy = () => {
   const [vacancy, setVacancy] = useState({});
   const [technologies, setTechnologies] = useState();
   const [addVacancy, setAddVacancy] = useState();
-  const url = `http://localhost:8000/api/vacancy/${id}/`;
-  const urlAdd = `http://localhost:8000/api/vacancy/?&technologies=${technologies}`;
+  const url = `http://185.104.113.54:8000/api/vacancy/${id}/`;
+  const urlAdd = `http://185.104.113.54:8000/api/vacancy/?&technologies=${technologies}`;
 
   const fetchAsycn = async () => {
     const { data } = await axios(url);

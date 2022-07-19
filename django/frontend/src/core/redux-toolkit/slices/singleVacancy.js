@@ -4,7 +4,7 @@ import axios from "axios";
 export const singleFetchVacancy = createAsyncThunk(
   "singleVacancy/singleFetchVacancy",
   async ({ id }) => {
-    const { data } = await axios(`http://localhost:8000/api/vacancy/${id}/`);
+    const { data } = await axios(`http://185.104.113.54:8000/api/vacancy/${id}/`);
 
     return data;
   }
@@ -13,7 +13,7 @@ export const AddFetchVacancy = createAsyncThunk(
   "singleVacancy/AddFetchVacancy",
   async ({ technologies }) => {
     const { data } = await axios(
-      `http://localhost:8000/api/vacancy/?&technologies=${technologies}`
+      `http://185.104.113.54:8000/api/vacancy/?&technologies=${technologies}`
     );
     return data.results;
   }
