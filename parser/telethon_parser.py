@@ -13,7 +13,7 @@ def parse_vacancy(msg):
     try:
         if ('#вакансия' in msg.text) and (not any([(tag in msg.text) for tag in 
                                                  ('#статья', '#задача', '#задачаотподписчика')])):
-            text = msg.text.replace('*', '') # Markdown -> Plain Text                                
+            text = msg.text.replace('*', '').replace('[', '').replace(']', '') # Markdown -> Plain Text                                
             vac_arr = text.split('\n')
             if len(vac_arr) > 8:
                 vac_dct = {"channel_id": {"url": msg.chat.username}, 
