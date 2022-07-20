@@ -44,11 +44,24 @@ services:
     command: [sh, -c, "cd frontend &&
                       apk add npm &&
                       npm install &&
-                      npm start"]
+                      npm run build"]
+    volumes:
+      - react_build:/frontend/build
     env_file:
       - ./.env
     depends_on:
       - django
+
+  nginx:
+    image: nginx:1.23.1-alpine
+    build: ./
+    ports: 
+      - 80:80
+    volumes:
+      - react_build:/frontend/build
+    depends_on:
+      - react
   
 volumes:
   postgres_data:
+  react_build:
