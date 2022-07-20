@@ -1,0 +1,27 @@
+.links{
+    font-size: 16px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+}
+.link{
+    text-decoration: none;
+    color: #4b4956;
+    margin-left: 15px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+@media screen and (max-width: 1069px) {
+}
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+    .links{
+        font-size: 14px;
+
+    }
+}

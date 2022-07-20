@@ -1,0 +1,54 @@
+version: '3.7'
+services:
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      # https://www.postgresql.org/docs/current/libpq-envars.html, подгружаются из .env
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - POSTGRES_DB=$DB_NAME
+    env_file:
+      - ./.env
+
+  django:
+    build: ./
+    command: [sh, -c, "cd django &&
+                       python manage.py makemigrations &&
+                       python manage.py migrate && 
+                       python manage.py runserver 0.0.0.0:8000"]
+    ports:
+      - $DJANGO_PORT:$DJANGO_PORT
+    env_file:
+      - ./.env
+    depends_on: 
+      - db
+
+  parser:
+    build: ./
+    command: [sh, -c, "cd parser &&
+                       python post_prev_vacancies.py &&
+                       python live_parser.py"]
+    restart: on-failure
+    env_file:
+      - ./.env
+    depends_on:
+      - django
+
+  react:
+    image: "node:18-alpine3.15"
+    build: ./
+    ports:
+      - $REACT_PORT:$REACT_PORT
+    command: [sh, -c, "cd frontend &&
+                      apk add npm &&
+                      npm install &&
+                      npm start"]
+    env_file:
+      - ./.env
+    depends_on:
+      - django
+  
+volumes:
+  postgres_data:

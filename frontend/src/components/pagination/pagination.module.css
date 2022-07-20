@@ -1,0 +1,48 @@
+.root {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+
+}
+ul{
+  padding: 0;
+}
+.pagHidden {
+  display: none;
+}
+.pag li {
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  margin: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  width: 38px;
+  height: 38px;
+}
+.pag li:hover {
+  color: var(--background-color);
+  background-color: var(--main-color);
+}
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+ .pag li{
+   width: 20px;
+   height: 20px;
+   font-size: 15px;
+   margin: 5px;
+   padding: 3px;
+ }
+
+
+}

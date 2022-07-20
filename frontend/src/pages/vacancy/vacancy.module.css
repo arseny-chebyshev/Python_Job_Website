@@ -1,0 +1,69 @@
+.root {
+    line-height: 1.4em;
+}
+
+.role {
+    font-size: 35px;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    color: gray;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.singleVacancy {
+    font-size: 17px;
+    background: var(--card-color);
+    padding: 35px;
+    border-radius: 15px;
+    width: 650px;
+}
+
+.salary,
+.desc,
+.location,
+.technologies {
+    margin-top: 23px;
+}
+
+.desc,
+.tasks {
+    line-height: 28px;
+}
+
+.smile {
+    color: #ff4040;
+}
+
+.desc {
+    text-align: justify;
+    max-height: fit-content;
+}
+
+.salary {
+    font-size: 20px;
+}
+
+.task_text {
+    font-family: "Mulish", sans-serif, "Outfit", sans-serif;
+}
+
+.tasks_title {
+    font-weight: bold;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 15px;
+}

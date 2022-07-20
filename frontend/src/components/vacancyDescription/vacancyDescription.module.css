@@ -1,0 +1,44 @@
+.root {
+  width: 1070px;
+  padding: 10px;
+  background-color: var(--card-color);
+  margin-top: 0px;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+.desc {
+  font-size: 17px;
+}
+.linkTG {
+  text-align: center;
+}
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+  .root{
+    width: 90vw;
+    padding-top: 0 ;
+
+  }
+  .desc{
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+
+
+
+
+
+
+}

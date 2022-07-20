@@ -1,0 +1,42 @@
+.root_desktop {
+  background-color: var(--card-color);
+  margin-top: 10px;
+  padding: 15px 20px;
+  width: 810px;
+  height: auto;
+  transition: all 0.5s ease-out;
+
+}
+.buttonFilters{
+  margin: 5px 10px 5px 5px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+.root_mobile{
+
+  display: none;
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .root_desktop {
+   display: none;
+  }
+  .root_mobile{
+    display: flex;
+
+  }
+
+
+}

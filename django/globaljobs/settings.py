@@ -25,13 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-fn%fj7336xm_4()z#jym%b0yhdw0(frww#p%ob=25*bvnc^w7a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+DEBUG = False
+# в Docker network контейнеры связываются друг с другом по названиям вместо IP
+ALLOWED_HOSTS = ['185.104.113.54','127.0.0.1', 'localhost', 'django', 'parser'] 
 
 # Application definition
 
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'psycopg2',
     'rest_framework',
     'djmoney',
+    'corsheaders',
     'vacancies.apps.VacanciesConfig',
 ]
 
@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'globaljobs.urls'
@@ -90,7 +91,11 @@ DATABASES = {
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
+        # 'HOST': os.getenv('DB_HOST', 'localhost'), 
+        # Docker запускает контейнер PostgreSQL не на 'localhost', 
+        # а на имени контейнера в docker-compose: в данном случае, 'db'. 
+        # https://stackoverflow.com/questions/70633841/django-docker-connection-to-server-at-localhost-127-0-0-1-port-5432-fail
+        'HOST': 'db',
         'PORT': os.getenv('DB_PORT'),
     }
 }
@@ -134,10 +139,34 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'vacancies\static')
+    os.path.join(BASE_DIR, 'vacancies/static')
 ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

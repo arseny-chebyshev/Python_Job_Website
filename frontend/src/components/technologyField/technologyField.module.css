@@ -1,0 +1,50 @@
+.root {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    overflow-y: scroll;
+    justify-content: flex-start;
+}
+
+.root::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.root::-webkit-scrollbar, ::-webkit-scrollbar-track {
+
+}
+
+.root::-webkit-scrollbar-thumb {
+
+}
+
+.root::-webkit-scrollbar, ::-webkit-scrollbar-track {
+
+}
+
+@media (min-width: 576px) {
+    .root {
+        flex-direction: row;
+        display: flex;
+        margin: 45px;
+        margin-top: 25px;
+        display: flex;
+        height: auto;
+        width: 300px;
+        flex-wrap: wrap;
+        align-items: center;
+        overflow: hidden;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}

@@ -1,0 +1,49 @@
+
+.button {
+    padding: 11px 70px;
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    color: white;
+}
+@media (max-width: 1200px) {
+    .card {
+        width: 710px;
+    }
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+    .button{
+        padding: 8px 20px;
+    }
+
+
+
+
+
+
+}

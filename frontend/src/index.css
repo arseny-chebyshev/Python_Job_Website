@@ -1,0 +1,88 @@
+:root {
+    --background-color: white;
+    --card-color: rgba(255, 255, 254, 0.8);
+    --text-color: black;
+    --text-blue: #1e90ff;
+    --header-color: #fff;
+    --select-color: #e8e8e8;
+    --color-standart-gray2: #f0f0f0;
+    --search-color: rgba(255, 255, 255, 0.848);
+    --main-color: rgb(45, 116, 200);
+    --main-orange: rgb(250, 159, 0);
+    --main-radius: 9px;
+    --card-shadow: 0px 1px 1px rgba(113, 113, 113, 0.2);
+    --search-loop-color: #bb76fb;
+    --salary-input-color: rgba(87, 87, 87, 0.664);
+    --border: 1px solid #cdd0d5;
+    --border-botom: 1px solid #d4d6de;
+    --placeholder-color: rgb(176, 175, 182);
+}
+
+
+body {
+
+    overflow-y: scroll;
+    margin: 0;
+    padding-top: 45px;
+    border: 0;
+    font-family: "Mulish", sans-serif, "Outfit", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 200ms linear;
+    font-size: 20px;
+    line-height: 1.3333;
+}
+
+
+
+a{
+    text-decoration: none;
+
+
+}
+
+pre {
+    white-space: pre-wrap;
+
+    white-space: -moz-pre-wrap;
+
+    white-space: pre-wrap;
+
+    white-space: -o-pre-wrap;
+
+    word-wrap: break-word;
+
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+
+::placeholder {
+    color: var(--placeholder-color);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar-track {
+    background-color: #f9f9fc;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e1e3eb;
+    border: 2px solid #e1e3eb;
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar-track {
+    background-color: #f9f9fc;
+}
+
+.selected {
+    color: var(--background-color);
+    background-color: var(--main-color);
+}
+
+.comma {
+    font-size: 14px;
+    color: gray;
+}

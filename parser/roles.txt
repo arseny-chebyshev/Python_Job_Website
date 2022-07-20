@@ -1,0 +1,693 @@
+Backend Engineer, Ops & Support Automation
+Backend developer  (middle, senior)
+Backend python/Django разработчик
+Data scientist (Computer Vision)
+Python/Data Modelling Developer
+**Сколько времени посвящать изучению Python
+Программист Python / python developer
+Аналитик данных
+Недавно мы делали небольшой [обзор](https://telegra.ph/Nestandartnaya-sreda-razrabotki-03-11) на среду разработки **Juputer Notebook**. Из преимуществ мы выделили возможность выполнения программы независимыми блоками. Такая система удобна для тестирования и отладки. Как добиться похожего функционала в других средах разработки или прямо из командной строки рассказываем в [данной статье
+Django / Python разработчик (Middle)
+Middle Data Scientist
+Backend-разработчик Python
+Backend Developer (junior, middle)
+#Москва #вакансия #Architect #Архитектор #AI #machinelearning #BigData #openstack #openshift #разработкаПО #UML #проектированиесетевойархитектуры #remote #офис #fulltime 
+Программист Python (junior)
+#**Задача**
+**Неизбежные проблемы разработчика и как их побороть. Часть 2
+Quant (HFT) Developer
+Стажер по нагрузочному тестированию
+Backend-Developer (Python) в мобильное приложение Instories 
+QA Automation Lead
+Backend-разработчик (junior, middle)
+Senior Software Engineer
+Риск-технолог
+Python developer/Data Engineer
+Python разработчик (Lead/tech PM)  (senior)
+Backend Team Lead (Python)
+Senior Full-Stack Developer
+Team Lead DevOps Engineer
+QA Engineer  (middle, senior)
+**Python developer на игровой проект Sidus** **(middle)
+Experienced Python (Django) Developer
+Ведущий backend developer (middle, senior)
+QA lead Automation Mobile
+Бэкенд-разработчик на Python
+Python разработчик (Junior+/Middle)
+Senior программист-разработчик (Python/Django)
+Разработчик на Python/Java в команду сервисов фискальных данных
+Специалист по тестированию (Джуниор/Миддл)
+Backend developer (Python)
+QA Lead (Vehicle Builder)
+Python Backend Developer (FastAPI)
+Regular Python Developer (проектная работа)
+Senior DevOps Engineer (with AWS)
+Machine Learning Engineer
+Middle/Senior PYTHON developer
+Backend Developer Python
+Python-разработчик в команду статистики Маркета
+Data Scientist (junior)
+Руководитель технического департамента 
+Reinforcement Machine Learning Engineer (remote)
+Ведущий Python-разработчик
+Middle/Senior Python/Django developer
+Technical Project Manager
+Storage Software Developer (Миддл)
+Python developer (Чат-Боты)
+DevOps
+Python Developer
+Python разработчик (middle) (backend)
+Программист Python (middle, senior)
+Backend Engineer (Python)
+Middle QA инженер/тестировщик
+Python Backend Developer
+Middle/Senior Python developer
+Web-программист Python Middle+
+Ищем Python программиста себе в команду.
+Программист (Junior, Middle)
+Python разработчик (удаленно)
+Python Backend-разработчик
+Python TeamLead/Senior Python developer
+FastAPI бэкенд разработчик  (middle)
+Python-разработчик (Middle)
+Python/Django Web Developer (Remote)
+Fullstack-разработчик (разработка на Python и архитектура)
+Python Developer (middle, senior)
+Python-разработчик (Middle, Senior)
+Python разаботчик (middle, senior)
+Python QA Automation
+Middle Backend Developer
+Python fullstack developer (middle)
+QA Engineer
+Middle backend python developer
+Python Software Developer
+**Как выстроить стратегию развития своей карьеры?
+Backend SOA разработчик (Python) (офис, Черногория)
+Python Developer (Remotely)
+Backend developer (junior)
+QA Automation Engineer (Backend)
+Backend Python developer
+Junior Data Engineer (Python)
+Python Developer (Payment Systems)
+Junior Developer 
+Разработчик Python ( middle)
+End-to-End Network Applications Network Software Engineer
+Kubernetes Software Engineer
+Middle Full stack разработчик (Go/Python)
+Стажер-разработчик бэкенда (Python)
+DevOps engineer (middle,senior)
+Middle/Senior Python Data Engineer
+Python-разработчик в отдел по машинному обучению (middle+/senior)
+Python developer
+Data Scientist
+Middle Python Developer in the Network Area
+ML / CV Engineer
+QA-инженер Selenium
+Python backend developer  (middle, senior)
+Python - разработчик в Сбере
+DevOps/ Инфраструктурный инженер/ Инженер по виртуализации
+Senior Python Backend Developer (Machine Learning)
+Разработчик Python (junior)
+QA automation (Python)
+Python App Backend Developer
+Senior/Middle backend-разработчик (Python, Django)
+Python ML Engineer
+Позиция: Middle+/Senior Python
+Backend engineer at Diagnocat
+Backend Developer
+**Решение задачи про наследуемые классы
+Python Data Engineer
+#москва #вакансия #qa #automation #middle #python #pytest #selenium #api #финтех #платежныесистемы
+Разработчик/аналитик BI
+Программист Python (Миддл)
+Python разработчик (Lead\Senior python developer)
+Middle Python Engineer
+#Москва #вакансия #middle #senior #Pythonразработчик #BigData #Pythondeveloper #офис #гибрид #fulltime
+Senior QA Engineer
+Backend-разработчик
+Разработчик (Python)
+Senior DevOps Engineer
+Python Back-end Developer (Junior)
+Machine learning engineer (junior)
+Backend разработчик
+Backend developer/WEB - разработчик (middle)
+Backend Python Engineer
+Python-разработчик GUI
+Мы уже[ обозревали](https://telegra.ph/Nestandartnaya-sreda-razrabotki-03-11) один облачный блокнот - **Jupyter Notebook** В комментариях  подписчики отметили достойного конкурента - **Google Colab**. Сегодня [разбираемся ](https://telegra.ph/Google-Colab---eshche-odna-interaktivnaya-oblachnaya-sreda-dlya-raboty-s-kodom-04-10)что это и какие у него плюсы?
+Junior QA Automation engineer
+Senior Backend Engineer
+Senior Python Developer - Wallet
+#вакансия #москва #релокейт #австрия #python #developer #middle #удаленка #офис 
+Senior Backend Engineer (Python) - Tools
+Бэкенд-разработчик Python/Middle Python/ Python Developer
+#job #Москва #вакансия #middle #senior #Pythonразработчик #BigData #Pythondeveloper #офис #гибрид #fulltime   
+Middle DevOps Engineer
+#job #вакансия #Engineer #ML #DS #machine_learning #remote #fulltime 
+Middle Product Manager в Fax App
+Разработчик-Python (Django, DRF)
+Senior Python (Django) Developer
+Middle Analyst
+Python Developer for International Company
+Разработчик Python (Junior)
+Python*django разработчик
+Риск-аналитик (middle)
+Senior Python разработчик
+Data Engineer/Python Developer (Миддл)
+Go/Python разработчик
+#полныйдень 
+QA automation engineer (Джуниор/Миддл/Сеньор)
+Ведущий Python-разработчик (Django)
+Senior Data Scientist
+Senior Fullstack developer
+Python SRE инженер
+Разработчик Python (Дистанционная Работа)
+Data Scientist на направление персонализации сервисов
+Middle/Senior Data Scientist
+Senior/Middle Test Automation Engineer/QA (Python)
+Python Backend Engineer (remote)
+Python backend developer (Django)
+Lead Performance Engineer
+Разработчик на Python (Яндекс.Лавка)
+Middle Python-developer
+Python-разработчик (Django), удаленно
+Middle Python back-end developer
+**Предлагаем решить задачу. Свои варианты  пишите в комментарии
+Backend Developer (Python, Django)
+#вакансия #Python #Middle #Senior #Москва #cloudnative #AICloud #MLSpace #удаленка #полная_занятость 
+Middle-backend Python разработчик / программист
+#вакансия #python #middle #senior #fulltime #Москва #офис #удаленка
+QA automation (Python) Middle/Senior
+💻 Формат работы: Удаленно
+Data engineer/python developer (middle)
+Back-end Full-stack разработчик
+Разработчик Python/Django + React.js
+Middle Backend Python + Django разработчик
+Lead Data Science Engineer
+Python Team Lead
+Разработчик Python (Middle)
+Программист
+Python web developer (middle)
+В свете последних событий жители России остались без доступа ко многим иностранным сервисам. Эта ситуация может быть полезна для программистов. Мы можем потренировать свои навыки и запустить собственный VPN. В[ этой статье](https://telegra.ph/Lichnyj-VPN-za-minutu-Sposob-1-03-19) мы рассмотрим простой способ создать безопасное соединение.
+Backend developer (middle+)
+Python разработчик (Middle\Senior)
+Python/C++ Developer
+Разработчик python/flask (junior)
+Data Science (NLP/Text Analysis)
+Fullstack  developer (middle+)
+Backend developer (junior, middle)
+Python Developer (Marketplace/Incentives)
+Team Lead команды разработки (Python)
+Middle/Senior Python-разработчик (команда Video Shopping)
+**Ответ на задачу Microsoft про веревки
+**Как лучше усваивать техническую литературу программисту?
+Senior Back-end Engineer (Python)
+Middle Django (Python) Developer
+Middle/Senior Python Разработчик
+Middle Python developer (релокация в Сочи)
+Инженер программист (Junior)
+Backend (Python)
+DevOps-инженер
+Senior/Middle Python Developer
+Backend разработчик (middle)
+Python backend developer
+Product Marketing Manager
+Backend developer (junior+)
+**Учимся оценивать задачу программиста
+Python Developer (Middle)
+Python Developer, Backend
+Fullstack Developer
+Python разработчик (Middle) 
+ML Engineer (C++ / Python)
+Ведущий разработчик python
+Python-разработчик (Django) 
+Разработчик Go/Python
+Senior QA Automation Engineer (Python)
+Backend разработчик Python/Scrapy
+Middle Backend Python/Django разработчик (удалённо)
+Привет! 
+Data Scientist (Миддл)
+Python Backend Developer (django)
+Senior Python backend developer
+Data/ML Python Engineer
+SDET (junior)
+Python-разработчик
+Инженер нагрузочного тестирования (middle)
+Senior Product Analyst
+Middle /Senior Python Developer
+#вакансия #москва #python #backend #удаленно #fulltime 
+Junior Developer (junior)
+Backend разработчик на Python / Django (Миддл)
+Backend developer (middle)
+Привет!
+Middle / Senior Backend Developer Python
+Team Lead
+Backend разработчик (Python)
+Бэкенд-разработчик (Python) / Middle Python / Python Developer (Remote)
+Frontend Developer (Джуниор/Миддл/Сеньор)
+Senior Backend Developer, Python
+QA Engineer (Manual)
+ML Engineer / Python Developer
+Middle QA Automation Engineer (Python)
+Разработчик Python
+Системный разработчик (middle)
+Разработчик на Python в Паспорт
+Strong Junior / Middle+ Python Developer
+Python Middle Developer
+Bioinformatics Software Engineer (Genomics)
+Senior PHP-Developer (Backend)
+Python developer (Middle)
+Python Backend Teamlead
+"Smart-contract Engineer
+Team Lead Backend (Яндекс.Еда)
+Python Developer (Marketplace/Incentives) (Middle)
+Big Data scientist
+Разработчик на Python в сервисы для малого и среднего бизнеса
+Golang/Python разработчик
+Senior Scala Developer
+Backend Developer (middle)
+Senior/Lead Python Developer (Backend)
+Разработчик бекенда Биллинга в Облако
+Python developer middle/senior
+Data - инженер
+QA Automation Engineer / Тестировщик (Автоматизированное тестирование)
+Golang/Python Engineer (Middle)
+Senior Backend-разработчик (Python)
+Python developer (middle)
+Middle Backend Developer (Python)
+Junior Python
+Senior Data Scientist /Quantitative Analyst (Кипр)
+Python developer (junior)
+Backend Python Developer (senior)
+Senior Python developer( teamlead)/ Middle Python developer
+Computer Vision/Deep Learning Engineer
+Senior Backend Python Developer
+Sr. Data Scientist
+Python разработчик (FastAPI)
+Full-stack Developer (React, Python) - Remote
+Аналитик python (junior)
+Python Backend Developer Blockchain
+Data scientist (intern, junior)
+Стажёр-разработчик Python (OZON)
+Python Middle разработчик
+Backend Python разработчик
+Junior Data Engineer
+QA Automation Engineer (Python) (middle,senior)
+Разработчик Python (Junior) 
+Frontend Developer (Продвинутая аналитика)
+Senior Python разработчик (SberDevices)
+Middle Backend разработчик (Python)
+Python-teamlead
+Backend Developer Python (Django)
+Backend Python Developer
+На прошлой неделе [мы разобрали ](https://telegra.ph/Lichnyj-VPN-za-minutu-Sposob-1-03-19)способ создания VPN-соединения за 60 секунд с помощью удаленного сервера. В[ этой статье](https://telegra.ph/Nastrojka-personalnoj-VPN-seti-Sposob-2-03-26) мы узнаем как создать приватное соединение с помощью **Python и Algo VPN.
+Senior Python Developer (Программист Python)
+Team Lead Python Developer
+Python разработчик (middle/senior)
+Middle Backend Developer (Python) - Remote
+Продуктовый аналитик (junior)
+Младший аналитик (junior)
+Ведущий программист Python / TeamLead
+Python разработчик (fullstack, продуктовая разработка)
+Senior Backend Developer (Web app, Python, FastAPI) / Удаленно
+Разработчик на Python в CM.Expert
+Data Engineer/ Backend-разработчик
+Python developer Middle/Senior
+Старший ML разработчик (CV, NLP)
+Python developer (Senior)
+Staff Backend Engineer (Crypto)
+DevOps Engineer
+Python - разработчик
+Machine Learning Engineer (CY)
+BI Solution Architect
+Python developer (reverse engineering)
+Python developer в финтех (middle)
+Python Developer (Middle / Senior)
+Junior Data Engineer (Intern)
+Python Back-End разработчик
+#вакансия #москва #python #backend #linux #postgresql #git #docker #unittest #solid #платежныесистемы
+#вакансия #python #senior #москва #fulltime #удаленка #офис #гибрид
+Senior Python Developer (Сybersecurity)
+Разработчик Python 
+Python developer (проект)
+Разработчик-аналитик / Middle Data Scientist
+Python Developer Middle/Senior
+Fullstack Engineer (middle)
+Python backend разработчик
+Python Developer (USD Salary, Remote)
+Python developer (Middle+/Senior)
+Junior Python Developer (Odoo)
+Python разработчик (Big data)
+Контент менеджер Python
+Python developer / Data engineer (Middle)
+Старший программист Python
+Python senior/middle
+Data scientist (junior)
+Data Analyst
+Senior Back-End Engineer (Python)
+Python Backend разработчик
+Back-end разработчик Python
+Архитектор, разработчик back-end
+Специалист Computer Vision (Senior Data Scientist)
+#вакансия #киев #удаленка #remote #офис #удаленно #полная
+Python backend разработчик(Middle/Middle+)
+Python Developer (Senior)
+Python стажер - разработчик (junior)
+Python Developer (middle)
+Python разработчик (middle)
+Программист Python(middle)
+Python/Golang разработчик
+Reporting and Visualization Analyst
+Data Analyst ассистентов Салют (SberDevices)
+Продуктовый аналитик в **Яндекс.Дзен 
+💥Всем, кто изучает Python, рекомендуем вступить в группу [Python Mentor](https://t.me/pymentor) - там вас ждет ламповое комьюнити питонистов, ответы на вопросы, помощь менторов, разборы задач и много чего еще! А кто к тому же осваивает JavaScript - рекомендуем группу [JavaScript Mentor](https://t.me/jstsmentor), там вы найдете ответы на все свои вопросы по разработке на  JavaScript/TypeScript
+Бэкэнд-разработчик (Python, Django)
+Python разработчик (Миддл)
+Fullstack Python Developer
+Python Tech Lead
+Lead/Senior Python Developer (Backend)
+Python-разработчик (Django)
+Разработчик Python (Django, DRF)
+Python разработчик (Django)
+Middle Python разработчик
+Full-stack developer (Python middle) (Кипр)
+Python разработчик (Fullstack, Продуктовая разработка)
+Разработчик Python (средний уровень)
+Backend-разработчик (junior)
+**Python** - лаконичный, простой и понятный язык программирования. Как приблизить свой код к идеалу? Рассказываем в [данной статье!
+Разработчик Python Django (REST)
+Middle/Senior Python Developer
+QA Automation engineer (Junior)
+Python-разработчик (Middle+)
+Python разработчик (Middle/Senior)
+Разработчик python (middle)
+"JSenior QA Automation Engineer (Java)
+**Ты неправильно замеряешь время в Python!
+Middle Python Developer
+Team Leader (CY)
+#вакансия #python #middle #senior #москва #fulltime #удаленка #офис #гибрид
+Python teamlead
+Python разработчик (Middle)
+Middle+ Data Engineer
+Backend Developer. (Python)
+Программист Python
+Backend разработчик python/django/flask (middle, senior)
+Data science analytics
+Quantitative developer (HFT developer)
+Программист Python (Middle)
+#вакансия #vacancy #instinctools #python #удаленка #офис #senior
+Fullstack Python Developer (Education)
+Senior/Middle+ QA Automation Engineer
+Аналитик-разработчик
+Data engineer (junior)
+Back-end SOA разработчик (Python)
+Software Engineer / Lead / Архитектор
+**Решение вчерашней задачи
+Аналитик данных (задачи для бизнес-функций)
+ML/Data Engineer
+Python engineer (middle,senior)
+Back-end разработчик
+Программист Python  (middle, senior)
+Разработчик Python (middle)
+Middle backend-разработчик (Python)
+Python-разработчик в Яндекс.Услуги
+Разработчик инфраструктуры IaaSr (middle)
+Python Engineer (Middle)
+Ведущий Fullstack разработчик
+#Москва #вакансия #DevOps #BigData #офис #гибрид #fulltime 
+PYTHON/GO DEVELOPER MIDDLE +
+Программист Python Middle/Senior/Lead
+Senior ML engineer
+Backend developer Python (middle)
+Backend Python Developer (middle)
+Python developer (middle, senior)
+Senior Data engineer
+Middle Backend Программист (Python)
+Редакторы для платформы по обучению программированию Python
+Python разработчик (middle+, senior)    
+Senior Python Backend Engineer
+Python / C++ разработчик
+Ведущий разработчик на Python (Lead/Senior Python Developer)
+Backend Engineer
+Инженер по автоматизации (Яндекс.Еда)
+Python-разработчик (Senior)
+Разработчик Python (Django/Flask)
+Senior Machine Learning Developer
+Разработчик-аналитик в Яндекс.Маркет
+"Senior Backend-разработчик (Python)
+Backend-разработчик Python Middle/Senior
+**Добрый вечер питонисты!
+Аналитик Python
+Разработчик Backend - Python
+Teamlead / Senior Python developer/ Middle Python developer
+Web-developer (Python/Django)
+Nine Blocks Capital Management is an institutional grade digital assets asset hedge fund that is in the process of being set-up. We are a new firm but seeded and majority owned by a US$1bn AUM traditional multi-strategy hedge fund with over a decade of institutional asset management experience. 
+Middle Backend разработчик (Go/Python)
+Python разработчик
+Python Backend Developer (middle, senior)
+Senior Backend Developer
+Разработчик Pythonr (middle, senior)
+Python Developer (World of Tanks)
+Python Developer / Data Engineer
+Backend Python Developer (USD Salary, Remote)
+Python backend engineer
+Python разаботчик (middle+)
+Python developer (middle+)
+Python разработчик (junior)
+Программист-математик/Алгоритмист (США)
+Разработчик объектного поиска
+Инженер Данных
+Python Developer (middle+)
+Python разработчик (part time / remote)
+Почему не стоит пугаться работы, к которой вы не готовы? [Разбираемся в статье
+Python + Go разработчик (можно удаленно)
+Junior+/Middle Data Scientist
+Python Django разработчик, удаленно
+Junior Data Analyst
+QA-автоматизатор (Middle)
+Senior (Lead) Python-разработчик
+Python-разработчик (Junior)
+Backend developer (Middle)
+Python developer (middle/senior)
+ETL developer (middle)
+Backe developer (middle)
+Ведущий Backend-разработчик (Python)
+Ведущий разработчик (Team lead) Python
+Риск-технолог (junior)
+Backend разработчик (junior)
+Senior QA Automation Engineer (Cloud)
+Backend Developer / WEB - разработчик (Middle)
+Backend Team Lead
+Backend-разработчик Python + Django (Middle/Senior)
+Lead Auto QA
+Senior/Lead Python Developer
+Python разработчикr (Middle)
+Python Backend developer (Middle)
+Middle/Senior Python Backend Developer (Remote)
+Python Developer (Backend)
+Middle+/Senior Python Developer
+Разработчик в Путешествия (Авиабилеты)
+#вакансия #python #django #DRF #celery #docker #remote
+Senior Python Developer
+**Задача
+#Москва #вакансия #middle #senior #Pythonразработчик #BigData #Pythondeveloper #офис #гибрид #fulltime 
+Python/Django разработчик
+Senior python developer (backend)
+Machine Learning Engineer (Time Series)
+Frontend Developer (React)
+Senior (Lead) web developer (full stack / backend разработчик)
+Middle Full-Stack Developer
+Middle Python backend разработчик
+Ведущий Python developer
+Senior Backend Developer (Python)
+Ведущий Python-developer
+Lead Python Developer
+Senior BI Developer (Python)
+Разработчик Python/Django
+Python developer (CRM Мик)
+Ведущий python-разработчик (Middle)
+Senior Backend Engineer (Python, Django)
+Senior NLP/ML Developer
+Middle Software Developer C++ / Python (relocation to Estonia, Tallinn)
+Разработчик Python  (middle)
+Разработчик Python (Senior, Principal)
+Analyst Developer
+Lead Python Developer (django)
+Software Engineer
+Web-программист Python (Middle/Senior)
+Разработчик инфраструктуры (Браузер)
+#вакансия #python #django #docker #remote #job
+Python TeamLead
+Senior Python/Django Developer
+**Python developer
+Senior Python Backend Developer
+#вакансия #удаленка #Python #ML #Senior #Middle
+Senior QA Automation Engineer
+Backend разработчик на Python
+Python/SQL Developer (Business Intelligence)
+Quantitative researcher
+Backend Python/Django
+Python (Django) Backend developer
+Руководитель направления Python/Go
+Senior Python Engineer
+Python Developer (New Product)
+Middle Python developer
+Backend разработчик (Python API, сетевые технологии)
+ML Engineer
+Senior Data Scientist (Recommender Systems)
+Data analyst (junior)
+Системный разработчик Python
+Backend-разработчик Python (Senior)
+Старший python-разработчик
+Python Developer (PIM)
+Python-разработчик в HR tech
+#вакансия #python #django #удаленка #fulltime #job
+ML/NLP Engineer
+Python developer (Django) (Middle)
+Frontend-разработчик
+Backend Python Developer (junior, middle)
+Video Streaming Engineer
+**Перспективы российских программистов в текущих реалиях
+#вакансия #украина #киев #удаленка #полнаязанятость 
+Middle Backend Developer (Web app, Python, FastAPI)
+IT Стажер
+Data Engineer
+Senior Python developer
+Data Engineer в службу подготовки и качества больших данных
+Python middle
+**Неизбежные проблемы разработчика и как их побороть. Часть 1
+Junior DevOps engineer (junior)
+Software Engineer (Python)
+Полезная подборка вопросов и возможные варианты ответов, которые могут встретиться на собеседовании.
+Junior+/middle Python разработчик
+Python Developer (middle/senior)
+QA automation (middle)
+IT - компании неохотно берут на работу junior-разработчиков. Что же делать начинающим разработчикам? Не упускать ни единой возможности набраться опыта и знаний, чтобы иметь преимущество при приеме не работу. Прокачать свои навыки программирования помогут полезные программы для домашнего использования, которые можно указать в резюме. 
+Middle/Senior Backend Developer - Python
+Lead embedded developer/system
+Python Developer/ Разработчик Python
+Backend Developer (Yandex DataLens)
+Разработчик Python \ Python Developer
+Архитектор программного продукта Python/Django (Ведущий разработчик)
+Platform Engineer (Senior)
+Python разработчик (Middle +)
+Fullstack developer (middle)
+Разработчик Python/Django (Middle)
+Python/Go разработчик
+Разработчик бэкенд Python (middle)
+Python разработчик (Django / Flask)
+Senior Python Back-end Developer
+Senior Backend Software Engineer
+Python/Go Developer
+Python разработчик для одного продукта (junior)
+Без нестандартного мышления и логики в программировании делать нечего. Это знают HR и с радостью задают логические задачки на собеседовании. Предлагаю разобрать одну из таких.
+Ведущий Backend разработчик Web-приложений Python
+Разработчик Python в команду сетевых функций облака
+Backend python developerr (junior, middle)
+Python разаботчик (middle)
+Ведущий питонист (django)
+Senior Python-разработчик
+Python/Django удалённый разработчик
+Middle Python Developer (Biotech)
+C++/Python engineer (mid-senior)
+Senior data engineer (python)
+Python-разработчик / Python-developer
+Middle python developer
+QA Automation Engineer (Python)
+Middle/Senior Python разработчик
+Python Developer (junior)
+Senior Python разработчик для фармацевтической компании
+Middle Python Developer (DevOps Team)
+Python developer / data engineer (Jun->Mid)
+"Senior Python Developer
+Backend/full-stack Developer
+Python developer (junior, middle)
+Python Developer Middle / Senior (SberDevices/ Платформа Layer - монетизация видео-контента)
+Разработчик отчетности/Аналитик данных
+Python developer (чатботы в Тг) (middle)
+Developer Python/C++
+Ведущий Backend разработчик - Java/Python
+Python/Go-разработчик (Яндекс.Биллинг)
+#вакансия #vacancy #instinctools #python #удаленка #офис 
+Программист Python (Junior/Middle)
+#москва #вакансия #python #senior #middle #fulltime #backend #cloud_native_services
+#вакансия #удаленно #python #middle #backend #Москва #Санкт_Петербург
+Senior Python Backend Developer (в команду Machine Learning)
+Product Analyst
+Lead Python Developer (SaaS/Remote)
+**Полезные сервисы для создания идеального резюме
+Middle ML / Data Science разработчик
+Senior python developer
+Инженер - программист (Junior)
+Ведущий разработчик/Программист Python (Миддл)
+Разработчик Python в тестировании
+Python Developer (Django)
+Питонист, будущий руководитель разработки
+Data Engineer (junior+)
+Lead Python Backend Developer
+Backend developer (python+)
+Technical Implementation Engineer (middle)
+**Вы уже трудитесь на должности junior разработчика или только ищете первую работу? Мы подготовили для вас **[список навыков](https://telegra.ph/Kak-dzhunu-vzletet-po-karernoj-lestnice-05-15)**, которые нужно качать, чтобы стать middle
+Python разработчик (Middle+/Senior)
+Python Developer (Payment Systems Team)
+#вакансия #python #django #удаленно #fulltime #job
+Python engineer (middle)
+Smart-contract Engineer
+Senior Backend Engineer (Python) - Health
+Strong Junior / Middle Python Developer
+Python+JS Fullstack разработчик
+Python разработчик (Junior, Middle)
+Python разработчик (junior, middle)
+Blockchain Developer
+Python разработчик (Джуниор)
+Python developer (middle+, senior)
+Data/ML Python Developer
+Go Developer
+Python Django developer
+Python-Developer
+**Учимся писать читабельный и легко поддерживаемый код
+Data Scientist (Recommender System)
+Backend-разработчик Python / Django
+Data Engineer (Amber Team) (Middle)
+Middle Python-разработчик
+Разработчик на Python (Яндекс.Взгляд)
+#вакансия #москва #python #middle #senior #backend #linux #postgresql #git #docker #unittest #solid #платежныесистемы
+Python Developer (back-end)
+Fullstack разработчик (Python, PHP, JS)
+Software Engineer (Golang & Python)
+Разработчик desktop приложений (Python)
+Ведущий Python разработчик (Middle) 
+Junior Product Data Analyst
+Python-разработчик платежно-финансовых систем
+Стажер-разработчик ABAP
+Backend разработчик (Middle)
+Senior разработчик (Python + Django)
+Senior QA Engineer (Automation)
+Senior разработчик (Python+Django)
+#вакансия #удаленка #занятостьполная #ml #remote #python
+PHP/Python developer (Tools)
+Программист Python Backend
+Программист Python (middle)
+Backend Разработчик на Python / Django (Middle)
+Разработчик backend (middle)
+Backend Senior разработчик Python / ведущий разработчик
+Python Разработчик
+**Программисты склонны к тому, чтобы долго сидеть за компьютером, питаться чем попало и вести ночной образ жизни. Такой распорядок сказывается на здоровье. Мы подготовили **[несколько советов](https://telegra.ph/ZHizn-za-kompom-kak-ne-poteryat-zdorove-05-14)**, чтобы вы смогли сохранить ваше здоровье
+Data Scientist (middle, senior)
+Pyth‎on Developer
+Python Engineer
+Python- разработчик
+#Москва #вакансия #Dataengineer #python #SQL #BigData #офис #гибрид #fulltime  
+Data Scientist / ML-engineer (NLP)
+Python backend developer (middle)
+Предлагаю немного размять мозги и решить несложную задачку.
+Python Back-end Разработчик
+Senior Python Developer (DS направление)
+Regular Python Developer
+Senior Data Engineer
+Аналитик-разработчик в поисковые рекомендации
+Middle/Senior Python Django developer
+Full-stack developer
+Lead Python Developer/Sys. Architect
+Full Stack Engineer
+DevOps Specialist
+Ведущий python разработчик (middle, senior)

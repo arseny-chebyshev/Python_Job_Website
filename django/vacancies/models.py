@@ -20,6 +20,14 @@ class RoleGroup(models.Model):
     name = models.CharField(verbose_name='Имя группы',
                             max_length=50, unique=True)
 
+    @classmethod
+    def get_default_group_id(cls):
+        default_obj = RoleGroup.objects.filter(name="Не указана").first()
+        if not default_obj:
+            default_obj = RoleGroup(name="Не указана")
+            default_obj.save()
+        return default_obj.id
+
     def __str__(self):
         return self.name
 
@@ -31,7 +39,7 @@ class RoleGroup(models.Model):
 class Role(models.Model):
     name = models.CharField(verbose_name='Название специализации',
                             max_length=50, unique=True)
-    group = models.ForeignKey(RoleGroup, on_delete=models.CASCADE)
+    group = models.ForeignKey(RoleGroup, on_delete=models.CASCADE, default=RoleGroup.get_default_group_id)
 
     def __str__(self):
         return self.name
@@ -81,7 +89,7 @@ class Vacancy(models.Model):
     role = models.ForeignKey(Role, on_delete=models.CASCADE, verbose_name="Специализация")
     desc = models.TextField(verbose_name='Описание вакансии')
     add_date = models.DateTimeField(verbose_name='Дата добавления вакансии',
-                                    auto_now=True)
+                                    auto_now=False)
     min_salary = MoneyField(verbose_name='Минимальная заработная плата', default=0,
                             max_digits=12, decimal_places=2, default_currency='RUB',
                             blank=True)
@@ -102,27 +110,27 @@ class Vacancy(models.Model):
                                  verbose_name='Локация',
                                  blank=True)
     employment = models.CharField(choices=[
-                                ('FULLDAY', 'Полный день'),
-                                ('NOTFULL', 'Неполный день'),
-                                ('PRJ', 'Проектная занятость'),
-                                ('PRTTIME', 'Частичная занятость'),
-                                ('NONE', 'Не указана'),
+                                ('Полный день', 'Полный день'),
+                                ('Гибкий график', 'Гибкий график'),
+                                ('Проектная занятость', 'Проектная занятость'),
+                                ('Частичная занятость', 'Частичная занятость'),
+                                ('Не указана', 'Не указана'),
                                 ],
                                 verbose_name='Занятость',
-                                max_length=7, default='NONE')
+                                max_length=20, default='Не указана')
     skill = models.CharField(choices=[
-                            ('IN', 'Intern'),
-                            ('JR', 'Junior'),
-                            ('MD', 'Middle'),
-                            ('SR', 'Senior'),
-                            ('TL', 'TeamLead'),
-                            ('NONE', 'Не указан')
+                            ('Intern', 'Intern'),
+                            ('Junior', 'Junior'),
+                            ('Middle', 'Middle'),
+                            ('Senior', 'Senior'),
+                            ('Team Lead', 'Team Lead'),
+                            ('Не указан', 'Не указан')
                             ],
                             verbose_name='Уровень квалификации',
-                            max_length=4,
-                            default='NONE')
-    tasks = models.TextField(verbose_name='Задачи')
-    requirements = models.TextField(verbose_name='Требования')
+                            max_length=10,
+                            default='Не указан')
+    tasks = models.TextField(verbose_name='Задачи', blank=True, default="Не указано")
+    requirements = models.TextField(verbose_name='Требования', blank=True, default="Не указано")
     url = models.SlugField(verbose_name='Адрес для вакансии на сайте', max_length=255,
                            unique=True, blank=True)
     channel_id = models.ForeignKey(Channel, on_delete=models.CASCADE,
@@ -144,9 +152,9 @@ class Vacancy(models.Model):
         return unique_slug
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
         if not self.url:
             self.url = self._create_unique_vacancy_slug()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.desc

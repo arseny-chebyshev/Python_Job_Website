@@ -1,0 +1,109 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+.overlay_active {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity:1;
+  transition: 0.5s;
+}
+
+.filter_overlay_active {
+  padding: 10px 25px 25px;
+  border-radius: 5px;
+  max-width: 850px;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1;
+
+}
+.modal_filters_title {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 32px;
+  margin-bottom: 5px;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.close {
+  position: relative;
+  font-size: 26px;
+  color: gray;
+  cursor: pointer;
+  bottom: 110px;
+  right: 28px;
+}
+.select,
+.input {
+  margin-right: 20px;
+}
+.checkbox {
+  margin-top: 25px;
+}
+.filters_header{
+  font-weight: 600;
+  width: 100%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1069px) {
+}
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+  .overlay_active{
+    height: 100%;
+
+
+  }
+  .filter_overlay_active{
+    height: 100vh;
+    display: inline-block;
+    padding: 35px 20px 20px 15px;
+  }
+  .filters{
+
+  }
+  .select,
+  .input,.checkbox {
+    margin-top: 25px;
+  }
+}

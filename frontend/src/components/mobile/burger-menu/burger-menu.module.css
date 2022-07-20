@@ -1,0 +1,48 @@
+.overlay {
+  overflow-y: auto;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  pointer-events: none;
+}
+.overlayactive {
+  overflow-y: auto;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.burger_overlay {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 12px 18px;
+  width: calc(100% - 80px);
+  max-width: 300px;
+  background: #fff;
+  font-size: 16px;
+  transform: translateX(-100%);
+  line-height: 1;
+  transition: all .5s;
+}
+.burger_overlayactive {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 12px 18px;
+  width: calc(100% - 80px);
+  max-width: 300px;
+  background: #fff;
+  font-size: 16px;
+  transform: translateX(0);
+  line-height: 1;
+  transition: all 0.5s;
+}
+

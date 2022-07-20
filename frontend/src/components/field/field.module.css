@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.field {
+  order: 2;
+}
+.languages {
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+@media (min-width: 576px) {
+  .root {
+    margin-top: 25px;
+    flex-direction: row;
+    display: flex;
+  }
+  .field {
+    order: 1;
+  }
+  .languages {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+  }
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
