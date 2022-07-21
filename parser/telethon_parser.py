@@ -5,6 +5,10 @@ import parser_utils
 load_dotenv()
 
 channels_for_parse = [ch.replace('\n', '') for ch in open('channels.txt', 'r', encoding='utf-8')]
+
+# Перед локальным использованием парсера нужно ОБЯЗАТЕЛЬНО поменять первый аргумент 'parse_session' 
+# на любой другой, чтобы не нарушалась уникальность сессий клиента. 
+# Если не поменять - упадёт и локально, и удаленно запущенный
 client = TelegramClient('parse_session', os.getenv('TELEGRAM_API_ID'), os.getenv('TELEGRAM_API_HASH'))
 
 def parse_vacancy(msg):
