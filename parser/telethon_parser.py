@@ -21,7 +21,7 @@ def parse_vacancy(msg):
                 vac_dct['add_date'] = str(msg.date) 
                 vac_dct['role'] = {"name": parser_utils.get_role(vac_arr[0])}
                 vac_dct['technologies'] = [{"name": t} for t in 
-                                           {tech for tech in technologies_list if tech in ''.join(vac_arr)}]
+                                           {tech for tech in technologies_list if f' {tech} ' in ''.join(vac_arr)}]
                 vac_dct['remote'] = any(tag in ''.join(vac_arr) for tag in ['#гибрид', '#удаленка'])
                 vac_dct['relocation'] = any(tag in ''.join(vac_arr) for tag in ['#релокация', '#relocation'])
                 vac_dct.update(parser_utils.get_skill(''.join(vac_arr[0:3])))
