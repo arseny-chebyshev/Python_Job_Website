@@ -10,7 +10,9 @@
     border-top: 1px solid #e8eaf0;
     font-size: 17px;
 }
-
+.link{
+    display: none;
+}
 .author {
     margin-top: 10px;
     padding: 10px 10px 10px 0;
@@ -58,7 +60,9 @@
         justify-content: center;
         align-items: center;
     }
-
+    .link{
+        display: flex;
+    }
     .icon {
         margin-bottom: 3px;
     }

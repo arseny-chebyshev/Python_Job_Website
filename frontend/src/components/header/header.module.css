@@ -33,7 +33,9 @@
   width: 27px;
   color: #404040;
 }
-
+.links{
+  padding: 30px;
+}
 @media screen and (max-width: 1069px) {
   .header {
     width: 993px;

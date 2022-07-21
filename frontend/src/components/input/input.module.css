@@ -12,10 +12,10 @@
   margin-top: 10px;
   position: relative;
   z-index: 1;
-  padding: 7px;
+  padding: 8px;
   cursor: pointer;
   height: 19px;
-  width: 175px;
+  width: 195px;
   border: none;
   border:1px solid #cdd0d5;
   background: var(--card-color);

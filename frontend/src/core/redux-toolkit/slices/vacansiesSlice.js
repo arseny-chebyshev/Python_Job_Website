@@ -15,7 +15,7 @@ export const fetchVacansies = createAsyncThunk(
       sortSearch
   }) => {
     const { data } = await axios(
-      `${BaseURL}vacancy/?limit=10&page=${currentPage}${sortSearch}${sortLevel}${sortMode}${sortRemote}${sortSalary}${sortRelocation}${sortTechnologies}`
+      `${BaseURL}vacancy/?limit=20&page=${currentPage}${sortSearch}${sortLevel}${sortMode}${sortRemote}${sortSalary}${sortRelocation}${sortTechnologies}`
     );
     return data;
   }
