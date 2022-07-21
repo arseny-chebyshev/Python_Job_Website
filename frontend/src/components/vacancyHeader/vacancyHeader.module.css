@@ -6,22 +6,26 @@
 
     border-bottom: var(--border-botom);
 }
+
 .root_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .role {
     font-size: 26px;
-    margin-bottom: 20px;
     font-weight: 600;
+    margin-top: 5px;
 }
 
 .data {
-    font-size: 14px;
+    font-size: 18px;
     color: #686868;
+    margin-bottom: 20px;
 }
-.technologies{
+
+.technologies {
     white-space: pre-wrap;
 
     white-space: -moz-pre-wrap;
@@ -34,6 +38,7 @@
     font-size: 17px;
     display: flex;
 }
+
 .body {
     display: flex;
     margin-top: 5px;
@@ -41,7 +46,14 @@
     flex-wrap: wrap;
 }
 
-
+.back{
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--main-color);
+}
+.back:hover{
+    color: dodgerblue;
+}
 .salary_value {
     margin-top: 5px;
     font-size: 18px;
@@ -52,37 +64,34 @@
     font-size: 18px;
     display: flex;
 }
-
 @media (max-width: 1200px) {
     .card {
         width: 710px;
     }
 }
-
 @media (max-width: 992px) {
 
 }
-
 @media (max-width: 768px) {
 
 }
-
 @media (max-width: 576px) {
-   .root{
-       margin-top: 15px;
-       padding: 30px 10px;
-       width: 90vw;
+    .root {
+        margin-top: 15px;
+        padding: 30px 10px;
+        width: 90vw;
 
-   }
-    .role{
-        font-size: 21px;
     }
-    .technologies{
-        font-size: 15px;
+    .data{
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .role {
+        font-size: 22px;
+    }
 
-
-
-
+    .technologies {
+        font-size: 16px;
 
     }
 

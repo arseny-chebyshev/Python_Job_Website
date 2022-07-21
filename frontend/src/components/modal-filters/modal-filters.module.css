@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +69,7 @@
   margin-right: 20px;
 }
 .checkbox {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 .filters_header{
   font-weight: 600;
@@ -78,6 +78,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.go{
+  display: none;
 }
 
 @media screen and (max-width: 1069px) {
@@ -89,21 +92,59 @@
 }
 
 @media screen and (max-width: 576px) {
-  .overlay_active{
-    height: 100%;
+  /*.overlay_active{*/
+  /*  height: 100vh;*/
 
 
-  }
+  /*}*/
+  /*.filter_overlay_active{*/
+  /*  height: 100vh;*/
+  /*  display: flex;*/
+  /*  justify-content: center;*/
+  /*  padding-top: 50px;*/
+  /*}*/
+  /*.filters{*/
+  /*  display: flex;*/
+  /*  flex-direction: column;*/
+  /*  justify-content: center;*/
+  /*  align-items:flex-start;*/
+  /*}*/
+  /*.select,*/
+  /*.input,.checkbox {*/
+  /*  margin-top: 25px;*/
+  /*  margin-right: 0;*/
+  /*}*/
+
   .filter_overlay_active{
-    height: 100vh;
-    display: inline-block;
-    padding: 35px 20px 20px 15px;
+    padding-top: 80px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
   .filters{
-
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
-  .select,
-  .input,.checkbox {
+  .checkbox,.input,.select{
     margin-top: 25px;
+    margin-right: 0;
   }
+
+  .go{
+    position: fixed;
+    bottom: 30px;
+    width: 45vw;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    background-color: #2d74c8;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+  }
+
 }
