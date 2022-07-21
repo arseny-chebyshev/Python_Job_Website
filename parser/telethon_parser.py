@@ -1,6 +1,7 @@
 import os
+import re
 from dotenv import load_dotenv
-from telethon.sync import TelegramClient, events
+from telethon.sync import TelegramClient
 import parser_utils
 load_dotenv()
 
@@ -17,7 +18,8 @@ def parse_vacancy(msg):
     try:
         if ('#вакансия' in msg.text) and (not any([(tag in msg.text) for tag in 
                                                  ('#статья', '#задача', '#задачаотподписчика')])):
-            text = msg.text.replace('*', '').replace('[', '').replace(']', '') # Markdown -> Plain Text                                
+            text = re.sub('[*\[\]]', '', msg.text) # Markdown -> Plain Text
+            text = re.sub(re.sub('\(http[s]?.*\)', '', text)) # Убираем гиперссылки                                
             vac_arr = text.split('\n')
             if len(vac_arr) > 8:
                 vac_dct = {"channel_id": {"url": msg.chat.username}, 
@@ -25,7 +27,7 @@ def parse_vacancy(msg):
                 vac_dct['add_date'] = str(msg.date) 
                 vac_dct['role'] = {"name": parser_utils.get_role(vac_arr[0])}
                 vac_dct['technologies'] = [{"name": t} for t in 
-                                           {tech for tech in technologies_list if tech in ''.join(vac_arr)}]
+                                           {tech for tech in technologies_list if re.search(f"({re.escape(tech)})\W+", ''.join(vac_arr))}]
                 vac_dct['remote'] = any(tag in ''.join(vac_arr) for tag in ['#гибрид', '#удаленка'])
                 vac_dct['relocation'] = any(tag in ''.join(vac_arr) for tag in ['#релокация', '#relocation'])
                 vac_dct.update(parser_utils.get_skill(''.join(vac_arr[0:3])))
