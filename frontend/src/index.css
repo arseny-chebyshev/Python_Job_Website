@@ -80,6 +80,7 @@ pre {
 .selected {
     color: var(--background-color);
     background-color: var(--main-color);
+
 }
 
 .comma {

@@ -6,13 +6,11 @@ const Skeleton = (props) => {
     <ContentLoader
       className={styles.skeleton}
       speed={1}
-      width={850}
-      height={280}
-      viewBox="0 0 850 280"
+
       foregroundColor="#DCDCDC"
       {...props}
     >
-      <rect x="0" y="0" rx="15" ry="15" width="850" height="280" />
+      <rect  width="850" height="240" />
     </ContentLoader>
   );
 };

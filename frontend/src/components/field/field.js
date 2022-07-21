@@ -10,12 +10,14 @@ const Field = () => {
 
    const {vacancy,isLoading} = useFetchInField()
 
+    console.log(vacancy)
+
     return <div className={styles.root}>
         <div className={styles.field}>
             <FieldFilter/>
             <div>
                 {isLoading ?
-                    [...Array(10)].map((_, i) => <Skeleton key={i}/>
+                    [...Array(20)].map((_, i) => <Skeleton key={i}/>
                     ) : vacancy.length ? (
                         vacancy.map((el, i) => (
                             <Card
@@ -33,6 +35,7 @@ const Field = () => {
                                 remote={el.remote}
                                 relocation={el.relocation}
                                 date={el.add_date}
+                                tasks = {el.requirements}
                             />
                         ))
                     ) : (

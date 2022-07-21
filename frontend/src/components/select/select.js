@@ -15,7 +15,7 @@ const Select = memo(({ title, option_arr, defolt, onSelect, keys }) => {
       <select onChange={onChange} value={value} className={styles.select}>
         <option>{defolt}</option>
         {option_arr.map((el, i) => (
-          <option value={el.notfull} key={i}>{el.full}</option>
+          <option value={el} key={i}>{el}</option>
         ))}
       </select>
     </div>

@@ -15,11 +15,14 @@ import { PickFilter } from "../pickFilter/pickFilter";
 import { Select } from "../select/select";
 import styles from "./modal-filters.module.css";
 import CloseWindow from "../closeWindow/closeWindow";
+import {declension} from "../../core/helpers/declension";
 
 const ModalFilters = () => {
   const dispatch = useDispatch();
 
   const show = useSelector((state) => state.modal.modal_filters);
+
+  const counter = useSelector((state) => state.vacansies.counter);
 
   return (
     <>
@@ -37,7 +40,6 @@ const ModalFilters = () => {
             <div>Фильтры</div>
             <div><CloseWindow/></div>
           </div>
-          <VacancyNumber/>
           <div className={styles.filters}>
             <div className={styles.select}>
               <Select
@@ -63,6 +65,7 @@ const ModalFilters = () => {
                 goSalary={(value) => dispatch(setSalary(value))}
               />
             </div>
+
             <div className={styles.checkbox}>
               <Checkbox
                 keys="remote"
@@ -79,6 +82,8 @@ const ModalFilters = () => {
             </div>
           </div>
           <PickFilter />
+
+          <div onClick={() =>dispatch(close_modal_filters())} className={styles.go}>Смотреть {counter} {declension(counter)}</div>
         </div>
       </div>
     </>
