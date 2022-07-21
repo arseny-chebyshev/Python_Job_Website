@@ -19,7 +19,7 @@ def parse_vacancy(msg):
         if ('#вакансия' in msg.text) and (not any([(tag in msg.text) for tag in 
                                                  ('#статья', '#задача', '#задачаотподписчика')])):
             text = re.sub('[*\[\]]', '', msg.text) # Markdown -> Plain Text
-            text = re.sub(re.sub('\(http[s]?.*\)', '', text)) # Убираем гиперссылки                                
+            text = re.sub('\(http[s]?.*\)', '', text) # Убираем гиперссылки                                
             vac_arr = text.split('\n')
             if len(vac_arr) > 8:
                 vac_dct = {"channel_id": {"url": msg.chat.username}, 
