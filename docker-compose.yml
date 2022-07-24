@@ -27,9 +27,9 @@ services:
 
   parser:
     build: ./
-    command: [sh, -c, "cd parser &&
-                       python post_prev_vacancies.py &&
-                       python live_parser.py"]
+    #command: [sh, -c, "cd parser &&
+    #                   python post_prev_vacancies.py &&
+    #                   python live_parser.py"]
     restart: on-failure
     env_file:
       - ./.env
@@ -37,28 +37,26 @@ services:
       - django
 
   react:
-    image: "node:18-alpine3.15"
-    build: ./
+    build:
+      context: ./frontend/
     ports:
       - $REACT_PORT:$REACT_PORT
-    command: [sh, -c, "cd frontend &&
-                      apk add npm &&
-                      npm install &&
-                      npm run build"]
-    volumes:
-      - react_build:/frontend/build
+    command: [sh, -c, "npm start"]
     env_file:
       - ./.env
+    volumes:
+      - react_build:/PYTHON_JOB_WEBSITE/build
     depends_on:
       - django
 
   nginx:
-    image: nginx:1.23.1-alpine
-    build: ./
+    build:
+      context: ./nginx
     ports: 
       - 80:80
+      - 443:443
     volumes:
-      - react_build:/frontend/build
+      - react_build:/var/www/react
     depends_on:
       - react
   
