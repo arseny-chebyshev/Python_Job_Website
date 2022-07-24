@@ -39,9 +39,6 @@ services:
   react:
     build:
       context: ./frontend/
-    ports:
-      - $REACT_PORT:$REACT_PORT
-    command: [sh, -c, "npm start"]
     env_file:
       - ./.env
     volumes:
