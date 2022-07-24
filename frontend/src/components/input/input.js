@@ -13,13 +13,13 @@ const Input = ({title, goSalary}) => {
 				<input
 					maxLength="7"
 					ref={inputRef}
-					onChange={(event) => inputChange(event)}
+					onChange={inputChange}
 					value={salary}
 					className={styles.input_input}
 					placeholder="От..."
 				/>
 				<div
-					onClick={() => inputClear()}
+					onClick={inputClear}
 					className={salary ? styles.clear : styles.clearNone}
 				>
 					×
