@@ -18,6 +18,7 @@ const Pagination = () => {
             <ReactPaginates
                 className={page_count === 1 ? styles.pagHidden : styles.pag}
                 breakLabel="..."
+                marginPagesDisplayed ={2}
                 nextLabel=">"
                 onPageChange={(event) => change(event)}
                 pageRangeDisplayed={1}

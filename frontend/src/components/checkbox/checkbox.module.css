@@ -26,7 +26,6 @@
   cursor: pointer;
   outline: none;
   color: var(--text-color);
-  box-shadow: var(--card-shadow);
   border-color: #ccecff;
   background-color: #ccecff;
 }
@@ -46,8 +45,11 @@
   .checkbox{
     width: 60vw;
     font-size: 14px;
+    margin-right: 0;
   }
   .checkbox_active{
     width: 60vw;
+    font-size: 14px;
+    margin-right: 0;
   }
 }

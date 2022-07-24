@@ -16,9 +16,8 @@
   width: 50px;
 }
 .text {
-
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 15px;
 }
 @media (min-width: 576px) {
   .root,

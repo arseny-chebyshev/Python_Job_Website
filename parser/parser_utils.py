@@ -42,7 +42,7 @@ def get_location(text_indice: str) -> dict:
 
 def get_salary(text_indice: str) -> dict:
     salary_dict = {}
-    currency_regex = {"USD": "$|USD|долларов",
+    currency_regex = {"USD": "\$|USD|долларов",
                       "EUR": "€|EUR|евро",
                       "RUB": "₽|RUB|руб.|рублей"}
     salary_range = re.findall('\d+?\s\d+', text_indice)

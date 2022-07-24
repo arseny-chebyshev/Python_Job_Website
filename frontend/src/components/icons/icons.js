@@ -14,7 +14,7 @@ const Icons = ({ path, name }) => {
     >
       <img className={styles.img} src={path} alt="1" />
       <div className={styles.text}>
-        {count} {declension(count)}
+        {count || '...'} {declension(count)}
       </div>
     </div>
   );

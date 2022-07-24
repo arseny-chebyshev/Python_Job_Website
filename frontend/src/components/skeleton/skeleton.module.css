@@ -1,4 +1,8 @@
 .skeleton {
+  padding: 5px 15px;
+  width: 810px;
+  height: 240px;
+  border-radius: 25px;
   margin-bottom: 15px;
   background-color: var(--background-color);
 }
@@ -19,6 +23,10 @@
 @media (max-width: 576px) {
   .skeleton{
     width: 90vw;
-    height: 90vh;
+    border-radius: 15px;
+    margin: 10px 19px;
+    padding: 0;
+    height: 210px;
+
   }
 }

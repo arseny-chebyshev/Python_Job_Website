@@ -3,6 +3,7 @@ import {HeaderMobile} from "../mobile/header-mobile/header-mobile";
 import {Title} from "../title/title";
 import Login from "../login/login";
 import {useCheckPositionHeader} from "../../core/hooks/header/useCheckPositionHeader";
+import Links from "../links/links";
 
 
 const Header = () => {
@@ -17,7 +18,11 @@ const Header = () => {
                 <div className={styles.logo}>
                     <Title size={35}/>
                 </div>
-                <Login/>
+                <div className={styles.links}>
+                    <Links/>
+                </div>
+
+                {/*<Login/>*/}
             </div>
         </>
     );

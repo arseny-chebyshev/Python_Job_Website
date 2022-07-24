@@ -1,60 +1,68 @@
 .root {
-  transition: max-height 0.2s;
-  max-height: 60px;
-  margin-top: 10px;
-  flex-wrap: wrap;
+    transition: max-height 0.2s;
+    max-height: 60px;
+    margin-top: 10px;
+    flex-wrap: wrap;
 }
+
 .root_none {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s;
 }
+
 .title {
-  margin: 5px;
-  font-size: 15px;
-  font-weight: 600;
-}
-.sbros_title {
-  cursor: pointer;
-  font-size: 15px;
-  margin-left: 5px;
-  margin-bottom: 10px;
-}
-.filters {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-.pick {
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  margin-left: 8px;
-  border-radius: 5px;
-}
-.delete {
-  width: 20px;
-  height: 20px;
-  flex: none;
-  padding: 0;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-  margin-left: 3px;
-  background-color: var(--select-color);
-  border-radius: 50%;
-}
-.del {
-  margin-top: 2px;
-  height: 14px;
-  width: 14px;
-  color: var(--text-color);
+    margin: 5px;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .sbros_title {
-  border-bottom: 1px dashed rgba(20, 99, 217, 0.3);
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-bottom: 10px;
 }
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.pick {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-left: 8px;
+    border-radius: 5px;
+}
+
+.delete {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    padding: 0;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-left: 3px;
+    background-color: var(--select-color);
+    border-radius: 50%;
+}
+
+.del {
+    margin-top: 2px;
+    height: 14px;
+    width: 14px;
+    color: var(--text-color);
+}
+
+.sbros_title {
+    border-bottom: 1px dashed rgba(20, 99, 217, 0.3);
+}
+
 @media (max-width: 1200px) {
 }
 
@@ -65,14 +73,29 @@
 }
 
 @media (max-width: 576px) {
-  .title{
-    font-size: 15px;
-  }
-  .pick{
-    font-size: 14px;
-  }
-  .sbros_title {
-    font-size: 14px;
-  }
+    .root {
+        text-align: center;
+
+    }
+
+    .filters {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .title {
+        display: none;
+        font-size: 15px;
+    }
+
+    .pick {
+        margin: 10px;
+        font-size: 14px;
+    }
+
+    .sbros_title {
+        font-size: 14px;
+    }
 
 }

@@ -8,7 +8,10 @@ const Footer = () => {
                 <div className={styles.title}>
                     devseye
                 </div>
-                <Links/>
+                <div className={styles.link}>
+                    <Links/>
+                </div>
+
             </div>
 
             <div className={styles.author}>

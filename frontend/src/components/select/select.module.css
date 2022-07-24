@@ -5,7 +5,7 @@
 .select {
   cursor: pointer;
   padding: 8px;
-  width: 190px;
+  width: 210px;
   border: none;
   border:1px solid #cdd0d5;
   background: var(--card-color);

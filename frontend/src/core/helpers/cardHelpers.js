@@ -14,7 +14,8 @@ export const getNormalDate = (date) => {
 };
 export const getNormalRole = (role) => {
 	const reg = /Senior|Middle|Junior/gi;
-	return (reg).test(role) ? role.replace(reg, '') : role;
+	return (reg).test(role.slice(0,12)) ? role.replace(reg, '') : role;
+
 };
 
 
@@ -73,8 +74,13 @@ export const getNormalTasks = (tasks) => {
 	);
 };
 
+
+export const getNormalDesc = (desc) => {
+	return desc.replace(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, '').replace(/\s+/g,' ').trim();
+}
+
 const getCurrency = (curr) => {
-	const currency = {'RUB':'₽','USD':'$'}
+	const currency = {'RUB':'₽','USD':'$',EUR:'€'}
 
 	return currency[curr]
 }
