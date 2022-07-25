@@ -20,7 +20,7 @@ export const useChangeInput = (goSalary) => {
 
     const inputChange = (event) => {
         const str = (event.target.value).replace(/\D/g, '')
-        if (str) {
+        if (str || str === '') {
             setSalary(str);
             testDebounce(str);
         }

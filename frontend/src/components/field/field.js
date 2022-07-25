@@ -10,8 +10,6 @@ const Field = () => {
 
    const {vacancy,isLoading} = useFetchInField()
 
-    console.log(vacancy)
-
     return <div className={styles.root}>
         <div className={styles.field}>
             <FieldFilter/>
