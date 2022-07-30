@@ -1,14 +1,15 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { BaseURL } from "../../constants/api";
 
 export const useFetchVacancy = () => {
   const { id } = useParams();
   const [vacancy, setVacancy] = useState({});
   const [technologies, setTechnologies] = useState();
   const [addVacancy, setAddVacancy] = useState();
-  const url = `http://185.104.113.54:8000/api/vacancy/${id}/`;
-  const urlAdd = `http://185.104.113.54:8000/api/vacancy/?&technologies=${technologies}`;
+  const url = BaseURL + `vacancy/${id}/`;
+  const urlAdd = BaseURL + `vacancy/?&technologies=${technologies}`;
 
   const fetchAsycn = async () => {
     const { data } = await axios(url);

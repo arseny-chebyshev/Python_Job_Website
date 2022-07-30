@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { BaseURL } from "../../constants/api";
 export const useFetchOneTechnology = (name) => {
   const [count, setCount] = useState();
 
-  const url = `http://185.104.113.54:8000/api/vacancy/?technologies=${name}`;
+  const url = BaseURL + `vacancy/?technologies=${name}`;
 
   const request = async () => {
     const { data } = await axios(url);

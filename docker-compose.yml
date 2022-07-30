@@ -27,9 +27,9 @@ services:
 
   parser:
     build: ./
-    command: [sh, -c, "cd parser &&
-                       python post_prev_vacancies.py &&
-                       python live_parser.py"]
+#    command: [sh, -c, "cd parser &&
+#                       python post_prev_vacancies.py &&
+#                       python live_parser.py"]
     restart: on-failure
     env_file:
       - ./.env
