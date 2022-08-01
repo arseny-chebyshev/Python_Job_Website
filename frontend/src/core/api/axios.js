@@ -1,7 +1,7 @@
 import axios from "axios";
-
+import { BaseURL } from "../constants/api";
 const def = axios.create({
-  baseURL: "`http://185.104.113.54:8000/api/vacancy/",
+  baseURL: BaseURL,
 });
 
 export default def;
