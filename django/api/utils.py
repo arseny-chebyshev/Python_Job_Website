@@ -49,6 +49,9 @@ def clean_nested_queryset(params: Dict, special_params: Dict, filter_mapping: Di
         if key == 'technologies':
             tech_list = value.split(', ')
             for tech in tech_list:
-                related_obj = Technology.objects.get(name__iexact=tech)
+                try: 
+                    related_obj = Technology.objects.get(name__iexact=tech)
+                except Technology.DoesNotExist:
+                    continue 
                 queryset = queryset.filter(technologies=related_obj)
     return queryset
