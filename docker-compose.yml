@@ -52,11 +52,22 @@ services:
     ports: 
       - 80:80
       - 443:443
+    restart: always
     volumes:
       - react_build:/var/www/react
+      - etc-letsencrypt:/etc/letsencrypt
+
     depends_on:
       - react
-  
+  cert:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    volumes:
+      - react_build:/var/www/react
+      - etc-letsencrypt:/etc/letsencrypt
+    command: certonly --webroot --webroot-path=/var/www/react --email arseny.chebyshev@gmail.com --agree-tos --no-eff-email -d devseye.ru 
 volumes:
   postgres_data:
   react_build:
+  etc-letsencrypt:
