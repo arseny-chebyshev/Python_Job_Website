@@ -1,2 +1,2 @@
 
-export const BaseURL =  'http://devseye.ru/api/'
+export const BaseURL =  '/api/'
